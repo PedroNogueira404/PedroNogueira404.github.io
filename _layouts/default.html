@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <style>
+    body {
+      background-color:rgb(24, 0, 0);
+      color: #e0e0e0;
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    a { color: #80cbc4; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">Início</a> |
+    <a href="/blog/">Blog</a> |
+    <a href="/sobre/">Sobre</a>
+  </nav>
+  {{ content }}
+</body>
+</html>

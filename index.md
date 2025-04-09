@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Home
+title: Início
 ---
 
-# Olá! 👋
+# Bem-vindo
 
-Meu nome é Pedro Nogueira. Este é meu site pessoal.
+Este é o site pessoal de Pedro Henrique Nogueira.
 
-Aqui você vai encontrar meus projetos, ideias e experiências com ciência, tecnologia e mais.
+Acesse o [blog](/blog/) ou saiba mais [sobre mim](/sobre/).

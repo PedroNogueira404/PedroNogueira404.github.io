@@ -4,6 +4,6 @@ title: Sobre mim
 permalink: /sobre/
 ---
 
-Sou apaixonado por astronomia, tecnologia e comunicação científica.
+Sou apaixonado por astronomia, física e ciência de dados. 
 
-Atualmente estou desenvolvendo simulações, explorando dados e criando conteúdos astronômicos!
+Crio conteúdos científicos, desenvolvo projetos com Python e faço pesquisa observacional com foco em sistemas estelares e exo-satélites.
