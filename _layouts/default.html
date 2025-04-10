@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,14 @@
         <i class="fab fa-youtube"></i>
       </a>
     </div>
+
+    <!-- Mudança de idioma -->
+    <div class="language-switcher">
+      <a href="?lang=en" class="lang-link">{{ 'english' | t }}</a>
+      <a href="?lang=pt" class="lang-link">{{ 'portuguese' | t }}</a>
+      <a href="?lang=es" class="lang-link">{{ 'spanish' | t }}</a>
+    </div>
+
     <p>&copy; {{ 'now' | date: "%Y" }} Pedro Nogueira</p>
   </footer>
 
