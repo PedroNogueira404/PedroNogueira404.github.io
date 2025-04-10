@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.lang }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +9,6 @@
 </head>
 
 <body>
-  <!-- Botão de troca de tema -->
-  <div class="switch-container">
-    <label class="switch-label" for="theme-toggle">🌗</label>
-    <label class="switch">
-      <input type="checkbox" id="theme-toggle">
-      <span class="slider"></span>
-    </label>
-  </div>
 
   <!-- Sidebar -->
   <div class="sidebar">
@@ -24,7 +16,7 @@
     <h1 class="profile-name">Pedro Nogueira</h1>
     <p>Astrophysicist & Science Communicator</p>
 
-    <!-- Navegação -->
+    <!-- Navigation -->
     <nav class="main-nav">
       <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
       <a href="{{ '/about/' | relative_url }}" class="nav-link">About</a>
@@ -33,7 +25,7 @@
       <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
     </nav>
 
-    <!-- Links de Redes Sociais -->
+    <!-- Social Links -->
     <div class="social-links">
       <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
         <i class="fab fa-github"></i> GitHub
@@ -46,53 +38,63 @@
       </a>
     </div>
 
-    <!-- Seletor de Idioma -->
+    <!-- Language Switcher -->
     <div class="language-switcher">
-      <a href="?lang=pt" class="lang-link">Português</a>
       <a href="?lang=en" class="lang-link">English</a>
+      <a href="?lang=pt" class="lang-link">Português</a>
       <a href="?lang=es" class="lang-link">Español</a>
     </div>
   </div>
 
-  <!-- Conteúdo Principal -->
+  <!-- Main Content -->
   <div class="main-content">
     {{ content }}
 
-    <!-- Seção de Comentários -->
-    {% if page.url contains '/blog/' %}
-    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
-      <div id="giscus_container"></div>
-      <script src="https://giscus.app/client.js"
-              data-repo="PedroNogueira404/PedroNogueira404.github.io"
-              data-repo-id="R_kgDOOW9BoA"
-              data-category="General"
-              data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-              data-mapping="pathname"
-              data-strict="0"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="preferred_color_scheme"
-              data-lang="en"
-              data-loading="lazy"
-              data-comments-enabled="true"
-              crossorigin="anonymous"
-              async>
-      </script>
+    <!-- Theme Toggle Button -->
+    <div class="switch-container">
+      <label class="switch-label" for="theme-toggle">🌗</label>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
     </div>
+
+    <!-- Comments Section (only on blog pages) -->
+    {% if page.url contains '/blog/' %}
+      <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
+        <div id="giscus_container"></div>
+        <script src="https://giscus.app/client.js"
+                data-repo="PedroNogueira404/PedroNogueira404.github.io"
+                data-repo-id="R_kgDOOW9BoA"
+                data-category="General"
+                data-category-id="DIC_kwDOOW9BoM4Co8kQ"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
+                data-lang="en"
+                data-loading="lazy"
+                data-comments-enabled="true"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
     {% endif %}
 
+    <!-- Footer -->
     <footer class="site-footer">
       &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
     </footer>
   </div>
 
-  <!-- Script de Troca de Tema -->
+  <!-- Theme Switching Script -->
   <script>
     const toggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Aplicar tema salvo
+    // Apply saved theme
     if (localStorage.getItem('theme') === 'light') {
       body.classList.add('light-mode');
       toggle.checked = true;
