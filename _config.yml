@@ -1,2 +1,12 @@
 title: Pedro Nogueira
 theme: minima
+ plugins:
+  - jekyll-multiple-languages-plugin
+
+languages:
+  - en
+  - pt
+  - es
+
+# Define as configurações do idioma padrão
+default_locale: en
