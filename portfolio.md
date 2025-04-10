@@ -6,13 +6,12 @@ permalink: /portfolio/
 
 # Portfolio
 
-{% for post in site.posts %}
-<div class="card" style="display: inline-block; margin: 1rem; width: 300px;">
-  <img src="{{ post.image }}" alt="Project image" style="width:100%; height:200px;">
-  <div class="card-content">
-    <h3>{{ post.title }}</h3>
-    <p>{{ post.excerpt }}</p>
-    <a href="{{ post.url }}" class="button">See More</a>
-  </div>
+<div class="card">
+  <h3>SPHERE/IRDIS Exo-satellite Survey</h3>
+  <p>Using direct imaging to search for exomoons and companions around brown dwarfs.</p>
 </div>
-{% endfor %}
+
+<div class="card">
+  <h3>Prey-Predator Simulator</h3>
+  <p>A pygame simulation with simple agents, interaction logs, and analysis tools.</p>
+</div>
