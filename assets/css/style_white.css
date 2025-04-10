@@ -96,6 +96,21 @@ body.light-mode .sidebar {
 .social-link:hover {
   color: #66ccff; /* Cor ao passar o mouse */
 }
+/* Ícones de imagem (X, Bluesky) */
+.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: filter 0.3s ease; /* Alteração de cor ao mudar de tema */
+}
+
+/* Altere o filtro de cor dependendo do modo */
+body.light-mode .social-icon {
+  filter: brightness(0) invert(1); /* Muda a cor para um tom mais claro no modo claro */
+}
+
+body.dark-mode .social-icon {
+  filter: brightness(1) invert(0); /* No modo escuro, mantém o ícone original */
+}
 
 /* Switch de idioma */
 .language-switcher {
