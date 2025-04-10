@@ -2,56 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: "Pedro Nogueira" }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-<div class="sidebar">
-  <img src="/assets/profile.jpg" alt="Profile Photo" style="width:150px;border-radius:50%;" class="profile-img">
-  <h2>Pedro Nogueira</h2>
-  <p>Astrophysicist & Science Communicator</p>
-  <!-- TESTE DE ÍCONE -->
-  <i class="fab fa-github" style="font-size: 24px; color: red;"></i>
-  <!-- TESTE DE ÍCONE -->                                                                
-  <a href="{{ "/" | relative_url }}">Home</a>
-  <a href="{{ "/about/" | relative_url }}">About</a>
-  <a href="{{ "/portfolio/" | relative_url }}">Portfolio</a>
-  <a href="{{ "/blog/" | relative_url }}">Blog</a>
-  <a href="{{ "/assets/CV.pdf" | relative_url }}" target="_blank">CV</a>
-</div>
-  <a href="https://github.com/PedroNogueira404" target="_blank">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-  <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://youtube.com/@exopedrito" target="_blank">
-    <i class="fab fa-youtube"></i> YouTube
-  </a>
+  <div class="sidebar">
+    <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
+    <h1>Pedro Nogueira</h1>
+    <p>Astrophysicist & Science Communicator</p>
+    
+    <nav class="main-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+      <a href="{{ '/about/' | relative_url }}" class="nav-link">About</a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Portfolio</a>
+      <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
+      <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
+    </nav>
+    
+    <div class="social-links">
+      <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+    </div>
+  </div>
 
-  <div class="main">
+  <div class="main-content">
     {{ content }}
     
-    <div id="giscus_container"></div>
-    <script src="https://giscus.app/client.js"
-            data-repo="PedroNogueira404/PedroNogueira404.github.io"
-            data-repo-id="R_kgDOOW9BoA"
-            data-category="General"
-            data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="dark"
-            data-lang="en"
-            crossorigin="anonymous"
-            async>
-    </script>
+    <div class="comments-section">
+      <div id="giscus_container"></div>
+      <script src="https://giscus.app/client.js"
+              data-repo="PedroNogueira404/PedroNogueira404.github.io"
+              data-repo-id="R_kgDOOW9BoA"
+              data-category="General"
+              data-category-id="DIC_kwDOOW9BoM4Co8kQ"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="dark"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
 
-    <footer>© Pedro Nogueira</footer>
+    <footer class="site-footer">
+      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+    </footer>
   </div>
 </body>
 </html>
