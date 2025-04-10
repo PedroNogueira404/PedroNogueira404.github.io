@@ -1,6 +1,6 @@
 title: Pedro Nogueira
 theme: minima
- plugins:
+plugins:
   - jekyll-multiple-languages-plugin
 
 languages:
