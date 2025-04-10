@@ -10,3 +10,7 @@ languages:
 
 # Define as configurações do idioma padrão
 default_locale: en
+collections:
+  publications:
+    output: true
+    permalink: /portfolio/:title/
