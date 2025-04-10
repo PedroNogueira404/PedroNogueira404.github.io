@@ -138,6 +138,64 @@ body.light-mode .social-link .x-icon {
 body.dark-mode .social-link .x-icon {
   filter: brightness(1) invert(0); /* No modo escuro, não inverte */
 }
+/* Cards do Portfólio */
+.card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.card-link {
+  font-size: 1.1rem;
+  color: #66ccff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card-link:hover {
+  color: #ff99cc;
+}
+
+/* Card no modo claro */
+body.light-mode .card {
+  background-color: #f9f9f9;
+  color: #222;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .card-link {
+  color: #66ccff;
+}
+
+body.light-mode .card-link:hover {
+  color: #ff99cc;
+}
 
 /* Switch de idioma */
 .language-switcher {
