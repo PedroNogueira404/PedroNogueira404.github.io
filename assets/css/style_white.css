@@ -39,7 +39,7 @@ body {
 .sidebar {
   width: 250px;
   padding: 2rem;
-  background: #1e1e1e url('/assets/sidebar-bg.jpg') no-repeat center center;
+  background: #1e1e1e url('/assets/background.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
   flex-direction: column;
