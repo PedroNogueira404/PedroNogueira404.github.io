@@ -81,35 +81,53 @@ body.light-mode .sidebar {
   justify-content: space-evenly; /* Distribui os ícones uniformemente */
   gap: 15px; /* Espaço entre os ícones */
   margin-top: auto; /* Coloca os ícones no final da barra lateral */
-  width: 100%; /* Faz os ícones ocuparem toda a largura disponível */
+  width: 90%; /* Faz os ícones ocuparem toda a largura disponível */
 }
 
-/* Estilo dos links de redes sociais */
+/* Ajuste para os ícones */
 .social-link {
-  font-size: 24px; /* Ajuste o tamanho dos ícones conforme necessário */
-  color: #e0e0e0; /* Cor dos ícones */
+  font-size: 24px; /* Tamanho dos ícones */
+  color: #e0e0e0; /* Cor padrão */
   text-decoration: none; /* Remove o sublinhado */
   transition: color 0.3s ease;
+  display: inline-flex; /* Garante que os ícones sejam exibidos de forma alinhada */
+  align-items: center; /* Centraliza os ícones verticalmente */
 }
 
-/* Mudança de cor no hover */
 .social-link:hover {
-  color: #66ccff; /* Cor ao passar o mouse */
+  color: #66ccff; /* Cor no hover */
 }
+
 /* Ícones de imagem (X, Bluesky) */
 .social-icon {
   width: 24px;
   height: 24px;
-  transition: filter 0.3s ease; /* Alteração de cor ao mudar de tema */
+  transition: filter 0.3s ease; /* Transição para a cor */
+  vertical-align: middle; /* Garante alinhamento correto */
 }
 
-/* Altere o filtro de cor dependendo do modo */
+/* No modo claro, cor dos ícones é escura para melhor visibilidade */
+body.light-mode .social-link {
+  color: #222; /* Cor dos ícones no modo claro */
+}
+
 body.light-mode .social-icon {
-  filter: brightness(0) invert(1); /* Muda a cor para um tom mais claro no modo claro */
+  filter: none; /* Remove a inversão no modo claro, mantém a cor original */
+}
+
+/* No modo escuro, cor dos ícones é clara */
+body.dark-mode .social-link {
+  color: #e0e0e0; /* Cor dos ícones no modo escuro */
 }
 
 body.dark-mode .social-icon {
-  filter: brightness(1) invert(0); /* No modo escuro, mantém o ícone original */
+  filter: brightness(1) invert(0); /* Mantém a cor original no modo escuro */
+}
+
+/* Ajustes extras caso o Bluesky esteja desalinhado */
+.social-link img {
+  vertical-align: middle; /* Garante que o ícone de imagem fique alinhado ao texto */
+  margin-top: 0; /* Elimina qualquer espaço acima da imagem */
 }
 
 /* Switch de idioma */
