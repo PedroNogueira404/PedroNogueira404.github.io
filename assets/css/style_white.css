@@ -1,10 +1,11 @@
-/* Basic Reset */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
@@ -13,19 +14,28 @@ body {
   color: #e0e0e0;
   transition: background-color 0.3s ease;
 }
+
+/* Botão genérico */
 .btn {
-    display: inline-block;
-    background: #0077b5;
-    color: white;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    text-decoration: none;
+  display: inline-block;
+  background: #0077b5;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #005f90;
 }
 
 .btn i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
+
+/* Sidebar */
 .sidebar {
   width: 250px;
   padding: 2rem;
@@ -36,6 +46,7 @@ body {
   text-align: center;
 }
 
+/* Imagem de perfil */
 .profile-img {
   width: 150px;
   height: 150px;
@@ -44,10 +55,13 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Conteúdo principal */
 .main-content {
   flex: 1;
   padding: 2rem;
 }
+
+/* Cartões */
 .card {
   background-color: #1e1e1e;
   border-radius: 12px;
@@ -56,21 +70,34 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   transition: transform 0.3s;
 }
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Navegação e redes sociais */
 .nav-link, .social-link {
   display: block;
   margin: 0.5rem 0;
-  color: #333;
+  color: #e0e0e0;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .nav-link:hover, .social-link:hover {
-  color: #0066cc;
+  color: #66ccff;
 }
 
+/* Rodapé */
 .site-footer {
   margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #444;
   text-align: center;
+  color: #aaa;
+}
+
+/* Ícones (ex: Font Awesome) */
+.sidebar i {
+  margin-right: 8px;
 }
