@@ -1,8 +1,6 @@
 ---
 layout: default
-title: Meu Primeiro Post
+title: Hello World!
 ---
 
-Este é o primeiro post no meu blog pessoal. 
-
-Pretendo compartilhar reflexões sobre ciência, tecnologia, programação, e também atualizações dos meus projetos.
+This is the first post of my personal website 🚀
