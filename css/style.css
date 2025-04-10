@@ -60,3 +60,31 @@ footer {
   opacity: 0.6;
   padding: 20px;
 }
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn {
+    display: inline-block;
+    background: #0077b5;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn i {
+    margin-right: 8px;
+}
