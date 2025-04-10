@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+  <!-- Botão de troca de tema -->
+  <div class="switch-container">
+    <label class="switch-label" for="theme-toggle">🌗</label>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
   <div class="sidebar">
     <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
     <h1 class="profile-name">Pedro Nogueira</h1>
     <p>Astrophysicist & Science Communicator</p>
-    
+
     <nav class="main-nav">
       <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
       <a href="{{ '/about/' | relative_url }}" class="nav-link">About</a>
@@ -21,7 +30,7 @@
       <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
       <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
     </nav>
-    
+
     <div class="social-links">
       <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
         <i class="fab fa-github"></i> GitHub
@@ -51,7 +60,7 @@
               data-reactions-enabled="1"
               data-emit-metadata="0"
               data-input-position="bottom"
-              data-theme="dark"
+              data-theme="preferred_color_scheme"
               data-lang="en"
               data-loading="lazy"
               data-comments-enabled="true"
@@ -65,5 +74,34 @@
       &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
     </footer>
   </div>
+
+  <!-- Script de troca de tema (com Giscus) -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Aplicar tema salvo
+    if (localStorage.getItem('theme') === 'light') {
+      body.classList.add('light-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      const isLight = toggle.checked;
+      body.classList.toggle('light-mode', isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+      const giscusFrame = document.querySelector('iframe.giscus-frame');
+      if (giscusFrame) {
+        giscusFrame.contentWindow.postMessage({
+          giscus: {
+            setConfig: {
+              theme: isLight ? 'light' : 'dark'
+            }
+          }
+        }, 'https://giscus.app');
+      }
+    });
+  </script>
 </body>
 </html>
