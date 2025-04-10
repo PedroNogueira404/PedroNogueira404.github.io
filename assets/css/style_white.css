@@ -12,7 +12,12 @@ body {
   min-height: 100vh;
   background-color: #121212;
   color: #e0e0e0;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 /* Botão genérico */
@@ -49,6 +54,12 @@ body {
   backdrop-filter: brightness(0.6);
 }
 
+body.light-mode .sidebar {
+  background: #f1f1f1 url('/assets/background-light.jpg') no-repeat center center;
+  color: #333;
+  backdrop-filter: brightness(0.8);
+}
+
 /* Imagem de perfil */
 .profile-img {
   width: 150px;
@@ -74,6 +85,12 @@ body {
   transition: transform 0.3s;
 }
 
+body.light-mode .card {
+  background-color: #ffffff;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
 .card:hover {
   transform: scale(1.02);
 }
@@ -85,6 +102,10 @@ body {
   color: #e0e0e0;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+body.light-mode .nav-link, body.light-mode .social-link {
+  color: #333;
 }
 
 .nav-link:hover, .social-link:hover {
@@ -100,7 +121,70 @@ body {
   color: #aaa;
 }
 
+body.light-mode .site-footer {
+  color: #666;
+}
+
 /* Ícones (ex: Font Awesome) */
 .sidebar i {
   margin-right: 8px;
+}
+
+/* Switch de modo */
+.switch-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.switch-label {
+  margin-right: 8px;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #66ccff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
 }
