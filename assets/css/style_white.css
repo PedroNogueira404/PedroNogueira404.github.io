@@ -139,12 +139,18 @@ body.dark-mode .social-link .x-icon {
   filter: brightness(1) invert(0); /* No modo escuro, não inverte */
 }
 /* Cards do Portfólio */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 .card {
   background-color: #1e1e1e;
   color: #e0e0e0;
   border-radius: 10px;
   padding: 1.5rem;
-  margin: 1.5rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -154,30 +160,34 @@ body.dark-mode .social-link .x-icon {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.card-title {
-  font-size: 1.8rem;
+.card h3 {
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.card-description {
+.card p {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
-.card-link {
-  font-size: 1.1rem;
-  color: #66ccff;
+.card a {
   text-decoration: none;
+  color: inherit;
   transition: color 0.3s ease;
 }
 
-.card-link:hover {
-  color: #ff99cc;
+.card a:hover {
+  color: #66ccff;
 }
 
-/* Card no modo claro */
+.card small {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+}
+
+/* Cards no modo claro */
 body.light-mode .card {
   background-color: #f9f9f9;
   color: #222;
@@ -189,13 +199,17 @@ body.light-mode .card:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-body.light-mode .card-link {
+body.light-mode .card a:hover {
   color: #66ccff;
 }
 
-body.light-mode .card-link:hover {
-  color: #ff99cc;
+/* Ajustes no layout para torná-lo mais fluido */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Ajuste automático */
+  gap: 1.5rem;
 }
+
 
 /* Switch de idioma */
 .language-switcher {
