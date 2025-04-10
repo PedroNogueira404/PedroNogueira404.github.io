@@ -1,10 +1,12 @@
 ---
 layout: default
-title: Início
+title: Home
 ---
 
-# Bem-vindo
+<img src="/assets/profile.jpg" alt="Profile Photo" style="width:150px;border-radius:50%;">
 
-Este é o site pessoal de Pedro Henrique Nogueira.
+# Hi, I'm Pedro Nogueira
 
-Acesse o [blog](/blog/) ou saiba mais [sobre mim](/sobre/).
+I'm an astrophysicist and science communicator passionate about observational astronomy, coding, and outreach.
+
+Explore my [blog](/blog/), read more [about me](/about/), or check my [CV](/assets/cv.pdf).

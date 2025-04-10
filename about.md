@@ -1,9 +1,13 @@
 ---
 layout: default
-title: Sobre mim
-permalink: /sobre/
+title: About Me
+permalink: /about/
 ---
 
-Sou apaixonado por astronomia, física e ciência de dados. 
+I specialize in observational astronomy, working with high-contrast imaging and simulation tools in Python. I'm also involved in science communication projects and content creation.
 
-Crio conteúdos científicos, desenvolvo projetos com Python e faço pesquisa observacional com foco em sistemas estelares e exo-satélites.
+You can reach me on:
+
+- [GitHub](https://github.com/PedroNogueira404)
+- [LinkedIn](https://www.linkedin.com/in/pedronogueira404)
+- [YouTube](https://youtube.com/@pedronogueira)
