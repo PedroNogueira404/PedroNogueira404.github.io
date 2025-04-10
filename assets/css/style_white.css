@@ -75,41 +75,26 @@ body.light-mode .sidebar {
   transform: translateX(5px);
 }
 
-/* Garantir que os ícones de redes sociais fiquem em linha */
+/* Redes Sociais - icones em linha e no final da sidebar */
 .social-links {
   display: flex;
-  justify-content: space-between; /* Distribui os ícones uniformemente */
+  justify-content: space-evenly; /* Distribui os ícones uniformemente */
   gap: 15px; /* Espaço entre os ícones */
   margin-top: auto; /* Coloca os ícones no final da barra lateral */
+  width: 100%; /* Faz os ícones ocuparem toda a largura disponível */
 }
 
+/* Estilo dos links de redes sociais */
 .social-link {
   font-size: 24px; /* Ajuste o tamanho dos ícones conforme necessário */
-  color: #000; /* Cor dos ícones, você pode mudar conforme o tema */
+  color: #e0e0e0; /* Cor dos ícones */
   text-decoration: none; /* Remove o sublinhado */
-}
-
-.social-link:hover {
-  color: #0077b5; /* Exemplo de cor no hover, pode ser alterada */
-}
-
-
-/* Ícones de Redes Sociais */
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.social-icon {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #e0e0e0;
   transition: color 0.3s ease;
 }
 
-.social-icon:hover {
-  color: #66ccff;
+/* Mudança de cor no hover */
+.social-link:hover {
+  color: #66ccff; /* Cor ao passar o mouse */
 }
 
 /* Switch de idioma */
