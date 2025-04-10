@@ -11,7 +11,7 @@
 <body>
   <div class="sidebar">
     <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
-    <h1>Pedro Nogueira</h1>
+    <h1 class="profile-name">Pedro Nogueira</h1>
     <p>Astrophysicist & Science Communicator</p>
     
     <nav class="main-nav">
@@ -37,8 +37,9 @@
 
   <div class="main-content">
     {{ content }}
-    
-    <div class="comments-section">
+
+    {% if page.url contains '/blog/' %}
+    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
       <div id="giscus_container"></div>
       <script src="https://giscus.app/client.js"
               data-repo="PedroNogueira404/PedroNogueira404.github.io"
@@ -52,10 +53,13 @@
               data-input-position="bottom"
               data-theme="dark"
               data-lang="en"
+              data-loading="lazy"
+              data-comments-enabled="true"
               crossorigin="anonymous"
               async>
       </script>
     </div>
+    {% endif %}
 
     <footer class="site-footer">
       &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
