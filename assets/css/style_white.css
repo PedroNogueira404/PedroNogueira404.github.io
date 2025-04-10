@@ -95,6 +95,7 @@ body.dark-mode .social-icon {
 .social-link img {
   vertical-align: middle; /* Garante que o ícone de imagem fique alinhado ao texto */
   margin-top: 0; /* Elimina qualquer espaço acima da imagem */
+  margin-bottom: 0;
   width: 24px; /* Garante que todos os ícones tenham o mesmo tamanho */
   height: 24px;
   display: inline-block;
