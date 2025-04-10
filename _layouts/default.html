@@ -1,61 +1,117 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-  <!-- Conteúdo principal da página -->
-  <div class="main-content">
-    {{ content }}
+  <!-- Botão de troca de tema -->
+  <div class="switch-container">
+    <label class="switch-label" for="theme-toggle">🌗</label>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
   </div>
 
-  <!-- Rodapé com ícones de redes sociais -->
-  <footer class="site-footer">
-    <div class="social-icons">
-      <a href="https://github.com/PedroNogueira404" target="_blank" class="social-icon">
-        <i class="fab fa-github"></i>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
+    <h1 class="profile-name">Pedro Nogueira</h1>
+    <p>Astrophysicist & Science Communicator</p>
+
+    <!-- Navegação -->
+    <nav class="main-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+      <a href="{{ '/about/' | relative_url }}" class="nav-link">About</a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Portfolio</a>
+      <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
+      <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
+    </nav>
+
+    <!-- Links de Redes Sociais -->
+    <div class="social-links">
+      <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
+        <i class="fab fa-github"></i> GitHub
       </a>
-      <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-icon">
-        <i class="fab fa-linkedin"></i>
+      <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <a href="https://youtube.com/@exopedrito" target="_blank" class="social-icon">
-        <i class="fab fa-youtube"></i>
+      <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link">
+        <i class="fab fa-youtube"></i> YouTube
       </a>
     </div>
 
-    <!-- Mudança de idioma -->
+    <!-- Seletor de Idioma -->
     <div class="language-switcher">
-      <a href="?lang=en" class="lang-link">{{ 'english' | t }}</a>
-      <a href="?lang=pt" class="lang-link">{{ 'portuguese' | t }}</a>
-      <a href="?lang=es" class="lang-link">{{ 'spanish' | t }}</a>
+      <a href="?lang=pt" class="lang-link">Português</a>
+      <a href="?lang=en" class="lang-link">English</a>
+      <a href="?lang=es" class="lang-link">Español</a>
     </div>
+  </div>
 
-    <p>&copy; {{ 'now' | date: "%Y" }} Pedro Nogueira</p>
-  </footer>
+  <!-- Conteúdo Principal -->
+  <div class="main-content">
+    {{ content }}
 
-  <!-- Script de troca de tema -->
+    <!-- Seção de Comentários -->
+    {% if page.url contains '/blog/' %}
+    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
+      <div id="giscus_container"></div>
+      <script src="https://giscus.app/client.js"
+              data-repo="PedroNogueira404/PedroNogueira404.github.io"
+              data-repo-id="R_kgDOOW9BoA"
+              data-category="General"
+              data-category-id="DIC_kwDOOW9BoM4Co8kQ"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="preferred_color_scheme"
+              data-lang="en"
+              data-loading="lazy"
+              data-comments-enabled="true"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+    {% endif %}
+
+    <footer class="site-footer">
+      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+    </footer>
+  </div>
+
+  <!-- Script de Troca de Tema -->
   <script>
-    const toggleSwitch = document.getElementById('themeSwitch');
+    const toggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Aplica o tema salvo
+    // Aplicar tema salvo
     if (localStorage.getItem('theme') === 'light') {
       body.classList.add('light-mode');
-      toggleSwitch.checked = true;
+      toggle.checked = true;
     }
 
-    toggleSwitch.addEventListener('change', function () {
-      if (this.checked) {
-        body.classList.add('light-mode');
-        localStorage.setItem('theme', 'light');
-      } else {
-        body.classList.remove('light-mode');
-        localStorage.setItem('theme', 'dark');
+    toggle.addEventListener('change', () => {
+      const isLight = toggle.checked;
+      body.classList.toggle('light-mode', isLight);
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+      const giscusFrame = document.querySelector('iframe.giscus-frame');
+      if (giscusFrame) {
+        giscusFrame.contentWindow.postMessage({
+          giscus: {
+            setConfig: {
+              theme: isLight ? 'light' : 'dark'
+            }
+          }
+        }, 'https://giscus.app');
       }
     });
   </script>
