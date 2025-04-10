@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
 /* Reset básico */
 * {
   margin: 0;
@@ -41,88 +43,123 @@ body.light-mode .sidebar {
   color: #222;
 }
 
-/* Redes Sociais */
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid white;
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.main-nav a {
+  font-weight: 500;
+}
+
+.nav-link, .social-link {
+  display: block;
+  margin: 1rem 0;
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .social-link:hover {
+  color: #66ccff;
+  transform: translateX(5px);
+}
+
+/* Redes Sociais - ícones em linha e no final da sidebar */
 .social-links {
   display: flex;
   justify-content: space-evenly; /* Distribui os ícones uniformemente */
   gap: 15px; /* Espaço entre os ícones */
   margin-top: auto; /* Coloca os ícones no final da barra lateral */
-  width: 90%; /* Faz os ícones ocuparem toda a largura disponível */
+  width: 100%; /* Faz os ícones ocuparem toda a largura disponível */
 }
 
-/* Ajuste para os ícones */
+/* Estilo dos links de redes sociais */
 .social-link {
-  font-size: 24px; /* Tamanho dos ícones */
-  color: #e0e0e0; /* Cor padrão */
+  font-size: 24px; /* Ajuste o tamanho dos ícones conforme necessário */
+  color: #e0e0e0; /* Cor dos ícones */
   text-decoration: none; /* Remove o sublinhado */
   transition: color 0.3s ease;
-  display: inline-flex; /* Garante que os ícones sejam exibidos de forma alinhada */
-  align-items: center; /* Centraliza os ícones verticalmente */
-  justify-content: center; /* Alinha horizontalmente */
 }
 
+/* Mudança de cor no hover */
 .social-link:hover {
-  color: #66ccff; /* Cor no hover */
+  color: #66ccff; /* Cor ao passar o mouse */
 }
 
 /* Ícones de imagem (X, Bluesky) */
 .social-icon {
   width: 24px;
   height: 24px;
-  transition: filter 0.3s ease; /* Transição para a cor */
-  vertical-align: middle; /* Garante alinhamento correto */
+  transition: filter 0.3s ease; /* Alteração de cor ao mudar de tema */
+  vertical-align: middle; /* Garante que o ícone fique alinhado */
 }
 
-/* No modo claro, cor dos ícones é escura para melhor visibilidade */
-body.light-mode .social-link {
-  color: #222; /* Cor dos ícones no modo claro */
-}
-
+/* Altere o filtro de cor dependendo do modo */
 body.light-mode .social-icon {
-  filter: none; /* Remove a inversão no modo claro, mantém a cor original */
-}
-
-/* No modo escuro, cor dos ícones é clara */
-body.dark-mode .social-link {
-  color: #e0e0e0; /* Cor dos ícones no modo escuro */
+  filter: brightness(0) invert(1); /* Muda a cor para um tom mais claro no modo claro */
 }
 
 body.dark-mode .social-icon {
-  filter: brightness(1) invert(0); /* Mantém a cor original no modo escuro */
+  filter: brightness(1) invert(0); /* No modo escuro, mantém o ícone original */
 }
 
-/* Ajustes extras para o ícone X e Bluesky */
-.social-link img {
-  vertical-align: middle; /* Garante que o ícone de imagem fique alinhado ao texto */
-  margin-top: 0; /* Elimina qualquer espaço acima da imagem */
-  margin-bottom: 0;
-  width: 24px; /* Garante que todos os ícones tenham o mesmo tamanho */
-  height: 24px;
-  display: inline-block;
-}
-
-/* Especificação para os ícones do Bluesky e X */
+/* Ajustes específicos para os ícones Bluesky e X */
 .social-link .bluesky-icon {
-  filter: brightness(0) invert(1); /* Aplica a inversão de cor para Bluesky */
+  filter: brightness(0) invert(1); /* Inverte a cor do Bluesky no modo claro */
 }
 
 .social-link .x-icon {
-  filter: brightness(1) invert(1); /* Aplica a inversão de cor para o X */
+  filter: brightness(1) invert(1); /* Inverte a cor do X no modo claro */
 }
 
-/* Ajustes para a mudança de cor do Bluesky e X conforme o tema */
 body.light-mode .social-link .bluesky-icon {
-  filter: brightness(1) invert(0); /* Não inverte no modo claro */
+  filter: brightness(1) invert(0); /* No modo claro, não inverte */
 }
 
 body.dark-mode .social-link .bluesky-icon {
-  filter: brightness(1) invert(0); /* Não inverte no modo escuro */
+  filter: brightness(1) invert(0); /* No modo escuro, não inverte */
 }
 
 body.light-mode .social-link .x-icon {
-  filter: brightness(1) invert(0); /* Não inverte no modo claro */
+  filter: brightness(1) invert(0); /* No modo claro, não inverte */
 }
 
 body.dark-mode .social-link .x-icon {
-  filter: brightness(1) invert(0); /* Não inverte no modo escuro */
+  filter: brightness(1) invert(0); /* No modo escuro, não inverte */
+}
+
+/* Switch de idioma */
+.language-switcher {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.lang-link {
+  margin: 0 10px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.lang-link:hover {
+  color: #66ccff;
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  padding: 3rem 4rem;
 }
