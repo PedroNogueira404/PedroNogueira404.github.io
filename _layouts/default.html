@@ -28,6 +28,10 @@
 
     <!-- Redes Sociais (somente ícones e dispostos de forma horizontal) -->
     <div class="social-links">
+    <!-- Ícone de e-mail -->
+      <a href="mailto:nogueirapedro404@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+      </a>
       <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
         <i class="fab fa-github"></i>
       </a>
@@ -45,10 +49,6 @@
       <!-- Ícone do X (novo logo) -->
       <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank">
         <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon" />
-      </a>
-      <!-- Ícone de e-mail -->
-      <a href="mailto:nogueirapedro404@gmail.com" class="social-link">
-        <i class="fas fa-envelope"></i>
       </a>
     </div>
 
@@ -74,7 +74,7 @@
     </div>
 
     <!-- Comments Section (only on blog pages) -->
-    {% if page.url contains '/blog/' %}
+    {% if page.url contains '/blog/' and page.url != '/blog/' %}
       <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
         <div id="giscus_container"></div>
         <script src="https://giscus.app/client.js"
