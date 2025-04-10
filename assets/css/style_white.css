@@ -69,6 +69,12 @@ body.light-mode .sidebar {
   margin-bottom: 1rem;
 }
 
+/* Nome de perfil "Pedro Nogueira" */
+.profile-name {
+  font-size: 1.2rem; /* Tamanho de fonte reduzido */
+  margin-bottom: 1.5rem; /* Distância aumentada dos links */
+}
+
 /* Conteúdo principal */
 .main-content {
   flex: 1;
@@ -98,7 +104,7 @@ body.light-mode .card {
 /* Navegação e redes sociais */
 .nav-link, .social-link {
   display: block;
-  margin: 0.5rem 0;
+  margin: 1rem 0; /* Afastamento maior entre os links */
   color: #e0e0e0;
   text-decoration: none;
   transition: color 0.3s;
@@ -187,4 +193,11 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(20px);
+}
+
+/* Caixa de comentários */
+.comments-container {
+  max-height: 300px; /* Diminuindo a altura da caixa de comentários */
+  overflow-y: auto; /* Permitindo rolagem vertical */
+  padding: 1rem;
 }
