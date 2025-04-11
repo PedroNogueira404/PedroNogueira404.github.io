@@ -59,7 +59,12 @@ body.light-mode .sidebar {
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
-  color: #FFD866; /* adicionado */
+  color: #F1C40F; /* amarelo */
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000; /* contorno preto */
 }
 
 .profile-title {
@@ -130,6 +135,7 @@ body.dark-mode .social-icon {
 .social-link .bluesky-icon {
   color: var(--link-color);
   fill: currentColor;
+  filter: brightness(0) invert(1);
   width: 24px;
   height: 24px;
   vertical-align: middle;
