@@ -129,7 +129,7 @@ body.dark-mode .social-icon {
 }
 
 .social-link .bluesky-icon {
-  /*filter: brightness(0) invert(1);*/
+  filter: brightness(0) invert(1);
   color: var(--link-color);
   fill: currentColor;
   width: 24px;
