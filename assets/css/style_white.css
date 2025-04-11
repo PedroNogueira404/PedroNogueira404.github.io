@@ -287,7 +287,11 @@ body.light-mode .social-link:hover {
 body.light-mode .social-icon {
   filter: brightness(0) invert(1);
 }
-
+/* Container do layout */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
 /* Impede alteração de cor do texto da sidebar no modo claro */
 /*
 body.light-mode .sidebar a,
