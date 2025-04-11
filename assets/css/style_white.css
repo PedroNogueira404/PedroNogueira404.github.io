@@ -58,11 +58,12 @@ body.light-mode .sidebar {
   border: 3px solid white;
 }
 
+
 .profile-name {
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
-  color: #66ccff;
+  color: #66ccff; /* adicionado */
 }
 
 .profile-title {
@@ -70,7 +71,6 @@ body.light-mode .sidebar {
   color: #bbbbbb;
   margin-bottom: 1.4rem;
 }
-
 .main-nav a {
   font-weight: 700;
 }
@@ -100,13 +100,13 @@ body.light-mode .sidebar {
 /* Estilo dos links de redes sociais */
 .social-link {
   font-size: 24px;
-  color: #e0e0e0 !important;
+  color: #aa9999;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .social-link:hover {
-  color: #66ccff !important;
+  color: #66ccff;
 }
 
 .social-icon {
@@ -114,7 +114,16 @@ body.light-mode .sidebar {
   height: 24px;
   transition: filter 0.3s ease;
   vertical-align: middle;
-  filter: brightness(1) invert(0); /* Força ícones com cor correta em todos os modos */
+  filter: brightness(1) invert(0);
+  /* Força ícones com cor correta em todos os modos */
+}
+
+/*body.light-mode .social-icon {
+  filter: brightness(0) invert(1);
+}*/
+
+body.dark-mode .social-icon {
+  filter: brightness(1) invert(0);
 }
 
 .social-link .bluesky-icon {
@@ -125,9 +134,17 @@ body.light-mode .sidebar {
   filter: brightness(1) invert(1);
 }
 
+/*(body.light-mode .social-link .bluesky-icon {
+  filter: brightness(1) invert(0);
+}*/
+
 body.dark-mode .social-link .bluesky-icon {
   filter: brightness(1) invert(0);
 }
+
+/*body.light-mode .social-link .x-icon {
+  filter: brightness(1) invert(0);
+}*/
 
 body.dark-mode .social-link .x-icon {
   filter: brightness(1) invert(0);
@@ -198,7 +215,9 @@ body.light-mode .card a:hover {
   color: #66ccff;
 }
 
-/* Switch de idioma */
+
+/* Switch de idioma*/
+
 .language-switcher {
   display: flex;
   justify-content: center;
@@ -248,9 +267,41 @@ body.light-mode .card a:hover {
   justify-content: center;
 }
 
+/* Ajuste de cor dos ícones no modo claro */
+/*body.light-mode .social-link {
+  color: #222;
+}*/
+
+/*body.light-mode .social-link:hover {
+  color: #66ccff;
+}*/
+
+/*body.light-mode .social-icon {
+  filter: brightness(0) invert(1);
+}*/
+
 /* Container do layout */
 .layout-container {
   display: flex;
+  min-height: 100vh;
+}
+
+/* Impede alteração de cor do texto da sidebar no modo claro */
+/*
+body.light-mode .sidebar a,
+body.light-mode .sidebar .lang-link,
+body.light-mode .sidebar .profile-name,
+body.light-mode .sidebar p {
+  color: #222 !important;
+}
+*/
+.social-link {
+  color: #e0e0e0 !important;
   height: 100vh;
   overflow: hidden;
 }
+
+/*
+.social-link:hover {
+  color: #66ccff !important;
+}*/
