@@ -12,6 +12,7 @@ body {
   font-size: 18px;
   line-height: 1.6;
   display: flex;
+  overflow: hidden; /* impede que o body inteiro role */
   min-height: 100vh;
   background-color: #121212;
   color: #e0e0e0;
@@ -25,18 +26,16 @@ body.light-mode {
 
 /* Sidebar */
 .sidebar {
-  width: 270px;
-  padding: 2rem;
-  background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
-  background-size: cover;
-  text-align: center;
-  color: white;
+  width: 250px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  backdrop-filter: brightness(0.6);
+  justify-content: flex-start;
+  background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
+  background-size: cover;
+  color: white;
   height: 100vh;
-  overflow: visible;
   flex-shrink: 0;
 }
 
@@ -48,28 +47,25 @@ body.light-mode .sidebar {
   color: #222;
 }
 */
-
 .profile-img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 110px;
+  height: 110px;
   margin-bottom: 1rem;
   border: 3px solid white;
 }
 
 
 .profile-name {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
   color: #66ccff; /* adicionado */
 }
 
 .profile-title {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: #bbbbbb;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1rem;
 }
 .main-nav a {
   font-weight: 700;
@@ -77,8 +73,7 @@ body.light-mode .sidebar {
 
 .nav-link, .social-link {
   display: block;
-  margin: 1rem 0;
-  color: inherit;
+  margin: 0.7rem 0;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -91,10 +86,11 @@ body.light-mode .sidebar {
 /* Redes Sociais - ícones em linha e no final da sidebar */
 .social-links {
   display: flex;
-  justify-content: space-evenly;
-  gap: 15px;
+  justify-content: center;
+  gap: 12px;
   margin-top: auto;
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 /* Estilo dos links de redes sociais */
@@ -232,7 +228,7 @@ body.light-mode .card a:hover {
   gap: 0.25rem;
   text-decoration: none;
   color: inherit;
-  font-size: 0.95rem;
+  font-size: 0;
   transition: transform 0.2s ease;
 }
 
@@ -251,7 +247,10 @@ body.light-mode .card a:hover {
 /* Conteúdo principal */
 .main-content {
   flex: 1;
-  padding: 3rem 4rem;
+  padding: 2rem 3rem;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   /* Remova estas linhas ↓ */
   /* overflow-y: auto;
      height: 100vh; */
@@ -260,11 +259,12 @@ body.light-mode .card a:hover {
 /* Theme Toggle (Fixado no canto superior direito) */
 .switch-container {
   position: fixed;
-  top: 20px;
+  top: 15px;
   right: 20px;
-  z-index: 10;
+  z-index: 999;
   display: flex;
   align-items: center;
+  gap: 10px;
   justify-content: center;
 }
 
@@ -284,7 +284,9 @@ body.light-mode .card a:hover {
 /* Container do layout */
 .layout-container {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 /* Impede alteração de cor do texto da sidebar no modo claro */
