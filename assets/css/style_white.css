@@ -252,8 +252,9 @@ body.light-mode .card a:hover {
 .main-content {
   flex: 1;
   padding: 3rem 4rem;
-  overflow-y: auto;
-  height: 100vh;
+  /* Remova estas linhas ↓ */
+  /* overflow-y: auto;
+     height: 100vh; */
 }
 
 /* Theme Toggle (Fixado no canto superior direito) */
