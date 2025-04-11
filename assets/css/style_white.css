@@ -60,12 +60,11 @@ body.light-mode .sidebar {
   font-weight: 800;
   margin-bottom: 0.4rem;
   color: #F1C40F; /* adicionado */
-  border: 2px solid white;
 }
 
 .profile-title {
   font-size: 1.0rem;
-  color: #B892FF;
+  color: #8a98ed;
   margin-bottom: 1rem;
 }
 .main-nav a {
@@ -77,7 +76,7 @@ body.light-mode .sidebar {
   margin: 0.7rem 0;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #B69CFF; 
+  color: #f0f1fa; 
 }
 
 .nav-link:hover, .social-link:hover {
