@@ -51,7 +51,7 @@ body.light-mode .sidebar {
   width: 110px;
   height: 110px;
   margin-bottom: 1rem;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
 
@@ -60,6 +60,7 @@ body.light-mode .sidebar {
   font-weight: 800;
   margin-bottom: 0.4rem;
   color: #F1C40F; /* adicionado */
+  border: 2px solid white;
 }
 
 .profile-title {
