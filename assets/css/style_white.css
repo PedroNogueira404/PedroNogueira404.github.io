@@ -209,7 +209,7 @@ body.light-mode .card a:hover {
   gap: 1.5rem;
 }
 
-/* Switch de idioma */
+/* Switch de idioma
 .language-switcher {
   margin-top: 2rem;
   display: flex;
@@ -226,6 +226,36 @@ body.light-mode .card a:hover {
 
 .lang-link:hover {
   color: #66ccff;
+} */
+/* Language Switcher Styling */
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.lang-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.lang-link:hover {
+  transform: scale(1.05);
+}
+
+.lang-flag {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 2px;
 }
 
 /* Conteúdo principal */
