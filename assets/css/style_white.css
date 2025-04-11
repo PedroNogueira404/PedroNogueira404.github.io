@@ -125,8 +125,19 @@ body.light-mode .sidebar {
 /*body.light-mode .social-icon {
   filter: brightness(0) invert(1);
 }*/
-
 body.dark-mode .social-icon {
+  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
+}
+
+/* Aplicar o mesmo filtro nos ícones de X e Bluesky */
+.social-link .x-icon,
+.social-link .bluesky-icon {
+  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+/*body.dark-mode .social-icon {
   filter: brightness(1) invert(0);
 }
 
@@ -137,7 +148,7 @@ body.dark-mode .social-icon {
   width: 24px;
   height: 24px;
   vertical-align: middle;
-}
+}*/
 
 /*.social-link .x-icon {*/
   /*filter: brightness(0) invert(1);*/
