@@ -84,10 +84,10 @@ body.light-mode .sidebar {
   transform: translateX(5px);
 }
 
-/* Link ativo opcional (se quiser destacar o atual) */
+/* Link ativo opcional (se quiser destacar o atual) 
 .nav-link.active {
   color: #F8DE7E;
-}
+}*/
 
 /* Redes Sociais - ícones em linha e no final da sidebar */
 .social-links {
