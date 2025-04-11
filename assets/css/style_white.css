@@ -130,10 +130,18 @@ body.dark-mode .social-icon {
 
 .social-link .bluesky-icon {
   filter: brightness(0) invert(1);
+  color: var(--link-color);
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
 }
 
 .social-link .x-icon {
-  filter: brightness(1) invert(1);
+  filter: brightness(0) invert(1);
+  color: var(--link-color);
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
 }
 
 /*(body.light-mode .social-link .bluesky-icon {
