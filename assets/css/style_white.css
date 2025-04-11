@@ -134,6 +134,7 @@ body.dark-mode .social-icon {
   fill: currentColor;
   width: 24px;
   height: 24px;
+  vertical-align: middle;
 }
 
 .social-link .x-icon {
@@ -142,6 +143,7 @@ body.dark-mode .social-icon {
   fill: currentColor;
   width: 24px;
   height: 24px;
+  vertical-align: middle;
 }
 
 /*(body.light-mode .social-link .bluesky-icon {
