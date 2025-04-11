@@ -37,11 +37,14 @@ body.light-mode {
   backdrop-filter: brightness(0.6);
 }
 
+/* Mantém o estilo original da sidebar no modo claro (comentado o antigo comportamento) */
+/*
 body.light-mode .sidebar {
   background: #f0f0f0 url('/assets/background-light.jpg') no-repeat center center;
   backdrop-filter: brightness(0.8);
   color: #222;
 }
+*/
 
 .profile-img {
   width: 140px;
@@ -96,7 +99,6 @@ body.light-mode .sidebar {
   color: #66ccff;
 }
 
-/* Ícones de imagem (X, Bluesky) */
 .social-icon {
   width: 24px;
   height: 24px;
@@ -185,6 +187,7 @@ body.dark-mode .social-link .x-icon {
   color: #b0b0b0;
 }
 
+/* Cards no modo claro */
 body.light-mode .card {
   background-color: #f9f9f9;
   color: #222;
@@ -219,21 +222,10 @@ body.light-mode .card a:hover {
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 6px;
 }
 
 .lang-link:hover {
   color: #66ccff;
-}
-
-/* Bandeiras */
-.lang-flag {
-  width: 20px;
-  height: 14px;
-  object-fit: contain;
-  vertical-align: middle;
 }
 
 /* Conteúdo principal */
@@ -242,7 +234,7 @@ body.light-mode .card a:hover {
   padding: 3rem 4rem;
 }
 
-/* Theme Toggle (Fixed on Top-Right) */
+/* Theme Toggle (Fixado no canto superior direito) */
 .switch-container {
   position: fixed;
   top: 20px;
@@ -266,10 +258,12 @@ body.light-mode .social-icon {
   filter: brightness(0) invert(1);
 }
 
-/* Garante contraste legível na sidebar no modo claro */
+/* Impede alteração de cor do texto da sidebar no modo claro */
+/*
 body.light-mode .sidebar a,
 body.light-mode .sidebar .lang-link,
 body.light-mode .sidebar .profile-name,
 body.light-mode .sidebar p {
   color: #222 !important;
 }
+*/
