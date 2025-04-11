@@ -162,18 +162,18 @@ body.dark-mode .social-icon {
 /*(body.light-mode .social-link .bluesky-icon {
   filter: brightness(1) invert(0);
 }*/
-
+/*
 body.dark-mode .social-link .bluesky-icon {
   filter: brightness(1) invert(0);
-}
+}*/
 
 /*body.light-mode .social-link .x-icon {
   filter: brightness(1) invert(0);
 }*/
-
+/*
 body.dark-mode .social-link .x-icon {
   filter: brightness(1) invert(0);
-}
+}*/
 
 /* Cards do Portfólio */
 .card-grid {
