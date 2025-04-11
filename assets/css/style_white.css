@@ -103,14 +103,11 @@ body.light-mode .sidebar {
 /* Estilo dos links de redes sociais */
 .social-link {
   font-size: 24px;
-  color: #aa9999;
+  color: #B69CFF;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.social-link:hover {
-  color: #66ccff;
-} 
 
 .social-icon {
   width: 24px;
@@ -129,8 +126,9 @@ body.dark-mode .social-icon {
   filter: brightness(1) invert(0);
 }
 
+
+.social-link .x-icon,
 .social-link .bluesky-icon {
-  filter: brightness(0) invert(1);
   color: var(--link-color);
   fill: currentColor;
   width: 24px;
@@ -138,14 +136,14 @@ body.dark-mode .social-icon {
   vertical-align: middle;
 }
 
-.social-link .x-icon {
+/*.social-link .x-icon {*/
   /*filter: brightness(0) invert(1);*/
-  color: var(--link-color);
+  /*color: var(--link-color);
   fill: currentColor;
   width: 24px;
   height: 24px;
   vertical-align: middle;
-}
+}*/
 
 /*(body.light-mode .social-link .bluesky-icon {
   filter: brightness(1) invert(0);
