@@ -311,3 +311,11 @@ body.light-mode .sidebar p {
   color: #222 !important;
 }
 */
+.social-link {
+  color: #e0e0e0 !important;
+}
+
+.social-link:hover {
+  color: #66ccff !important;
+}
+
