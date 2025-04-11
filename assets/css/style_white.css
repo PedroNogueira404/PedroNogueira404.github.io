@@ -116,9 +116,9 @@ body.light-mode .sidebar {
   vertical-align: middle;
 }
 
-body.light-mode .social-icon {
+/*body.light-mode .social-icon {
   filter: brightness(0) invert(1);
-}
+}*/
 
 body.dark-mode .social-icon {
   filter: brightness(1) invert(0);
@@ -132,17 +132,17 @@ body.dark-mode .social-icon {
   filter: brightness(1) invert(1);
 }
 
-body.light-mode .social-link .bluesky-icon {
+/*(body.light-mode .social-link .bluesky-icon {
   filter: brightness(1) invert(0);
-}
+}*/
 
 body.dark-mode .social-link .bluesky-icon {
   filter: brightness(1) invert(0);
 }
 
-body.light-mode .social-link .x-icon {
+/*body.light-mode .social-link .x-icon {
   filter: brightness(1) invert(0);
-}
+}*/
 
 body.dark-mode .social-link .x-icon {
   filter: brightness(1) invert(0);
@@ -286,17 +286,17 @@ body.light-mode .card a:hover {
 }
 
 /* Ajuste de cor dos ícones no modo claro */
-body.light-mode .social-link {
+/*body.light-mode .social-link {
   color: #222;
-}
+}*/
 
-body.light-mode .social-link:hover {
+/*body.light-mode .social-link:hover {
   color: #66ccff;
-}
+}*/
 
-body.light-mode .social-icon {
+/*body.light-mode .social-icon {
   filter: brightness(0) invert(1);
-}
+}*/
 /* Container do layout */
 .layout-container {
   display: flex;
