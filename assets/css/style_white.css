@@ -55,12 +55,22 @@ body.light-mode .sidebar {
   border: 3px solid white;
 }
 
-.profile-name {
+/*.profile-name {
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 1.4rem;
+}*/
+.profile-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  color: #66ccff; /* adicionado */
 }
-
+.profile-title {
+  font-size: 1rem;
+  color: #bbbbbb;
+  margin-bottom: 1.4rem;
+}
 .main-nav a {
   font-weight: 700;
 }
