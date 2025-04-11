@@ -133,9 +133,7 @@ body.dark-mode .social-icon {
 
 .social-link .x-icon,
 .social-link .bluesky-icon {
-  color: var(--link-color);
-  fill: currentColor;
-  filter: brightness(0) invert(1);
+  filter: brightness(1) invert(1);
   width: 24px;
   height: 24px;
   vertical-align: middle;
