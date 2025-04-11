@@ -54,12 +54,12 @@ body.light-mode .sidebar {
 
 .profile-name {
   font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 1.4rem;
 }
 
 .main-nav a {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .nav-link, .social-link {
