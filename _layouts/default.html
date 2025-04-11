@@ -11,106 +11,109 @@
 
 <body>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
-    <h1 class="profile-name">Pedro H. Nogueira</h1>
-    
-    <p>Astrophysicist & Science Communicator</p>
-    <p></p>
-    <!-- Navigation -->
-<nav class="main-nav">
-  <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
-  <!--<a href="{{ '/about/' | relative_url }}" class="nav-link">About Me</a>-->
-  <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
-  <a href="{{ '/outreach/' | relative_url }}" class="nav-link">Outreach</a>
-  <a href="{{ '/personal/' | relative_url }}" class="nav-link">Personal</a>
-  <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
-  <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
-</nav>
+  <div class="layout-container">
 
-    <!-- Redes Sociais (somente ícones e dispostos de forma horizontal) -->
-    <div class="social-links">
-    <!-- Ícone de e-mail -->
-      <a href="mailto:nogueirapedro404@gmail.com" class="social-link">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <!-- Ícone do Bluesky (substituindo por um ícone de Twitter para agora) -->
-      <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank">
-        <img src="/assets/bluesky-newlogo.svg" alt="Bluesky" class="social-icon bluesky-icon" />
-      </a>
-    
-      <!-- Ícone do X (novo logo) -->
-      <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank">
-        <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon" />
-      </a>
-    </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
+      <h1 class="profile-name">Pedro H. Nogueira</h1>
+      
+      <p>Astrophysicist & Science Communicator</p>
+      <p></p>
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+        <!--<a href="{{ '/about/' | relative_url }}" class="nav-link">About Me</a>-->
+        <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
+        <a href="{{ '/outreach/' | relative_url }}" class="nav-link">Outreach</a>
+        <a href="{{ '/personal/' | relative_url }}" class="nav-link">Personal</a>
+        <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
+        <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
+      </nav>
 
-    <!-- Language Switcher -->
-<div class="language-switcher">
-  <a href="?lang=pt" class="lang-link">
-    <img src="/assets/br.svg" alt="Português" class="lang-flag" /> Português
-  </a>
-  <a href="?lang=en" class="lang-link">
-    <img src="/assets/uk.svg" alt="English" class="lang-flag" /> English
-  </a>
-  <a href="?lang=es" class="lang-link">
-    <img src="/assets/es.svg" alt="Español" class="lang-flag" /> Español
-  </a>
-</div>
-
-
-  <!-- Main Content -->
-  <div class="main-content">
-    {{ content }}
-
-    <!-- Theme Toggle Button -->
-    <div class="switch-container">
-      <label class="switch-label" for="theme-toggle">🌗</label>
-      <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider"></span>
-      </label>
-    </div>
-
-    <!-- Comments Section (only on blog pages) -->
-    {% if page.url contains '/blog/' and page.url != '/blog/' %}
-      <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
-        <div id="giscus_container"></div>
-        <script src="https://giscus.app/client.js"
-                data-repo="PedroNogueira404/PedroNogueira404.github.io"
-                data-repo-id="R_kgDOOW9BoA"
-                data-category="General"
-                data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="preferred_color_scheme"
-                data-lang="en"
-                data-loading="lazy"
-                data-comments-enabled="true"
-                crossorigin="anonymous"
-                async>
-        </script>
+      <!-- Redes Sociais (somente ícones e dispostos de forma horizontal) -->
+      <div class="social-links">
+        <!-- Ícone de e-mail -->
+        <a href="mailto:nogueirapedro404@gmail.com" class="social-link">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <!-- Ícone do Bluesky -->
+        <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank">
+          <img src="/assets/bluesky-newlogo.svg" alt="Bluesky" class="social-icon bluesky-icon" />
+        </a>
+        <!-- Ícone do X -->
+        <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank">
+          <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon" />
+        </a>
       </div>
-    {% endif %}
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
-    </footer>
-  </div>
+      <!-- Language Switcher -->
+      <div class="language-switcher">
+        <a href="?lang=pt" class="lang-link">
+          <img src="/assets/br.svg" alt="Português" class="lang-flag" /> Português
+        </a>
+        <a href="?lang=en" class="lang-link">
+          <img src="/assets/uk.svg" alt="English" class="lang-flag" /> English
+        </a>
+        <a href="?lang=es" class="lang-link">
+          <img src="/assets/es.svg" alt="Español" class="lang-flag" /> Español
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      {{ content }}
+
+      <!-- Theme Toggle Button -->
+      <div class="switch-container">
+        <label class="switch-label" for="theme-toggle">🌗</label>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Comments Section (only on blog pages) -->
+      {% if page.url contains '/blog/' and page.url != '/blog/' %}
+        <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
+          <div id="giscus_container"></div>
+          <script src="https://giscus.app/client.js"
+                  data-repo="PedroNogueira404/PedroNogueira404.github.io"
+                  data-repo-id="R_kgDOOW9BoA"
+                  data-category="General"
+                  data-category-id="DIC_kwDOOW9BoM4Co8kQ"
+                  data-mapping="pathname"
+                  data-strict="0"
+                  data-reactions-enabled="1"
+                  data-emit-metadata="0"
+                  data-input-position="bottom"
+                  data-theme="preferred_color_scheme"
+                  data-lang="en"
+                  data-loading="lazy"
+                  data-comments-enabled="true"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      {% endif %}
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+      </footer>
+    </div>
+
+  </div> <!-- Fim da layout-container -->
 
   <!-- Theme Switching Script -->
   <script>
