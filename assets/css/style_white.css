@@ -78,66 +78,64 @@ body.light-mode .sidebar {
 /* Redes Sociais - ícones em linha e no final da sidebar */
 .social-links {
   display: flex;
-  justify-content: space-evenly; /* Distribui os ícones uniformemente */
-  gap: 15px; /* Espaço entre os ícones */
-  margin-top: auto; /* Coloca os ícones no final da barra lateral */
-  width: 100%; /* Faz os ícones ocuparem toda a largura disponível */
+  justify-content: space-evenly;
+  gap: 15px;
+  margin-top: auto;
+  width: 100%;
 }
 
 /* Estilo dos links de redes sociais */
 .social-link {
-  font-size: 24px; /* Ajuste o tamanho dos ícones conforme necessário */
-  color: #e0e0e0; /* Cor dos ícones */
-  text-decoration: none; /* Remove o sublinhado */
+  font-size: 24px;
+  color: #e0e0e0;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* Mudança de cor no hover */
 .social-link:hover {
-  color: #66ccff; /* Cor ao passar o mouse */
+  color: #66ccff;
 }
 
 /* Ícones de imagem (X, Bluesky) */
 .social-icon {
   width: 24px;
   height: 24px;
-  transition: filter 0.3s ease; /* Alteração de cor ao mudar de tema */
-  vertical-align: middle; /* Garante que o ícone fique alinhado */
+  transition: filter 0.3s ease;
+  vertical-align: middle;
 }
 
-/* Altere o filtro de cor dependendo do modo */
 body.light-mode .social-icon {
-  filter: brightness(0) invert(1); /* Muda a cor para um tom mais claro no modo claro */
+  filter: brightness(0) invert(1);
 }
 
 body.dark-mode .social-icon {
-  filter: brightness(1) invert(0); /* No modo escuro, mantém o ícone original */
+  filter: brightness(1) invert(0);
 }
 
-/* Ajustes específicos para os ícones Bluesky e X */
 .social-link .bluesky-icon {
-  filter: brightness(0) invert(1); /* Inverte a cor do Bluesky no modo claro */
+  filter: brightness(0) invert(1);
 }
 
 .social-link .x-icon {
-  filter: brightness(1) invert(1); /* Inverte a cor do X no modo claro */
+  filter: brightness(1) invert(1);
 }
 
 body.light-mode .social-link .bluesky-icon {
-  filter: brightness(1) invert(0); /* No modo claro, não inverte */
+  filter: brightness(1) invert(0);
 }
 
 body.dark-mode .social-link .bluesky-icon {
-  filter: brightness(1) invert(0); /* No modo escuro, não inverte */
+  filter: brightness(1) invert(0);
 }
 
 body.light-mode .social-link .x-icon {
-  filter: brightness(1) invert(0); /* No modo claro, não inverte */
+  filter: brightness(1) invert(0);
 }
 
 body.dark-mode .social-link .x-icon {
-  filter: brightness(1) invert(0); /* No modo escuro, não inverte */
+  filter: brightness(1) invert(0);
 }
+
 /* Cards do Portfólio */
 .card-grid {
   display: grid;
@@ -187,7 +185,6 @@ body.dark-mode .social-link .x-icon {
   color: #b0b0b0;
 }
 
-/* Cards no modo claro */
 body.light-mode .card {
   background-color: #f9f9f9;
   color: #222;
@@ -203,13 +200,11 @@ body.light-mode .card a:hover {
   color: #66ccff;
 }
 
-/* Ajustes no layout para torná-lo mais fluido */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Ajuste automático */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
-
 
 /* Switch de idioma */
 .language-switcher {
@@ -224,10 +219,21 @@ body.light-mode .card a:hover {
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .lang-link:hover {
   color: #66ccff;
+}
+
+/* Bandeiras */
+.lang-flag {
+  width: 20px;
+  height: 14px;
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 /* Conteúdo principal */
@@ -249,13 +255,21 @@ body.light-mode .card a:hover {
 
 /* Ajuste de cor dos ícones no modo claro */
 body.light-mode .social-link {
-  color: #222; /* Ícones mais visíveis no modo claro */
+  color: #222;
 }
 
 body.light-mode .social-link:hover {
-  color: #66ccff; /* Manter a cor ao passar o mouse */
+  color: #66ccff;
 }
 
 body.light-mode .social-icon {
-  filter: brightness(0) invert(1); /* Melhor visibilidade dos ícones no modo claro */
+  filter: brightness(0) invert(1);
+}
+
+/* Garante contraste legível na sidebar no modo claro */
+body.light-mode .sidebar a,
+body.light-mode .sidebar .lang-link,
+body.light-mode .sidebar .profile-name,
+body.light-mode .sidebar p {
+  color: #222 !important;
 }
