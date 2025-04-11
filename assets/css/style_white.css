@@ -81,7 +81,9 @@ body.light-mode .sidebar {
   margin: 0.7rem 0;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #f0f1fa; 
+  color: #f0f1fa;
+  text-align: center;
+  width: 100%;
 }
 
 .nav-link:hover, .social-link:hover {
