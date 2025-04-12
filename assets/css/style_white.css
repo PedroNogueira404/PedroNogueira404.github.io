@@ -347,6 +347,9 @@ body.mobile-menu-active .main-content {
   }
 
   .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 250px;
     height: 100vh;
     overflow-y: auto;
@@ -361,9 +364,13 @@ body.mobile-menu-active .main-content {
   }
 
   .social-links {
-    flex-wrap: nowrap;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
     gap: 12px;
     margin-top: auto;
   }
 }
+
