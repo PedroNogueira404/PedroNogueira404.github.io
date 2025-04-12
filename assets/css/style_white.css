@@ -12,7 +12,7 @@ body {
   font-size: 18px;
   line-height: 1.6;
   display: flex;
-  overflow: hidden; /* impede que o body inteiro role */
+  overflow: hidden;
   min-height: 100vh;
   background-color: #121212;
   color: #e0e0e0;
@@ -37,16 +37,9 @@ body.light-mode {
   color: white;
   height: 100vh;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Mantém o estilo original da sidebar no modo claro (comentado o antigo comportamento) */
-/*
-body.light-mode .sidebar {
-  background: #f0f0f0 url('/assets/background-light.jpg') no-repeat center center;
-  backdrop-filter: brightness(0.8);
-  color: #222;
-}
-*/
 .profile-img {
   width: 110px;
   height: 110px;
@@ -54,17 +47,16 @@ body.light-mode .sidebar {
   border: 2px solid black;
 }
 
-
 .profile-name {
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
-  color: #F1C40F; /* amarelo */
+  color: #F1C40F;
   text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000; /* contorno preto */
+     1px  1px 0 #000;
 }
 
 .profile-title {
@@ -72,6 +64,7 @@ body.light-mode .sidebar {
   color: #beaafa;
   margin-bottom: 0.8rem;
 }
+
 .main-nav a {
   font-weight: 700;
 }
@@ -91,12 +84,6 @@ body.light-mode .sidebar {
   transform: translateX(5px);
 }
 
-/* Link ativo opcional (se quiser destacar o atual) 
-.nav-link.active {
-  color: #F8DE7E;
-}*/
-
-/* Redes Sociais - ícones em linha e no final da sidebar */
 .social-links {
   display: flex;
   justify-content: center;
@@ -106,7 +93,6 @@ body.light-mode .sidebar {
   margin-bottom: 0.5rem;
 }
 
-/* Estilo dos links de redes sociais */
 .social-link {
   font-size: 24px;
   color: #B69CFF;
@@ -114,24 +100,18 @@ body.light-mode .sidebar {
   transition: color 0.3s ease;
 }
 
-
 .social-icon {
   width: 24px;
   height: 24px;
   transition: filter 0.3s ease;
   vertical-align: middle;
   filter: brightness(1) invert(0);
-  /* Força ícones com cor correta em todos os modos */
 }
 
-/*body.light-mode .social-icon {
-  filter: brightness(0) invert(1);
-}*/
 body.dark-mode .social-icon {
   filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
 }
 
-/* Aplicar o mesmo filtro nos ícones de X e Bluesky */
 .social-link .x-icon,
 .social-link .bluesky-icon {
   filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
@@ -139,43 +119,6 @@ body.dark-mode .social-icon {
   height: 24px;
   vertical-align: middle;
 }
-/*body.dark-mode .social-icon {
-  filter: brightness(1) invert(0);
-}
-
-
-.social-link .x-icon,
-.social-link .bluesky-icon {
-  filter: brightness(1) invert(1);
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}*/
-
-/*.social-link .x-icon {*/
-  /*filter: brightness(0) invert(1);*/
-  /*color: var(--link-color);
-  fill: currentColor;
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}*/
-
-/*(body.light-mode .social-link .bluesky-icon {
-  filter: brightness(1) invert(0);
-}*/
-/*
-body.dark-mode .social-link .bluesky-icon {
-  filter: brightness(1) invert(0);
-}*/
-
-/*body.light-mode .social-link .x-icon {
-  filter: brightness(1) invert(0);
-}*/
-/*
-body.dark-mode .social-link .x-icon {
-  filter: brightness(1) invert(0);
-}*/
 
 /* Cards do Portfólio */
 .card-grid {
@@ -226,7 +169,6 @@ body.dark-mode .social-link .x-icon {
   color: #b0b0b0;
 }
 
-/* Cards no modo claro */
 body.light-mode .card {
   background-color: #f9f9f9;
   color: #222;
@@ -242,9 +184,7 @@ body.light-mode .card a:hover {
   color: #66ccff;
 }
 
-
-/* Switch de idioma*/
-
+/* Switch de idioma */
 .language-switcher {
   display: flex;
   justify-content: center;
@@ -282,44 +222,9 @@ body.light-mode .card a:hover {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  /* Remova estas linhas ↓ */
-  /* overflow-y: auto;
-     height: 100vh; */
 }
 
-/* Theme Toggle (Fixado no canto superior direito) */
-.switch-container {
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-}
-
-/* Ajuste de cor dos ícones no modo claro */
-/*body.light-mode .social-link {
-  color: #222;
-}*/
-
-/*body.light-mode .social-link:hover {
-  color: #66ccff;
-}*/
-
-/*body.light-mode .social-icon {
-  filter: brightness(0) invert(1);
-}*/
-
-/* Container do layout */
-.layout-container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-}
-/* Botão do menu hamburguer */
+/* Botão de menu (hamburguer) */
 .menu-toggle {
   display: none;
   position: fixed;
@@ -332,35 +237,26 @@ body.light-mode .card a:hover {
   z-index: 1001;
   cursor: pointer;
 }
-/* Impede alteração de cor do texto da sidebar no modo claro */
-/*
-body.light-mode .sidebar a,
-body.light-mode .sidebar .lang-link,
-body.light-mode .sidebar .profile-name,
-body.light-mode .sidebar p {
-  color: #222 !important;
-}
 
-.social-link {
-  color: #e0e0e0 !important;
+/* Container do layout */
+.layout-container {
+  display: flex;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
 }
-*/
-/*
-.social-link:hover {
-  color: #66ccff !important;
-}*/
-/* Responsividade para telas pequenas */
-/* NOVO: Esconde o main-content quando o menu está ativo no mobile */
+
+/* Quando menu mobile está ativo, oculta o conteúdo principal */
 body.mobile-menu-active .main-content {
   display: none;
 }
-/* Correção completa para mobile */
+
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
   }
+
   body {
     flex-direction: column;
     overflow: auto;
@@ -378,6 +274,11 @@ body.mobile-menu-active .main-content {
     align-items: center;
     justify-content: flex-start;
     background-position: center;
+    transform: translateY(0);
+  }
+
+  body.mobile-menu-active .sidebar {
+    display: flex;
   }
 
   .main-content {
@@ -401,13 +302,13 @@ body.mobile-menu-active .main-content {
     font-size: 1rem;
   }
 
-.main-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-  width: 100%;
-}
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+  }
 
   .nav-link {
     font-size: 1rem;
@@ -438,7 +339,7 @@ body.mobile-menu-active .main-content {
   }
 }
 
-/* Telas horizontais pequenas (rotacionadas) */
+/* Telas horizontais pequenas */
 @media (max-height: 500px) and (orientation: landscape) {
   .layout-container {
     flex-direction: row;
@@ -466,5 +367,3 @@ body.mobile-menu-active .main-content {
     margin-top: auto;
   }
 }
-
-
