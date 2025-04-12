@@ -23,7 +23,11 @@ body.light-mode {
   background-color: #f4f4f4;
   color: #222;
 }
-
+.switch-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
 /* Sidebar */
 .sidebar {
   width: 250px;
@@ -248,10 +252,10 @@ body.light-mode .card a:hover {
   overflow: hidden;
 }
 
-/* Quando menu mobile está ativo, oculta o conteúdo principal */
+/* Quando menu mobile está ativo, oculta o conteúdo principal 
 body.mobile-menu-active .main-content {
   display: none;
-}
+}*/
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
