@@ -339,3 +339,72 @@ body.light-mode .sidebar p {
 .social-link:hover {
   color: #66ccff !important;
 }*/
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-position: center;
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .profile-img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+
+  .profile-name,
+  .profile-title {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .social-links {
+    justify-content: flex-end;
+    gap: 8px;
+    margin: 0;
+  }
+
+  .language-switcher {
+    order: 2;
+    margin-top: 0;
+    margin-left: 1rem;
+  }
+
+  .switch-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+
+  .main-content {
+    padding: 1rem;
+    height: auto;
+  }
+}
+
