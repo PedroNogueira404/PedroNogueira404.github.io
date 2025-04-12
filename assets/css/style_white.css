@@ -319,7 +319,19 @@ body.light-mode .card a:hover {
   width: 100vw;
   overflow: hidden;
 }
-
+/* Botão do menu hamburguer */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  z-index: 1001;
+  cursor: pointer;
+}
 /* Impede alteração de cor do texto da sidebar no modo claro */
 /*
 body.light-mode .sidebar a,
@@ -340,8 +352,15 @@ body.light-mode .sidebar p {
   color: #66ccff !important;
 }*/
 /* Responsividade para telas pequenas */
+/* NOVO: Esconde o main-content quando o menu está ativo no mobile */
+body.mobile-menu-active .main-content {
+  display: none;
+}
 /* Correção completa para mobile */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
   body {
     flex-direction: column;
     overflow: auto;
@@ -382,14 +401,13 @@ body.light-mode .sidebar p {
     font-size: 1rem;
   }
 
-  .main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-top: 1rem;
-    width: 100%;
-  }
+.main-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+  width: 100%;
+}
 
   .nav-link {
     font-size: 1rem;
@@ -401,7 +419,7 @@ body.light-mode .sidebar p {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 12px;
     margin-top: auto;
     width: 100%;
     padding-bottom: 1rem;
