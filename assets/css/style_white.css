@@ -227,6 +227,8 @@ body.light-mode .card a:hover {
   padding: 2rem 3rem;
   min-height: 100vh;
   height: auto;
+  width: 100%;
+  padding: 2rem 1.5rem;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -265,6 +267,7 @@ body.mobile-menu-active .main-content {
   }
 body.mobile-menu-active .main-content {
   /* margin-left: 250px; <- Remova essa linha */
+  display: flex !important;
   transition: margin-left 0.3s ease;
 }
   body {
@@ -291,12 +294,14 @@ body.mobile-menu-active .main-content {
   }
   */
  .sidebar {
-    position: relative;
+    position: fixed;
     top: 0;
     left: 0;
     width: 250px;
     height: 100%;
-    background-color: #fff;
+    background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
+    background-size: cover;
+    color: white;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     z-index: 1000;
