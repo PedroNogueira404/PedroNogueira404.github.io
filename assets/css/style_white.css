@@ -348,28 +348,29 @@ body.light-mode .sidebar p {
   .sidebar {
     width: 100%;
     height: auto;
-    padding: 1rem 1rem 0.5rem;
+    padding: 1rem 1.5rem;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    position: static;
     background-position: center;
     background-size: cover;
+    position: relative;
   }
 
   .profile-img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 0.5rem;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0.8rem;
   }
 
   .profile-name {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-align: center;
   }
 
   .profile-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -383,26 +384,33 @@ body.light-mode .sidebar p {
 
   .nav-link {
     font-size: 1rem;
-    margin: 0.4rem 0;
+    margin: 0.6rem 0;
+    width: 100%;
+    text-align: center;
   }
 
   .social-links {
-    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
     justify-content: center;
-    margin-top: 1rem;
-    gap: 10px;
+    gap: 14px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    padding: 0.5rem 0;
+  }
+
+  .main-content {
+    padding: 1.2rem;
+    height: auto;
+    overflow-y: visible;
   }
 
   .switch-container {
     position: fixed;
     top: 10px;
     right: 10px;
-  }
-
-  .main-content {
-    padding: 1rem;
-    height: auto;
-    overflow-y: visible;
   }
 }
 
