@@ -12,7 +12,7 @@ body {
   font-size: 18px;
   line-height: 1.6;
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; <- Remova essa linha */
   min-height: 100vh;
   background-color: #121212;
   color: #e0e0e0;
@@ -263,7 +263,10 @@ body.mobile-menu-active .main-content {
   .menu-toggle {
     display: block;
   }
-
+body.mobile-menu-active .main-content {
+  /* margin-left: 250px; <- Remova essa linha */
+  transition: margin-left 0.3s ease;
+}
   body {
     flex-direction: column;
     overflow: auto;
@@ -303,6 +306,7 @@ body.mobile-menu-active .main-content {
   body.mobile-menu-active .sidebar {
     display: flex !important;
     transform: translateX(0);
+    position: relative;
   }
 
   .main-content {
