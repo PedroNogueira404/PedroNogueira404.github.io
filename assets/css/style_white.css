@@ -340,19 +340,33 @@ body.light-mode .sidebar p {
   color: #66ccff !important;
 }*/
 /* Responsividade para telas pequenas */
+/* Correção completa para mobile */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
     overflow: auto;
   }
-  .sidebar {
-    width: 100vw;
-    height: auto;
-    display: flex;
+
+  .layout-container {
     flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    padding: 1rem 1.5rem;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem;
+    background-position: center;
+  }
+
+  .main-content {
+    flex: 1;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 2rem 1.5rem;
   }
 
   .profile-img {
@@ -361,64 +375,78 @@ body.light-mode .sidebar p {
   }
 
   .profile-name {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.3rem;
   }
 
   .profile-title {
-    font-size: 0.9rem;
-    text-align: center;
+    font-size: 1rem;
   }
 
-  .main-nav,
-  .social-links {
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1rem;
     width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    width: auto;
+  }
+
+  .social-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+    padding-bottom: 1rem;
   }
 
-  .social-links {
-    margin-top: 1rem;
-    gap: 10px;
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  
+
   .switch-container {
     position: fixed;
     top: 10px;
     right: 10px;
-  .nav-link {
-    font-size: 1rem;
-    margin: 0.5rem;
-    text-align: center;
   }
 }
 
-/* Melhor adaptação para rotacionar tela (landscape em celular) */
+/* Telas horizontais pequenas (rotacionadas) */
 @media (max-height: 500px) and (orientation: landscape) {
-  .sidebar {
+  .layout-container {
+    flex-direction: row;
     height: 100vh;
-    width: 200px;
-    overflow-y: auto;
-    flex-direction: column;
-    justify-content: space-between;
   }
 
-  .main-content {
+  .sidebar {
+    width: 250px;
     height: 100vh;
     overflow-y: auto;
     padding: 1rem;
   }
 
+  .main-content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+
   .social-links {
     flex-wrap: nowrap;
     justify-content: center;
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-link {
-    font-size: 0.9rem;
+    gap: 12px;
+    margin-top: auto;
   }
 }
+
 
