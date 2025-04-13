@@ -262,7 +262,7 @@ body.mobile-menu-active .main-content {
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: none;
   }
 body.mobile-menu-active .main-content {
   /* margin-left: 250px; <- Remova essa linha */
@@ -296,12 +296,15 @@ body.mobile-menu-active .main-content {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
     background-size: cover;
     color: white;
     transform: translateX(-100%);
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
     transition: transform 0.3s ease;
     z-index: 1000;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
@@ -385,6 +388,14 @@ body.mobile-menu-active .main-content {
     top: 10px;
     right: 10px;
   }
+ .language-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem; /* aumentei o espaço */
+  pointer-events: auto;
+  z-index: 1001;
+}
 }
 
 /* Telas horizontais pequenas */
