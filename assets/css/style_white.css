@@ -260,12 +260,10 @@ body.mobile-menu-active .main-content {
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
+
 body.mobile-menu-active .main-content {
   /* margin-left: 250px; <- Remova essa linha */
-  display: flex !important;
+  display: none;
   transition: margin-left 0.3s ease;
 }
   body {
@@ -313,6 +311,7 @@ body.mobile-menu-active .main-content {
     display: flex !important;
     transform: translateX(0);
     position: relative;
+    transition: margin-left 0.3s ease;
   }
 
   .main-content {
