@@ -289,7 +289,7 @@ body.mobile-menu-active .main-content {
   }
 
   .layout-container {
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
   }
   
