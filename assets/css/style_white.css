@@ -343,29 +343,29 @@ body.mobile-menu-active .main-content {
   }
 
   .profile-img {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
   }
 
   .profile-name {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .profile-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
   }
 
   .main-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0rem;
     width: 100%;
   }
 
   .nav-link {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin: 0.4rem 0;   /* reduz espaço vertical entre links */
     padding: 0.3rem 0.6rem;
     width: auto;
@@ -379,7 +379,7 @@ body.mobile-menu-active .main-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0.7px;
   width: 100%;
   padding-bottom: 0;
   margin-bottom: 1rem; /* ajuste conforme necessário */
