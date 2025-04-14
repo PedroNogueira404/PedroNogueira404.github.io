@@ -250,6 +250,9 @@ body.light-mode .card a:hover {
   z-index: 1001;
   cursor: pointer;
 }
+body.light-mode .menu-toggle {
+  color: #222; /* Ou qualquer cor escura que contraste com o fundo claro */
+}
 
 /* Container do layout */
 .layout-container {
