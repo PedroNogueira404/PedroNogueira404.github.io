@@ -43,6 +43,12 @@ body.light-mode {
   height: 100vh; /* força ocupar a altura toda */
   overflow: hidden; /* importante */
 }
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza tudo horizontalmente */
+  text-align: center;
+}
 
 .profile-img {
   width: 110px;
@@ -260,7 +266,12 @@ body.mobile-menu-active .main-content {
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza tudo horizontalmente */
+  text-align: center;
+}
 body.mobile-menu-active .main-content {
   display: none;
   transition: margin-left 0.3s ease;
@@ -274,6 +285,7 @@ body.mobile-menu-active .main-content {
     flex-direction: column;
     height: auto;
   }
+  
   /*
   .sidebar {
     display: none;
