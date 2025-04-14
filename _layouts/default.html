@@ -8,9 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <button id="menuToggle" class="menu-toggle">&#9776;</button>
-  <button class="menu-toggle" onclick="document.body.classList.toggle('mobile-menu-active')">
-  ☰
+  <button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">
+  &#9776;
+</button>
+  <!--<button class="menu-toggle" onclick="document.body.classList.toggle('mobile-menu-active')"> 
+  ☰-->
 </button>
   <div class="layout-container">
     <!-- Sidebar -->
@@ -30,51 +32,51 @@
         <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
       </nav>
 
-      <!-- Redes Sociais -->
+      <!-- Social Links with aria-labels -->
       <div class="social-links">
-        <a href="mailto:nogueirapedro404@gmail.com" class="social-link">
+        <a href="mailto:nogueirapedro404@gmail.com" class="social-link" aria-label="Send email to Pedro Nogueira">
           <i class="fas fa-envelope"></i>
         </a>
-        <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link">
+        <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's GitHub profile">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link">
+        <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's LinkedIn profile">
           <i class="fab fa-linkedin"></i>
         </a>
-        <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link">
+        <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's YouTube channel">
           <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank">
+        <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank" aria-label="Visit Pedro Nogueira's Bluesky profile">
           <img src="/assets/bluesky-logo.svg" alt="Bluesky" class="social-icon bluesky-icon" />
         </a>
-        <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank">
+        <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank" aria-label="Visit Pedro Nogueira's X (Twitter) profile">
           <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon" />
         </a>
       </div>
 
-      <!-- Language Switcher -->
+      <!-- Language Switcher with aria-labels -->
       <div class="language-switcher">
-        <a href="?lang=pt" class="lang-link">
-          <img src="/assets/br.svg" alt="Português" class="lang-flag" /> Português
+        <a href="?lang=pt" class="lang-link" aria-label="Switch language to Portuguese">
+          <img src="/assets/br.svg" alt="Portuguese" class="lang-flag" /> Português
         </a>
-        <a href="?lang=en" class="lang-link">
+        <a href="?lang=en" class="lang-link" aria-label="Switch language to English">
           <img src="/assets/uk.svg" alt="English" class="lang-flag" /> English
         </a>
-        <a href="?lang=es" class="lang-link">
-          <img src="/assets/es.svg" alt="Español" class="lang-flag" /> Español
+        <a href="?lang=es" class="lang-link" aria-label="Switch language to Spanish">
+          <img src="/assets/es.svg" alt="Spanish" class="lang-flag" /> Español
         </a>
       </div>
-    </div>
 
     <!-- Main Content -->
     <div class="main-content" style="overflow-y: auto;">
       {{ content }}
 
       <!-- Theme Toggle Button -->
+      <!-- Theme Toggle Button -->
       <div class="switch-container">
-        <label class="switch-label" for="theme-toggle">🌗</label>
+        <label class="switch-label" for="theme-toggle" aria-label="Toggle between light and dark mode">🌗</label>
         <label class="switch">
-          <input type="checkbox" id="theme-toggle">
+          <input type="checkbox" id="theme-toggle" aria-label="Theme toggle switch">
           <span class="slider"></span>
         </label>
       </div>
@@ -145,5 +147,21 @@
       document.body.classList.toggle('mobile-menu-active');
     });
   </script>
+  <script>
+  // Ativa o sidebar no mobile ao carregar
+  window.addEventListener("DOMContentLoaded", () => {
+    const isPortraitMobile = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
+    if (isPortraitMobile) {
+      document.body.classList.add("mobile-menu-active");
+    }
+  });
+
+  // Fecha o sidebar quando clica em um link da nav
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("nav-link")) {
+      document.body.classList.remove("mobile-menu-active");
+    }
+  });
+</script>
 </body>
 </html>
