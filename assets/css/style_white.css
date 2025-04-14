@@ -113,7 +113,7 @@ body.light-mode {
 }
 
 .social-icon {
-  width: 24px;
+  width: 24px;and (orientation: portrait)
   height: 24px;
   transition: filter 0.3s ease;
   vertical-align: middle;
@@ -270,7 +270,7 @@ body.mobile-menu-active .main-content {
 }*/
 
 /* RESPONSIVIDADE */
-@media (max-width: 768px) {
+@media (max-width: 768px) and (orientation: portrait) {
 .sidebar-header {
   display: flex;
   flex-direction: column;
