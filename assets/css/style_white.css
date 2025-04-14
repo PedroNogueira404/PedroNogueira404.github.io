@@ -262,7 +262,6 @@ body.mobile-menu-active .main-content {
 @media (max-width: 768px) {
 
 body.mobile-menu-active .main-content {
-  /* margin-left: 250px; <- Remova essa linha */
   display: none;
   transition: margin-left 0.3s ease;
 }
@@ -310,7 +309,7 @@ body.mobile-menu-active .main-content {
   body.mobile-menu-active .sidebar {
     display: flex !important;
     transform: translateX(0);
-    position: relative;
+    position: fixed;
     transition: margin-left 0.3s ease;
   }
 
@@ -365,6 +364,7 @@ body.mobile-menu-active .main-content {
 }
 
   .menu-toggle {
+    display: block;
     position: fixed;
     top: 10px;
     left: 10px;
