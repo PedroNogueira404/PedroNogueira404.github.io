@@ -339,7 +339,6 @@ body.mobile-menu-active .main-content {
     padding: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 2rem 1.5rem;
   }
 
   .profile-img {
@@ -353,7 +352,7 @@ body.mobile-menu-active .main-content {
 
   .profile-title {
     font-size: 1.6rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
   }
 
   .main-nav {
@@ -371,7 +370,7 @@ body.mobile-menu-active .main-content {
     width: auto;
   }
 
-.social-links {
+  /* .social-links {
   position: absolute;
   bottom: 1rem;
   left: 50%;
@@ -382,9 +381,17 @@ body.mobile-menu-active .main-content {
   gap: 0.7px;
   width: 100%;
   padding-bottom: 0;
-  margin-bottom: 1rem; /* ajuste conforme necessário */
+  margin-bottom: 1rem; 
+} LOOK TO CHANGE*/
+ .social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+     align-items: center; 
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-top: auto;
 }
-
   .menu-toggle {
     display: block;
     position: fixed;
