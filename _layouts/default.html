@@ -66,7 +66,17 @@
           <img src="/assets/es.svg" alt="Spanish" class="lang-flag" /> Español
         </a>
       </div>
-    </div>
+
+      <!-- Theme Toggle Button (also in sidebar) -->
+      <div class="switch-container sidebar-switch">
+        <label class="switch-label" for="theme-toggle-sidebar" aria-label="Toggle between light and dark mode">🌗</label>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle-sidebar" aria-label="Theme toggle switch in sidebar">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div><!-- END OF SIDEBAR -->
+    
     <!-- Main Content -->
     <div class="main-content" style="overflow-y: auto;" tabindex="-1">
       {{ content }}
@@ -114,19 +124,23 @@
 
   <!-- Theme Switching Script -->
   <script>
-    const toggle = document.getElementById('theme-toggle');
+    const toggleMain = document.getElementById('theme-toggle');
+    const toggleSidebar = document.getElementById('theme-toggle-sidebar');
     const body = document.body;
-
-    if (localStorage.getItem('theme') === 'light') {
+  
+    const isLight = localStorage.getItem('theme') === 'light';
+    if (isLight) {
       body.classList.add('light-mode');
-      toggle.checked = true;
+      toggleMain.checked = true;
+      toggleSidebar.checked = true;
     }
-
-    toggle.addEventListener('change', () => {
-      const isLight = toggle.checked;
+  
+    function setTheme(isLight) {
       body.classList.toggle('light-mode', isLight);
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
-
+      toggleMain.checked = isLight;
+      toggleSidebar.checked = isLight;
+  
       const giscusFrame = document.querySelector('iframe.giscus-frame');
       if (giscusFrame) {
         giscusFrame.contentWindow.postMessage({
@@ -137,8 +151,12 @@
           }
         }, 'https://giscus.app');
       }
-    });
+    }
+  
+    toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
+    toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
   </script>
+
 
   <!-- Mobile Menu Toggle Script -->
   <script>
