@@ -113,7 +113,7 @@ body.light-mode {
 }
 
 .social-icon {
-  width: 24px;and (orientation: portrait)
+  width: 24px;
   height: 24px;
   transition: filter 0.3s ease;
   vertical-align: middle;
@@ -281,8 +281,14 @@ body.mobile-menu-active .main-content {
   height: 100%; /* ADICIONE para preencher o espaço da sidebar */
 }
 body.mobile-menu-active .main-content {
-  display: none;
+  opacity: 1;
+  visibility: visible;
+  display: block;
   transition: margin-left 0.3s ease;
+}
+body:not(.mobile-menu-active) .main-content {
+  opacity: 0;
+  visibility: hidden;
 }
   body {
     flex-direction: column;
@@ -291,7 +297,7 @@ body.mobile-menu-active .main-content {
 
   .layout-container {
     display: flex;
-    flex-direction: collumn;
+    flex-direction: column;
     height: auto;
   }
   
@@ -318,25 +324,30 @@ body.mobile-menu-active .main-content {
     background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
     background-size: cover;
     color: white;
-    transform: translateX(-100%);
+    transform: translateX(0);
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
     transition: transform 0.3s ease;
     z-index: 1000;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    pointer-events: none; /* evita bugs */
+    pointer-events: auto;
+   display: flex;
   }
   
   body.mobile-menu-active .sidebar {
     display: flex !important;
-    transform: translateX(0);
+    transform: translateX(-100%);
     position: fixed;
     transition: margin-left 0.3s ease;
-    pointer-events: auto;
+    pointer-events: none;
   }
 
   .main-content {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    display: block;
     flex: 1;
     height: auto;
     width: 100%;
