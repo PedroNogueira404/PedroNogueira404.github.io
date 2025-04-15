@@ -11,7 +11,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.6;
-  display: flex;
+  display: block;
   /* overflow: hidden; <- Remova essa linha */
   min-height: 100vh;
   background-color: #121212;
@@ -259,6 +259,7 @@ body.light-mode .menu-toggle {
 /* Container do layout */
 .layout-container {
   display: flex;
+  flex-direction: row;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -289,7 +290,7 @@ body.mobile-menu-active .main-content {
   }
 
   .layout-container {
-    flex-direction: row;
+    flex-direction: collumn;
     height: auto;
   }
   
@@ -323,6 +324,7 @@ body.mobile-menu-active .main-content {
     transition: transform 0.3s ease;
     z-index: 1000;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    pointer-events: none; /* evita bugs */
   }
   
   body.mobile-menu-active .sidebar {
@@ -330,6 +332,7 @@ body.mobile-menu-active .main-content {
     transform: translateX(0);
     position: fixed;
     transition: margin-left 0.3s ease;
+    pointer-events: auto;
   }
 
   .main-content {
