@@ -299,7 +299,7 @@ body:not(.mobile-menu-active) .main-content {
 
   body.mobile-menu-active .main-content {
     opacity: 1 !important;
-    visibility: hidden !important; /* visible !important;*/
+    visibility: visible !important;*/
     transition: margin-left 0.3s ease;
   }
   body:not(.mobile-menu-active) .main-content {
