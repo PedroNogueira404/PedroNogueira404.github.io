@@ -362,7 +362,7 @@ body:not(.mobile-menu-active) .main-content {
   .main-content {
     opacity: 0 !important;
     visibility: hidden !important;
-    transition: opacity 0.3s ease;
+    transition: none;
     display: block;
     flex: 1;
     height: auto;
