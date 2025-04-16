@@ -380,6 +380,16 @@ body:not(.mobile-menu-active) .main-content {
   body.show-main .main-content {
     display: block;
   }
+    body.show-main .sidebar {
+    display: none;
+  }
+    body.sidebar-only .sidebar {
+    display: block;
+  }
+
+  body.sidebar-only .main-content {
+    display: none;
+  }
   .profile-img {
     width: 140px;
     height: 140px;
