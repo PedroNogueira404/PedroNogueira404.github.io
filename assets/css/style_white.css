@@ -537,3 +537,10 @@ body.light-mode .sidebar .social-link img,
 body.light-mode .sidebar .lang-flag {
   filter: none;
 }
+.main-content {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sidebar {
+  transition: transform 0.3s ease;
+}
