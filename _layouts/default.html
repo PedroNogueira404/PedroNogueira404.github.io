@@ -187,64 +187,43 @@
 </script>
 <!-- Menu Toggle Script -->
 <script>
-  document.getElementById('menuToggle').addEventListener('click', function () {
-    document.body.classList.add('sidebar-only');
-    document.body.classList.remove('show-main');
-  });
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelectorAll('.sidebar .nav-link');
 
-document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-
-
-
-  link.addEventListener('click', function (e) {
-
-
+  // Alterna visibilidade da sidebar no modo mobile portrait
+  menuToggle.addEventListener('click', function () {
     const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
-
-
     if (isPortraitMobile) {
-
-
-      e.preventDefault();
-
-
-      const href = this.href;
-
-
-
-
-
-      // Oculta o sidebar e mostra o conteúdo
-
-
-      document.body.classList.remove('mobile-menu-active');
-
-
-      document.body.classList.add('show-main');
-
-
-
-
-
-      // Garante tempo suficiente para mostrar a transição antes de carregar
-
-
-      setTimeout(() => {
-
-
-        window.location.href = href;
-
-
-      }, 300); // pode ajustar o tempo se quiser mais rápido
-
-
-    }    }
+      // Alterna entre mostrar sidebar ou main
+      if (document.body.classList.contains('show-main')) {
+        document.body.classList.remove('show-main');
+        document.body.classList.add('sidebar-only');
+      } else {
+        document.body.classList.add('sidebar-only');
+      }
+    }
   });
-});
 
+  // Lógica de clique nos links do menu no modo mobile portrait
+  navLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+      if (isPortraitMobile) {
+        e.preventDefault();
+        const href = this.href;
 
+        // Oculta sidebar, mostra conteúdo principal
+        document.body.classList.remove('sidebar-only');
+        document.body.classList.add('show-main');
+
+        // Aguarda a transição antes de carregar
+        setTimeout(() => {
+          window.location.href = href;
+        }, 10); // mínimo necessário para evitar flickering
+      }
+    });
+  });
 </script>
-
 
 <style>
   /* Adicione isso no final do seu CSS */
