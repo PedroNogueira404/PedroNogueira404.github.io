@@ -6,6 +6,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  display: block;
+  /* overflow: hidden; <- Remova essa linha */
+  min-height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  justify-content: center; /* ADICIONE ISSO para centralizar verticalmente */
+  text-align: center;
+}
 /* Sidebar */
 .sidebar {
   flex-shrink: 0;
@@ -53,19 +66,7 @@
   color: #beaafa;
   margin-bottom: 0.8rem;
 }
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  line-height: 1.6;
-  display: block;
-  /* overflow: hidden; <- Remova essa linha */
-  min-height: 100vh;
-  background-color: #121212;
-  color: #e0e0e0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  justify-content: center; /* ADICIONE ISSO para centralizar verticalmente */
-  text-align: center;
-}
+
 
 body.light-mode {
   background-color: #f4f4f4;
@@ -605,4 +606,50 @@ body.sidebar-only .main-content {
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .container {
+    flex-direction: row;
+  }
+
+  #sidebar {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    transform: translateX(0);
+  }
+
+  #main-content {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #sidebar.hidden + #main-content {
+    display: flex;
+  }
+
+  /* Oculta #sidebar quando classe "hidden" é aplicada */
+  #sidebar.hidden {
+    display: none;
+  }
+
+  /* Impede flickering de main-content antes da transição */
+  body:not(.show-main) #main-content {
+    display: none !important;
+  }
+
+  body.show-main #main-content {
+    display: flex !important;
+  }
+
+  /* Corrige scroll e overflow */
+  html, body {
+    overflow: hidden;
+    height: 100vh;
+  }
 }
