@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Cores do tema para mobile -->
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
@@ -14,15 +15,15 @@
     .main-content {
       display: none;
     }
-
+  
     body.show-main .main-content {
       display: block;
     }
-
+  
     body.sidebar-only .sidebar {
       display: block;
     }
-
+  
     .sidebar {
       width: 100vw;
       height: 100vh;
@@ -33,7 +34,7 @@
       top: 0;
       left: 0;
     }
-
+  
     .main-content {
       width: 100vw;
       height: 100vh;
@@ -43,11 +44,11 @@
       left: 0;
       background-color: var(--main-bg, #fff);
     }
-
+  
     body.show-main .sidebar {
       display: none;
     }
-
+  
     .menu-toggle {
       position: fixed;
       top: 1rem;
@@ -60,40 +61,36 @@
       cursor: pointer;
     }
   }
+
   </style>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Garante que a sidebar esteja visível no mobile portrait no carregamento
-      if (window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches) {
-        document.body.classList.add("sidebar-only");
-      }
-
-      // Evita transições visuais indesejadas ao carregar
-      document.body.classList.add("no-transition");
+    // Impede transições indesejadas na primeira renderização
+    document.body.classList.add('no-transition');
+    window.addEventListener('load', () => {
       setTimeout(() => {
-        document.body.classList.remove("no-transition");
+        document.body.classList.remove('no-transition');
       }, 100);
     });
   </script>
 </head>
 <body>
-  <noscript>
-    <p style="text-align: center; background: #ffdddd; padding: 1rem;">
-      Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
-    </p>
+    <noscript>
+      <p style="text-align: center; background: #ffdddd; padding: 1rem;">
+        Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
+      </p>
   </noscript>
-
   <button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">
-    &#9776;
-  </button>
-
+  &#9776;
+</button>
   <div class="layout-container">
+    <!-- Sidebar -->
     <div class="sidebar">
       <div class="sidebar-header">
         <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
         <h1 class="profile-name">Pedro H. Nogueira</h1>
         <p class="profile-title">Astrophysicist</p>
       </div>
+      <!-- Navigation -->
       <nav class="main-nav">
         <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
         <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
@@ -102,42 +99,66 @@
         <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
         <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
       </nav>
+
+      <!-- Social Links with aria-labels -->
       <div class="social-links">
-        <a href="mailto:nogueirapedro404@gmail.com" class="social-link" aria-label="Send email to Pedro Nogueira"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link" aria-label="Visit GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link" aria-label="Visit LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link" aria-label="Visit YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank" aria-label="Visit Bluesky">
+        <a href="mailto:nogueirapedro404@gmail.com" class="social-link" aria-label="Send email to Pedro Nogueira">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's GitHub profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's LinkedIn profile">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's YouTube channel">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank" aria-label="Visit Pedro Nogueira's Bluesky profile">
           <img src="/assets/bluesky-logo.svg" alt="Bluesky" class="social-icon bluesky-icon" />
         </a>
-        <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank" aria-label="Visit X (Twitter)">
+        <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank" aria-label="Visit Pedro Nogueira's X (Twitter) profile">
           <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon" />
         </a>
       </div>
+
+      <!-- Language Switcher with aria-labels -->
       <div class="language-switcher">
-        <a href="?lang=pt" class="lang-link" aria-label="Português"><img src="/assets/br.svg" alt="Portuguese" class="lang-flag" /> Português</a>
-        <a href="?lang=en" class="lang-link" aria-label="English"><img src="/assets/uk.svg" alt="English" class="lang-flag" /> English</a>
-        <a href="?lang=es" class="lang-link" aria-label="Español"><img src="/assets/es.svg" alt="Spanish" class="lang-flag" /> Español</a>
+        <a href="?lang=pt" class="lang-link" aria-label="Switch language to Portuguese">
+          <img src="/assets/br.svg" alt="Portuguese" class="lang-flag" /> Português
+        </a>
+        <a href="?lang=en" class="lang-link" aria-label="Switch language to English">
+          <img src="/assets/uk.svg" alt="English" class="lang-flag" /> English
+        </a>
+        <a href="?lang=es" class="lang-link" aria-label="Switch language to Spanish">
+          <img src="/assets/es.svg" alt="Spanish" class="lang-flag" /> Español
+        </a>
       </div>
+
+      <!-- Theme Toggle Button (also in sidebar) -->
       <div class="switch-container sidebar-switch">
-        <label class="switch-label" for="theme-toggle-sidebar" aria-label="Toggle theme">🌗</label>
+        <label class="switch-label" for="theme-toggle-sidebar" aria-label="Toggle between light and dark mode">🌗</label>
         <label class="switch">
-          <input type="checkbox" id="theme-toggle-sidebar">
+          <input type="checkbox" id="theme-toggle-sidebar" aria-label="Theme toggle switch in sidebar">
           <span class="slider"></span>
         </label>
       </div>
-    </div>
-
+    </div><!-- END OF SIDEBAR -->
+    
+    <!-- Main Content -->
     <div class="main-content" style="overflow-y: auto;" tabindex="-1">
       {{ content }}
+
+      <!-- Theme Toggle Button -->
       <div class="switch-container">
-        <label class="switch-label" for="theme-toggle" aria-label="Toggle theme">🌗</label>
+        <label class="switch-label" for="theme-toggle" aria-label="Toggle between light and dark mode">🌗</label>
         <label class="switch">
-          <input type="checkbox" id="theme-toggle">
+          <input type="checkbox" id="theme-toggle" aria-label="Theme toggle switch">
           <span class="slider"></span>
         </label>
       </div>
 
+      <!-- Comments Section -->
       {% if page.url contains '/blog/' and page.url != '/blog/' %}
       <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
         <div id="giscus_container"></div>
@@ -156,34 +177,37 @@
                 data-loading="lazy"
                 data-comments-enabled="true"
                 crossorigin="anonymous"
-                async></script>
+                async>
+        </script>
       </div>
       {% endif %}
 
+      <!-- Footer -->
       <footer class="site-footer">
         &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
       </footer>
     </div>
   </div>
 
+<!-- Theme Switching Script -->
 <script>
   const toggleMain = document.getElementById('theme-toggle');
   const toggleSidebar = document.getElementById('theme-toggle-sidebar');
   const body = document.body;
-
+  
   const isLight = localStorage.getItem('theme') === 'light';
   if (isLight) {
     body.classList.add('light-mode');
     toggleMain.checked = true;
     toggleSidebar.checked = true;
   }
-
+  
   function setTheme(isLight) {
     body.classList.toggle('light-mode', isLight);
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     toggleMain.checked = isLight;
     toggleSidebar.checked = isLight;
-
+  
     const giscusFrame = document.querySelector('iframe.giscus-frame');
     if (giscusFrame) {
       giscusFrame.contentWindow.postMessage({
@@ -195,51 +219,64 @@
       }, 'https://giscus.app');
     }
   }
-
+  
   toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
-</script>
-
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.querySelectorAll('.sidebar .nav-link');
-
-  menuToggle.addEventListener('click', function () {
-    const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
-    if (isPortraitMobile) {
-      if (document.body.classList.contains('show-main')) {
-        document.body.classList.remove('show-main');
-        document.body.classList.add('sidebar-only');
-      } else {
-        document.body.classList.remove('sidebar-only');
-        document.body.classList.add('show-main');
-      }
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
-      if (isPortraitMobile) {
-        e.preventDefault();
-        const href = this.href;
-
-        document.body.classList.remove('sidebar-only');
-        document.body.classList.add('show-main');
-
-        setTimeout(() => {
-          window.location.href = href;
-        }, 50);
-      }
-    });
-  });
-</script>
 
 <style>
+  /* Adicione isso no final do seu CSS */
   body.no-transition .sidebar,
   body.no-transition .main-content {
     transition: none !important;
   }
 </style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelectorAll('.sidebar .nav-link');
+
+    const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+
+    // Define estado inicial no mobile portrait
+    if (isPortraitMobile()) {
+      document.body.classList.add("sidebar-only");
+    }
+
+    // Clique no botão hamburguer
+    menuToggle.addEventListener("click", () => {
+      if (!isPortraitMobile()) return;
+
+      const body = document.body;
+      if (body.classList.contains("sidebar-only")) {
+        body.classList.remove("sidebar-only");
+        body.classList.add("show-main");
+      } else if (body.classList.contains("show-main")) {
+        body.classList.remove("show-main");
+        body.classList.add("sidebar-only");
+      } else {
+        body.classList.add("show-main");
+      }
+    });
+
+    // Clique nos links da sidebar
+    navLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        if (!isPortraitMobile()) return;
+
+        e.preventDefault();
+        const href = link.href;
+
+        document.body.classList.remove("sidebar-only");
+        document.body.classList.add("show-main");
+
+        // Aguarda transição antes de navegar
+        setTimeout(() => {
+          window.location.href = href;
+        }, 100);
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
