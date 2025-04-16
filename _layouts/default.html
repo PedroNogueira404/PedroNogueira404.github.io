@@ -182,9 +182,11 @@
   // Ao carregar a página, se for mobile retrato, mostre a main-content
   window.addEventListener("DOMContentLoaded", () => {
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
+    const shouldShowMain = localStorage.getItem('showMainContent') === 'true';
   
-    if (isMobilePortrait) {
+    if (isMobilePortrait && shouldShowMain) {
       document.body.classList.add('show-main');
+      localStorage.removeItem('showMainContent'); // Limpa o sinalizador
     }
   
     // Observador para evitar flickering (opcional)
@@ -219,7 +221,8 @@
       const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
   
       if (!isMobilePortrait || this.target === '_blank') return;
-  
+      // Marca que na próxima página devemos mostrar o main-content
+      localStorage.setItem('showMainContent', 'true');
       // Deixa o conteúdo atual escondido
       document.body.classList.remove('show-main');
       document.body.classList.add('no-transition');
