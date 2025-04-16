@@ -179,7 +179,7 @@
   window.addEventListener("DOMContentLoaded", () => {
     const isPortraitMobile = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     if (isPortraitMobile) {
-      document.body.classList.remove("mobile-menu-active");
+      document.body.classList.add("mobile-menu-active");
     }
   });
 
