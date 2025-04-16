@@ -215,11 +215,13 @@
         // Oculta sidebar, mostra conteúdo principal
         document.body.classList.remove('sidebar-only');
         document.body.classList.add('show-main');
-
+        
+        // Simula clique no botão hamburguer para garantir transição
+        menuToggle.click();
         // Aguarda a transição antes de carregar
-        setTimeout(() => {
-          window.location.href = href;
-        }, 10); // mínimo necessário para evitar flickering
+        // setTimeout(() => {
+        //  window.location.href = href;
+        //}, 10); // mínimo necessário para evitar flickering
       }
     });
   });
