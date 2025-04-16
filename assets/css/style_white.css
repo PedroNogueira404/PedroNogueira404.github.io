@@ -538,9 +538,6 @@ body.light-mode .sidebar .social-link img,
 body.light-mode .sidebar .lang-flag {
   filter: none;
 }
-.main-content {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
 
 body.mobile-menu-active .main-content {
   opacity: 1 !important;
