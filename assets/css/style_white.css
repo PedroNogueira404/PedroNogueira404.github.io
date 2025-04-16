@@ -239,6 +239,7 @@ body.light-mode .card a:hover {
   width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 /* Botão de menu (hamburguer) */
