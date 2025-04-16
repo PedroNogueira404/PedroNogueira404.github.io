@@ -10,6 +10,21 @@
   <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  @media (max-width: 768px) and (orientation: portrait) {
+    .main-content {
+      display: none;
+    }
+    body.show-main .main-content {
+      display: block;
+    }
+  }
+
+  body.no-transition .sidebar,
+  body.no-transition .main-content {
+    transition: none !important;
+  }
+  </style>
 </head>
 <body>
     <noscript>
@@ -168,9 +183,10 @@
   window.addEventListener("DOMContentLoaded", () => {
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     
-    if (isMobilePortrait) {
-      // Força sidebar visível na primeira visita (ignora localStorage)
-      document.body.classList.remove('mobile-menu-active');
+      if (isMobilePortrait) {
+        document.body.classList.remove('mobile-menu-active');
+        document.body.classList.remove('show-main'); // garante main escondido
+      }
       
       // Configura observador para evitar flickering
       const observer = new MutationObserver(() => {
@@ -200,37 +216,27 @@
   });
 
   // Controle dos links do sidebar (SOLUÇÃO DEFINITIVA)
-  document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
-      
-      if (!isMobilePortrait || this.target === '_blank') return;
-      
-      if (this.href.includes(window.location.hostname)) {
-        e.preventDefault();
-        
-        // Adiciona classe temporária para bloquear transição
-        document.body.classList.add('no-transition');
-        
-        // Esconde o conteúdo atual instantaneamente
-        document.querySelector('.main-content').style.opacity = '0';
-        document.querySelector('.main-content').style.visibility = 'hidden';
-        
-        // Remove a classe após um frame
-        requestAnimationFrame(() => {
-          document.body.classList.remove('no-transition');
-          
-          // Fecha o sidebar
-          document.body.classList.add('mobile-menu-active');
-          
-          // Redireciona após pequeno delay
-          setTimeout(() => {
-            window.location.href = this.href;
-          }, 50);
-        });
-      }
-    });
+document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
+
+    if (!isMobilePortrait || this.target === '_blank') return;
+
+    if (this.href.includes(window.location.hostname)) {
+      e.preventDefault();
+
+      // Evita qualquer flicker
+      document.body.classList.remove('show-main');
+      document.body.classList.add('no-transition');
+
+      // Redireciona rápido
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 20);
+    }
   });
+});
+
 </script>
 
 <style>
