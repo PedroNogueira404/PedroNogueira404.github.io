@@ -206,10 +206,10 @@
 
   // Lógica de clique nos links do menu no modo mobile portrait
   navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', function () {
       const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
       if (isPortraitMobile) {
-        e.preventDefault();
+        // e.preventDefault();
         const href = this.href;
 
         // Oculta sidebar, mostra conteúdo principal
