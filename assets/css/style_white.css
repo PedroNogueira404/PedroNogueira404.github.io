@@ -369,7 +369,7 @@ body:not(.mobile-menu-active) .main-content {
     opacity: 0 !important;
     visibility: hidden !important;
     transition: none;
-    display: block;
+    display: none;
     flex: 1;
     height: auto;
     width: 100%;
@@ -377,7 +377,9 @@ body:not(.mobile-menu-active) .main-content {
     overflow-y: auto;
     overflow-x: hidden;
   }
-
+  body.show-main .main-content {
+    display: block;
+  }
   .profile-img {
     width: 140px;
     height: 140px;
