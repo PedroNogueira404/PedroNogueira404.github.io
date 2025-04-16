@@ -227,10 +227,11 @@
       document.body.classList.remove('show-main');
       document.body.classList.add('no-transition');
   
-      // Navega após um pequeno atraso
-      setTimeout(() => {
-        window.location.href = this.href;
-      }, 100);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          window.location.href = this.href;
+        });
+      });
     });
   });
 </script>
