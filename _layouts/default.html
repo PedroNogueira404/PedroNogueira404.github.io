@@ -167,39 +167,60 @@
 </script>
 
 <script>
-  // Configuração inicial
+  // Configuração inicial - Mobile Portrait começa com sidebar visível
   window.addEventListener("DOMContentLoaded", () => {
-    if (window.innerWidth <= 768) {
-      document.body.classList.remove("mobile-menu-active");
+    // Verifica se é mobile portrait
+    const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
+    
+    // Verifica se há um estado salvo no localStorage
+    const menuState = localStorage.getItem('menuState');
+    
+    if (isMobilePortrait) {
+      // Se não houver estado salvo ou estiver como 'closed', mostra o sidebar
+      if (!menuState || menuState === 'open') {
+        document.body.classList.remove("mobile-menu-active");
+        localStorage.setItem('menuState', 'open');
+      } else {
+        document.body.classList.add("mobile-menu-active");
+      }
     }
   });
 
   // Controle do menu toggle
   document.getElementById('menuToggle').addEventListener('click', function() {
     document.body.classList.toggle('mobile-menu-active');
+    
+    // Atualiza o estado no localStorage
+    if (document.body.classList.contains('mobile-menu-active')) {
+      localStorage.setItem('menuState', 'closed');
+    } else {
+      localStorage.setItem('menuState', 'open');
+    }
   });
 
-  // Controle dos links do sidebar (MODIFICADO)
+  // Controle dos links do sidebar
   document.querySelectorAll('.sidebar .nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
-      if (window.innerWidth > 768) return; // Só aplica em mobile
+      // Aplica apenas em mobile portrait
+      if (window.innerWidth > 768 || !window.matchMedia("(orientation: portrait)").matches) return;
+      
+      // Para links externos ou que abrem em nova aba
+      if (this.target === '_blank' || !this.href.includes(window.location.hostname)) {
+        return;
+      }
       
       e.preventDefault();
       const targetUrl = this.href;
       
       // 1. Fecha o sidebar
       document.body.classList.add('mobile-menu-active');
+      localStorage.setItem('menuState', 'closed');
       
-      // 2. Espera a transição terminar
+      // 2. Espera a transição terminar antes de redirecionar
       setTimeout(() => {
-        // 3. Redireciona mantendo o estado
+        // 3. Redireciona mantendo o estado fechado
         window.location.href = targetUrl;
-        
-        // 4. Força reabrir o sidebar ao carregar (opcional)
-        setTimeout(() => {
-          document.body.classList.remove('mobile-menu-active');
-        }, 50);
-      }, 300); // Tempo igual à transição CSS
+      }, 300);
     });
   });
 </script>
