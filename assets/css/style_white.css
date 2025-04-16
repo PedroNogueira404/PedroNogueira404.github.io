@@ -296,12 +296,16 @@ body:not(.mobile-menu-active) .main-content {
 }*/
 
  /* Quando o menu está ativo (toggle clicado), mostra o main content */
-body.mobile-menu-active .main-content {
+
+  body.mobile-menu-active .main-content {
     opacity: 1 !important;
     visibility: visible !important;
     transition: margin-left 0.3s ease;
   }
-
+  body:not(.mobile-menu-active) .main-content {
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
   body {
     flex-direction: column;
     overflow: auto;
@@ -539,12 +543,3 @@ body.light-mode .sidebar .lang-flag {
   filter: none;
 }
 
-body.mobile-menu-active .main-content {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-body:not(.mobile-menu-active) .main-content {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
