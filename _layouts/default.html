@@ -20,9 +20,6 @@
   <button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">
   &#9776;
 </button>
-  <!--<button class="menu-toggle" onclick="document.body.classList.toggle('mobile-menu-active')"> 
-  ☰-
-</button> -->
   <div class="layout-container">
     <!-- Sidebar -->
     <div class="sidebar">
@@ -90,7 +87,6 @@
     <div class="main-content" style="overflow-y: auto;" tabindex="-1">
       {{ content }}
 
-      <!-- Theme Toggle Button -->
       <!-- Theme Toggle Button -->
       <div class="switch-container">
         <label class="switch-label" for="theme-toggle" aria-label="Toggle between light and dark mode">🌗</label>
@@ -166,14 +162,19 @@
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 </script>
 
+<!-- Menu Control Script -->
 <script>
-  // Configuração inicial
+  // Configuração inicial - Mobile Portrait
   window.addEventListener("DOMContentLoaded", () => {
+    // Garante estado inicial 'open' se não existir
+    if (localStorage.getItem('menuState') === null) {
+      localStorage.setItem('menuState', 'open');
+    }
+    
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     
     if (isMobilePortrait) {
       const menuState = localStorage.getItem('menuState');
-      // Estado padrão: sidebar visível (menuState = 'open')
       document.body.classList.toggle('mobile-menu-active', menuState === 'closed');
     }
   });
@@ -190,7 +191,7 @@
     }
   });
 
-  // Controle dos links do sidebar (versão aprimorada)
+  // Controle dos links do sidebar
   document.querySelectorAll('.sidebar .nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
       const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
@@ -206,10 +207,10 @@
         document.body.classList.add('mobile-menu-active');
         localStorage.setItem('menuState', 'closed');
         
-        // 2. Redireciona após a transição
+        // 2. Redireciona após pequeno delay
         setTimeout(() => {
           window.location.href = this.href;
-        }, 300);
+        }, 50); // Delay mínimo para garantir a transição
       }
     });
   });
