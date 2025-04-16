@@ -332,7 +332,7 @@ body:not(.mobile-menu-active) .main-content {
     z-index: 1000;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     pointer-events: auto;
-    display: flex;
+    display: block;
   }
   
   body.mobile-menu-active .sidebar {
