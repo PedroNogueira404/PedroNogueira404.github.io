@@ -3,11 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Cores do tema para mobile -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
   <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <noscript>
+      <p style="text-align: center; background: #ffdddd; padding: 1rem;">
+        Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
+      </p>
+  </noscript>
   <button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">
   &#9776;
 </button>
