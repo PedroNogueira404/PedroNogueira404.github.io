@@ -177,67 +177,62 @@
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 </script>
 
-<!-- Menu Control Script -->
+<!-- Menu Toggle Script -->
 <script>
   // Configuração inicial - Mobile Portrait
   window.addEventListener("DOMContentLoaded", () => {
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     
-      if (isMobilePortrait) {
-        document.body.classList.remove('mobile-menu-active');
-        document.body.classList.remove('show-main'); // garante main escondido
-      }
-      
-      // Configura observador para evitar flickering
-      const observer = new MutationObserver(() => {
-        if (document.body.classList.contains('mobile-menu-active')) {
-          document.querySelector('.main-content').style.opacity = '0';
-          document.querySelector('.main-content').style.visibility = 'hidden';
-        } else {
-          document.querySelector('.main-content').style.opacity = '';
-          document.querySelector('.main-content').style.visibility = '';
-        }
-      });
-      
-      observer.observe(document.body, {
-        attributes: true,
-        attributeFilter: ['class']
-      });
+    if (isMobilePortrait) {
+      document.body.classList.remove('mobile-menu-active');
+      document.body.classList.remove('show-main'); // garante main escondido
     }
+
+    // Observador para evitar flickering
+    const observer = new MutationObserver(() => {
+      if (document.body.classList.contains('mobile-menu-active')) {
+        document.querySelector('.main-content').style.opacity = '0';
+        document.querySelector('.main-content').style.visibility = 'hidden';
+      } else {
+        document.querySelector('.main-content').style.opacity = '';
+        document.querySelector('.main-content').style.visibility = '';
+      }
+    });
+
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
   });
 
-  // Controle do menu toggle
+  // Controle do botão de menu
   document.getElementById('menuToggle').addEventListener('click', function() {
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
-    
+
     if (isMobilePortrait) {
       document.body.classList.toggle('mobile-menu-active');
     }
   });
 
-  // Controle dos links do sidebar (SOLUÇÃO DEFINITIVA)
-<script>
-// Controle dos links do sidebar (CORRIGIDO)
-document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
+  // Controle dos links do menu lateral
+  document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
 
-    if (!isMobilePortrait || this.target === '_blank') return;
+      if (!isMobilePortrait || this.target === '_blank') return;
 
-    if (this.origin === window.location.origin) {
-      e.preventDefault();
+      if (this.origin === window.location.origin) {
+        e.preventDefault();
 
-      // Evita qualquer flicker
-      document.body.classList.remove('show-main');
-      document.body.classList.add('no-transition');
+        document.body.classList.remove('show-main');
+        document.body.classList.add('no-transition');
 
-      // Redireciona rápido
-      setTimeout(() => {
-        window.location.href = this.href;
-      }, 20);
-    }
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 20);
+      }
+    });
   });
-});
 </script>
 
 
