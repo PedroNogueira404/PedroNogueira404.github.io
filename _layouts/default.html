@@ -25,6 +25,15 @@
     transition: none !important;
   }
   </style>
+  <script>
+    // Impede transições indesejadas na primeira renderização
+    document.body.classList.add('no-transition');
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.body.classList.remove('no-transition');
+      }, 100);
+    });
+  </script>
 </head>
 <body>
     <noscript>
@@ -183,9 +192,18 @@
   });
 
   document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-    link.addEventListener('click', function () {
-      // Fecha o menu depois de clicar num link
-      document.body.classList.remove('mobile-menu-active');
+    link.addEventListener('click', function (e) {
+      const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+      if (isPortraitMobile) {
+        e.preventDefault(); // previne navegação instantânea
+        const href = this.href;
+        document.body.classList.add('no-transition');
+        document.body.classList.add('sidebar-only');
+  
+        setTimeout(() => {
+          window.location.href = href;
+        }, 100); // tempo suficiente para esconder o sidebar
+      }
     });
   });
 </script>
