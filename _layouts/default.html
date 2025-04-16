@@ -224,6 +224,24 @@
     });
   });
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    menuToggle.addEventListener('click', () => {
+      document.body.classList.toggle('mobile-menu-active');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Após clicar num link da sidebar, mostra o conteúdo principal
+        document.body.classList.remove('mobile-menu-active');
+        document.body.classList.add('show-main');
+      });
+    });
+  });
+</script>
 
 <style>
   /* Adicione isso no final do seu CSS */
