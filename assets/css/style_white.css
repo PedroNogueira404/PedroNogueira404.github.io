@@ -489,6 +489,32 @@ body.light-mode .sidebar {
   color: #222;
 }
 
+body.light-mode .profile-name {
+  color: #1a1a1a; /* cor do título no modo claro */
+}
+
+body.light-mode .profile-title {
+  color: #444444; /* cor do subtítulo no modo claro */
+}
+
+/* .profile-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  color: #F1C40F;
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.profile-title {
+  font-size: 0.8rem;
+  color: #beaafa;
+  margin-bottom: 0.8rem;
+}
+*/
 body.light-mode .sidebar .nav-link,
 body.light-mode .sidebar .social-link,
 body.light-mode .sidebar .lang-link {
