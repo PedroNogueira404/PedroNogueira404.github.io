@@ -131,49 +131,42 @@
     </div>
   </div>
 
-  <!-- Theme Switching Script -->
-  <script>
-    const toggleMain = document.getElementById('theme-toggle');
-    const toggleSidebar = document.getElementById('theme-toggle-sidebar');
-    const body = document.body;
+<!-- Theme Switching Script -->
+<script>
+  const toggleMain = document.getElementById('theme-toggle');
+  const toggleSidebar = document.getElementById('theme-toggle-sidebar');
+  const body = document.body;
   
-    const isLight = localStorage.getItem('theme') === 'light';
-    if (isLight) {
-      body.classList.add('light-mode');
-      toggleMain.checked = true;
-      toggleSidebar.checked = true;
-    }
+  const isLight = localStorage.getItem('theme') === 'light';
+  if (isLight) {
+    body.classList.add('light-mode');
+    toggleMain.checked = true;
+    toggleSidebar.checked = true;
+  }
   
-    function setTheme(isLight) {
-      body.classList.toggle('light-mode', isLight);
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      toggleMain.checked = isLight;
-      toggleSidebar.checked = isLight;
+  function setTheme(isLight) {
+    body.classList.toggle('light-mode', isLight);
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggleMain.checked = isLight;
+    toggleSidebar.checked = isLight;
   
-      const giscusFrame = document.querySelector('iframe.giscus-frame');
-      if (giscusFrame) {
-        giscusFrame.contentWindow.postMessage({
-          giscus: {
-            setConfig: {
-              theme: isLight ? 'light' : 'dark'
-            }
+    const giscusFrame = document.querySelector('iframe.giscus-frame');
+    if (giscusFrame) {
+      giscusFrame.contentWindow.postMessage({
+        giscus: {
+          setConfig: {
+            theme: isLight ? 'light' : 'dark'
           }
-        }, 'https://giscus.app');
-      }
+        }
+      }, 'https://giscus.app');
     }
+  }
   
-    toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
-    toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
-  </script>
+  toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
+  toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
+</script>
 
-
-  <!-- Mobile Menu Toggle Script -->
-  <script>
-    const toggleButton = document.getElementById('menuToggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('mobile-menu-active');
-    });
-  </script>
+<!-- Mobile Menu Script (ÚNICO E ATUALIZADO) -->
 <script>
   // Configuração inicial - Mobile Portrait começa com sidebar visível
   window.addEventListener("DOMContentLoaded", () => {
@@ -190,7 +183,7 @@
     }
   });
 
-  // Toggle do menu (☰)
+  // Toggle do menu (☰) - SÓ UMA DECLARAÇÃO!
   const toggleButton = document.getElementById('menuToggle');
   toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('mobile-menu-active');
