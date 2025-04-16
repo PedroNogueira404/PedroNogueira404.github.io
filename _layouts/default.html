@@ -15,15 +15,53 @@
     .main-content {
       display: none;
     }
+  
     body.show-main .main-content {
       display: block;
     }
+  
+    body.sidebar-only .sidebar {
+      display: block;
+    }
+  
+    .sidebar {
+      width: 100vw;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 1000;
+      background-color: var(--sidebar-bg, #fff);
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  
+    .main-content {
+      width: 100vw;
+      height: 100vh;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: var(--main-bg, #fff);
+    }
+  
+    body.show-main .sidebar {
+      display: none;
+    }
+  
+    .menu-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      z-index: 1100;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: inherit;
+      cursor: pointer;
+    }
   }
 
-  body.no-transition .sidebar,
-  body.no-transition .main-content {
-    transition: none !important;
-  }
   </style>
   <script>
     // Impede transições indesejadas na primeira renderização
