@@ -192,19 +192,25 @@
     document.body.classList.remove('show-main');
   });
 
-document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    
+    const targetId = link.getAttribute('href').substring(1);
+    
+    document.querySelectorAll('.page').forEach(page => {
+      page.classList.remove('active');
+    });
 
-    if (isPortraitMobile) {
-      // Mostra main-content e esconde sidebar direto, sem delay
-      document.body.classList.remove('sidebar-only');
-      document.body.classList.add('show-main');
-      // Navegação normal — deixa o navegador carregar a nova URL normalmente
+    document.getElementById(targetId).classList.add('active');
+
+    // Se for mobile portrait, troca visibilidade
+    if (window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches) {
+      document.body.classList.add('main-visible');
     }
-    // Do contrário, comportamento padrão (navega normalmente)
   });
 });
+
 
 </script>
 
