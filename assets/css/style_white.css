@@ -542,9 +542,6 @@ body.light-mode .sidebar .lang-flag {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.sidebar {
-  transition: transform 0.3s ease;
-}
 body.mobile-menu-active .main-content {
   opacity: 1 !important;
   visibility: visible !important;
@@ -557,8 +554,4 @@ body:not(.mobile-menu-active) .main-content {
 
 .sidebar {
   transition: transform 0.3s ease;
-}
-
-.main-content {
-  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
