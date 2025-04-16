@@ -178,32 +178,7 @@
 </script>
 <script>
 <!-- Menu Toggle Script -->
-  // Controle dos links do menu lateral
-  document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-    link.addEventListener('click', function (e) {
-      const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
-  
-      if (!isMobilePortrait || this.target === '_blank') return;
-  
-      e.preventDefault(); // evita navegação imediata
-  
-      localStorage.setItem('showMainContent', 'true');
-      document.body.classList.remove('show-main');
-      document.body.classList.add('no-transition');
-  
-      const href = this.href;
-
-      // AQUI: adiciona a classe para evitar flickering
-      document.body.classList.add('show-main');
-  
-      // Use requestAnimationFrame para garantir sincronização
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          window.location.href = href;
-        });
-      });
-    });
-  });
+ 
 <script>
 <script>
   // Ao carregar a página, se for mobile retrato, mostre a main-content
@@ -253,14 +228,9 @@
   });
 
   // Controle dos links do menu lateral
-  /*document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+  document.querySelectorAll('.sidebar .nav-link').forEach(link => {
     link.addEventListener('click', function (e) {
       const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
-  
-      if (!isMobilePortrait || this.target === '_blank') return;
-  
-      e.preventDefault(); // evita navegação imediata
-  
       localStorage.setItem('showMainContent', 'true');
       document.body.classList.remove('show-main');
       document.body.classList.add('no-transition');
@@ -277,7 +247,7 @@
         });
       });
     });
-  });*/
+  });
 </script>
 
 
