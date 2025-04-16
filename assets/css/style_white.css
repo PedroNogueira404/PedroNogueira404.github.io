@@ -302,16 +302,16 @@ body:not(.mobile-menu-active) .main-content {
 }*/
 
  /* Quando o menu está ativo (toggle clicado), mostra o main content */
-
+/*
   body.mobile-menu-active .main-content {
     opacity: 1 !important;
-    visibility: visible !important;*/
+    visibility: visible !important;
     transition: margin-left 0.3s ease;
   }
   body:not(.mobile-menu-active) .main-content {
     opacity: 0 !important;
     visibility: hidden !important;
-  }
+  }*/
   body {
     flex-direction: column;
     overflow: auto;
@@ -358,13 +358,18 @@ body:not(.mobile-menu-active) .main-content {
   }
   
   body.mobile-menu-active .sidebar {
-    display: flex !important;
+    /*display: flex !important;*/
     transform: translateX(-100%) !important;
-    position: fixed;
-    transition: margin-left 0.3s ease;
+    /*position: fixed;*/
+    /*transition: margin-left 0.3s ease;*/
     pointer-events: none !important;
   }
-
+  
+  body.mobile-menu-active .main-content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
   .main-content {
     opacity: 0 !important;
     visibility: hidden !important;
