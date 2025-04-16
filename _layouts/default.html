@@ -185,9 +185,19 @@
     const shouldShowMain = localStorage.getItem('showMainContent') === 'true';
   
     if (isMobilePortrait && shouldShowMain) {
-      document.body.classList.add('show-main');
-      localStorage.removeItem('showMainContent'); // Limpa o sinalizador
-    }
+      // Evita flickering visual
+      document.body.classList.add('no-transition');
+    
+      // Garante que o show-main entre antes do render
+      requestAnimationFrame(() => {
+        document.body.classList.add('show-main');
+        localStorage.removeItem('showMainContent');
+        requestAnimationFrame(() => {
+          document.body.classList.remove('no-transition');
+        });
+      });
+    } 
+
   
     // Observador para evitar flickering (opcional)
     const observer = new MutationObserver(() => {
