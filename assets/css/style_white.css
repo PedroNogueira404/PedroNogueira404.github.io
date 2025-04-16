@@ -282,6 +282,7 @@ body.mobile-menu-active .main-content {
   text-align: center;
   height: 100%; /* ADICIONE para preencher o espaço da sidebar */
 }
+ /*  
 body.mobile-menu-active .main-content {
   opacity: 1;
   visibility: visible;
@@ -291,7 +292,15 @@ body.mobile-menu-active .main-content {
 body:not(.mobile-menu-active) .main-content {
   opacity: 0;
   visibility: hidden;
-}
+}*/
+
+ /* Quando o menu está ativo (toggle clicado), mostra o main content */
+body.mobile-menu-active .main-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: margin-left 0.3s ease;
+  }
+
   body {
     flex-direction: column;
     overflow: auto;
@@ -326,28 +335,28 @@ body:not(.mobile-menu-active) .main-content {
     background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
     background-size: cover;
     color: white;
-    transform: translateX(0);
+    transform: translateX(0) !important; /* Força ficar visível */
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
     transition: transform 0.3s ease;
     z-index: 1000;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    pointer-events: auto;
-    display: flex;
+    pointer-events: auto !important;
+    display: flex !important;
   }
   
   body.mobile-menu-active .sidebar {
     display: flex !important;
-    transform: translateX(-100%);
+    transform: translateX(-100%) !important;
     position: fixed;
     transition: margin-left 0.3s ease;
-    pointer-events: none;
+    pointer-events: none !important;
   }
 
   .main-content {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
     transition: opacity 0.3s ease;
     display: block;
     flex: 1;
