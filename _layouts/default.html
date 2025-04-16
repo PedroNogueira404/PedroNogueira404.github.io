@@ -209,7 +209,7 @@
     link.addEventListener('click', function () {
       const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
       if (isPortraitMobile) {
-        // e.preventDefault();
+        e.preventDefault();
         const href = this.href;
 
         // Oculta sidebar, mostra conteúdo principal
