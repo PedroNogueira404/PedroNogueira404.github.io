@@ -229,7 +229,7 @@
   const navLinks = document.querySelectorAll('.sidebar .nav-link');
 
   // Alterna visibilidade da sidebar no modo mobile portrait
-  menuToggle.addEventListener('click', function () {
+  menuToggle.addEventListener('click', function (e) {
     const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
     if (isPortraitMobile) {
       // Alterna entre mostrar sidebar ou main
