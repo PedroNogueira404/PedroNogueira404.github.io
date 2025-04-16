@@ -166,16 +166,27 @@
 <script>
   // Configuração inicial - Mobile Portrait
   window.addEventListener("DOMContentLoaded", () => {
-    // Garante estado inicial 'open' se não existir
-    if (localStorage.getItem('menuState') === null) {
-      localStorage.setItem('menuState', 'open');
-    }
-    
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     
     if (isMobilePortrait) {
-      const menuState = localStorage.getItem('menuState');
-      document.body.classList.toggle('mobile-menu-active', menuState === 'closed');
+      // Força sidebar visível na primeira visita (ignora localStorage)
+      document.body.classList.remove('mobile-menu-active');
+      
+      // Configura observador para evitar flickering
+      const observer = new MutationObserver(() => {
+        if (document.body.classList.contains('mobile-menu-active')) {
+          document.querySelector('.main-content').style.opacity = '0';
+          document.querySelector('.main-content').style.visibility = 'hidden';
+        } else {
+          document.querySelector('.main-content').style.opacity = '';
+          document.querySelector('.main-content').style.visibility = '';
+        }
+      });
+      
+      observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
     }
   });
 
@@ -185,35 +196,49 @@
     
     if (isMobilePortrait) {
       document.body.classList.toggle('mobile-menu-active');
-      localStorage.setItem('menuState', 
-        document.body.classList.contains('mobile-menu-active') ? 'closed' : 'open'
-      );
     }
   });
 
-  // Controle dos links do sidebar
+  // Controle dos links do sidebar (SOLUÇÃO DEFINITIVA)
   document.querySelectorAll('.sidebar .nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
       const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
       
-      // Ignora em desktop/landscape ou links externos
       if (!isMobilePortrait || this.target === '_blank') return;
       
-      // Previne comportamento padrão apenas para links internos
       if (this.href.includes(window.location.hostname)) {
         e.preventDefault();
         
-        // 1. Fecha o sidebar e atualiza estado
-        document.body.classList.add('mobile-menu-active');
-        localStorage.setItem('menuState', 'closed');
+        // Adiciona classe temporária para bloquear transição
+        document.body.classList.add('no-transition');
         
-        // 2. Redireciona após pequeno delay
-        setTimeout(() => {
-          window.location.href = this.href;
-        }, 50); // Delay mínimo para garantir a transição
+        // Esconde o conteúdo atual instantaneamente
+        document.querySelector('.main-content').style.opacity = '0';
+        document.querySelector('.main-content').style.visibility = 'hidden';
+        
+        // Remove a classe após um frame
+        requestAnimationFrame(() => {
+          document.body.classList.remove('no-transition');
+          
+          // Fecha o sidebar
+          document.body.classList.add('mobile-menu-active');
+          
+          // Redireciona após pequeno delay
+          setTimeout(() => {
+            window.location.href = this.href;
+          }, 50);
+        });
       }
     });
   });
 </script>
+
+<style>
+  /* Adicione isso no final do seu CSS */
+  body.no-transition .sidebar,
+  body.no-transition .main-content {
+    transition: none !important;
+  }
+</style>
 </body>
 </html>
