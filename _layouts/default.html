@@ -229,6 +229,9 @@
       document.body.classList.add('no-transition');
   
       const href = this.href;
+
+      // AQUI: adiciona a classe para evitar flickering
+      document.body.classList.add('show-main');
   
       // Use requestAnimationFrame para garantir sincronização
       requestAnimationFrame(() => {
