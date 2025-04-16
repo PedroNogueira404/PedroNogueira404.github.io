@@ -289,6 +289,21 @@ body.mobile-menu-active .main-content {
   body.sidebar-only .sidebar {
   display: none;
   }
+  /* Adicionando transições suaves para a sidebar e o conteúdo principal */
+.sidebar, .main-content {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-only .sidebar {
+  transform: translateX(-100%); /* Esconde a sidebar movendo-a para fora da tela */
+  opacity: 0; /* Faz a sidebar desaparecer */
+}
+
+.show-main .main-content {
+  opacity: 1; /* Torna o conteúdo principal visível */
+  transform: translateX(0); /* Move o conteúdo principal para sua posição */
+}
+
   /*  
 body.mobile-menu-active .main-content {
   opacity: 1;
