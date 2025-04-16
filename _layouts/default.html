@@ -174,20 +174,26 @@
       document.body.classList.toggle('mobile-menu-active');
     });
   </script>
-  <script>
-  // Ativa o sidebar no mobile ao carregar
+<script>
+  // Configuração inicial - Mobile Portrait começa com sidebar visível
   window.addEventListener("DOMContentLoaded", () => {
     const isPortraitMobile = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     if (isPortraitMobile) {
-      document.body.classList.add("mobile-menu-active");
+      document.body.classList.remove("mobile-menu-active"); // Sidebar visível
     }
   });
 
-  // Fecha o sidebar quando clica em um link da nav
+  // Fecha o sidebar quando um link é clicado (mobile)
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("nav-link")) {
-      document.body.classList.remove("mobile-menu-active");
+      document.body.classList.add("mobile-menu-active"); // Esconde sidebar e mostra main content
     }
+  });
+
+  // Toggle do menu (☰)
+  const toggleButton = document.getElementById('menuToggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('mobile-menu-active');
   });
 </script>
 </body>
