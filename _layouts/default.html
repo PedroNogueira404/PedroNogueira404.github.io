@@ -192,22 +192,53 @@
     document.body.classList.remove('show-main');
   });
 
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    const targetId = link.getAttribute('href').substring(1);
-    
-    document.querySelectorAll('.page').forEach(page => {
-      page.classList.remove('active');
-    });
+document.querySelectorAll('.sidebar .nav-link').forEach(link => {
 
-    document.getElementById(targetId).classList.add('active');
 
-    // Se for mobile portrait, troca visibilidade
-    if (window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches) {
-      document.body.classList.add('main-visible');
-    }
+
+  link.addEventListener('click', function (e) {
+
+
+    const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+
+
+    if (isPortraitMobile) {
+
+
+      e.preventDefault();
+
+
+      const href = this.href;
+
+
+
+
+
+      // Oculta o sidebar e mostra o conteúdo
+
+
+      document.body.classList.remove('mobile-menu-active');
+
+
+      document.body.classList.add('show-main');
+
+
+
+
+
+      // Garante tempo suficiente para mostrar a transição antes de carregar
+
+
+      setTimeout(() => {
+
+
+        window.location.href = href;
+
+
+      }, 300); // pode ajustar o tempo se quiser mais rápido
+
+
+    }    }
   });
 });
 
