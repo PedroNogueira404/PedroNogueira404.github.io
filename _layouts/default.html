@@ -166,27 +166,32 @@
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 </script>
 
-<!-- Mobile Menu Script (ÚNICO E ATUALIZADO) -->
 <script>
   // Configuração inicial - Mobile Portrait começa com sidebar visível
   window.addEventListener("DOMContentLoaded", () => {
     const isPortraitMobile = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
     if (isPortraitMobile) {
-      document.body.classList.remove("mobile-menu-active"); // Sidebar visível
+      document.body.classList.remove("mobile-menu-active");
     }
   });
 
-  // Fecha o sidebar quando um link é clicado (mobile)
-  document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("nav-link")) {
-      document.body.classList.add("mobile-menu-active"); // Esconde sidebar e mostra main content
-    }
-  });
-
-  // Toggle do menu (☰) - SÓ UMA DECLARAÇÃO!
+  // Toggle do menu (☰)
   const toggleButton = document.getElementById('menuToggle');
   toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('mobile-menu-active');
+  });
+
+  // Fecha o sidebar quando um link é clicado (COM TRANSITION)
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("nav-link")) {
+      e.preventDefault(); // Pausa o redirecionamento
+      document.body.classList.add("mobile-menu-active");
+      
+      // Aguarda a transição terminar antes de redirecionar
+      setTimeout(() => {
+        window.location.href = e.target.href;
+      }, 300); // 300ms = mesma duração da transição no CSS
+    }
   });
 </script>
 </body>
