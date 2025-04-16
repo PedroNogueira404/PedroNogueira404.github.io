@@ -176,10 +176,19 @@
   toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 </script>
-<script>
 <!-- Menu Toggle Script -->
- 
 <script>
+  document.getElementById('menuToggle').addEventListener('click', function () {
+    document.body.classList.toggle('mobile-menu-active');
+  });
+
+  document.querySelectorAll('.sidebar .nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+      // Fecha o menu depois de clicar num link
+      document.body.classList.remove('mobile-menu-active');
+    });
+  });
+</script>
 <script>
   // Ao carregar a página, se for mobile retrato, mostre a main-content
   window.addEventListener("DOMContentLoaded", () => {
