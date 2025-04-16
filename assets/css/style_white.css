@@ -283,12 +283,30 @@ body.mobile-menu-active .main-content {
   text-align: center;
   height: 100%; /* ADICIONE para preencher o espaço da sidebar */
 }
-  body.sidebar-only .main-content {
-  display: block;
-  }
+  /* Esconde a sidebar e o conteúdo principal de forma suave */
   body.sidebar-only .sidebar {
-  display: none;
+    transform: translateX(-100%);  /* Mover para fora da tela */
+    opacity: 0;
+    visibility: hidden; /* Ocultar o elemento */
   }
+  body.sidebar-only .main-content {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible; /* Garantir que o conteúdo seja visível */
+  }
+  /* Ao ativar o menu, exibe a sidebar */
+  body.mobile-menu-active .sidebar {
+    transform: translateX(0); /* Sidebar visível */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  body.mobile-menu-active .main-content {
+    opacity: 0;
+    visibility: hidden;  /* Ocultar o conteúdo principal enquanto a sidebar está ativa */
+    transform: translateX(-100%);  /* Empurrar o conteúdo principal para fora da tela */
+  }
+
   /* Adicionando transições suaves para a sidebar e o conteúdo principal */
 .sidebar, .main-content {
   transition: transform 0.3s ease, opacity 0.3s ease;
