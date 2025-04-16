@@ -61,7 +61,6 @@
       cursor: pointer;
     }
   }
-
   </style>
   <script>
     // Impede transições indesejadas na primeira renderização
@@ -223,13 +222,7 @@
   toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 
-<style>
-  /* Adicione isso no final do seu CSS */
-  body.no-transition .sidebar,
-  body.no-transition .main-content {
-    transition: none !important;
-  }
-</style>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menuToggle');
