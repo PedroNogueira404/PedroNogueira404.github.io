@@ -283,7 +283,13 @@ body.mobile-menu-active .main-content {
   text-align: center;
   height: 100%; /* ADICIONE para preencher o espaço da sidebar */
 }
- /*  
+  body.sidebar-only .main-content {
+  display: block;
+  }
+  body.sidebar-only .sidebar {
+  display: none;
+  }
+  /*  
 body.mobile-menu-active .main-content {
   opacity: 1;
   visibility: visible;
@@ -542,4 +548,11 @@ body.light-mode .sidebar .social-link img,
 body.light-mode .sidebar .lang-flag {
   filter: none;
 }
+body.sidebar-only .main-content {
+  animation: fadeIn 0.2s ease-in;
+}
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
