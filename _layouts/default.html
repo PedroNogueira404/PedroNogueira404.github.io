@@ -188,25 +188,21 @@
 <!-- Menu Toggle Script -->
 <script>
   document.getElementById('menuToggle').addEventListener('click', function () {
-    document.body.classList.toggle('sidebar-only');//troquei, antes era mobile-menu-active
+    document.body.classList.add('sidebar-only');
+    document.body.classList.remove('show-main');
   });
 
 document.querySelectorAll('.sidebar .nav-link').forEach(link => {
   link.addEventListener('click', function (e) {
     const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+
     if (isPortraitMobile) {
-      e.preventDefault();
-      const href = this.href;
-
-      // Oculta o sidebar e mostra o conteúdo
-      document.body.classList.remove('mobile-menu-active');
+      // Mostra main-content e esconde sidebar direto, sem delay
+      document.body.classList.remove('sidebar-only');
       document.body.classList.add('show-main');
-
-      // Garante tempo suficiente para mostrar a transição antes de carregar
-      setTimeout(() => {
-        window.location.href = href;
-      }, 300); // pode ajustar o tempo se quiser mais rápido
+      // Navegação normal — deixa o navegador carregar a nova URL normalmente
     }
+    // Do contrário, comportamento padrão (navega normalmente)
   });
 });
 
