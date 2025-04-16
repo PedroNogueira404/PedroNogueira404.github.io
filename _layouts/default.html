@@ -179,16 +179,15 @@
 
 <!-- Menu Toggle Script -->
 <script>
-  // Configuração inicial - Mobile Portrait
+  // Ao carregar a página, se for mobile retrato, mostre a main-content
   window.addEventListener("DOMContentLoaded", () => {
     const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
-    
+  
     if (isMobilePortrait) {
-      document.body.classList.remove('mobile-menu-active');
-      document.body.classList.add('show-main'); // garante main escondido
+      document.body.classList.add('show-main');
     }
-
-    // Observador para evitar flickering
+  
+    // Observador para evitar flickering (opcional)
     const observer = new MutationObserver(() => {
       if (document.body.classList.contains('mobile-menu-active')) {
         document.querySelector('.main-content').style.opacity = '0';
@@ -198,7 +197,7 @@
         document.querySelector('.main-content').style.visibility = '';
       }
     });
-
+  
     observer.observe(document.body, {
       attributes: true,
       attributeFilter: ['class']
@@ -218,19 +217,17 @@
   document.querySelectorAll('.sidebar .nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
       const isMobilePortrait = window.innerWidth <= 768 && window.matchMedia("(orientation: portrait)").matches;
-
+  
       if (!isMobilePortrait || this.target === '_blank') return;
-
-      if (this.origin === window.location.origin) {
-        e.preventDefault();
-
-        document.body.classList.remove('show-main');
-        document.body.classList.add('no-transition');
-
-        setTimeout(() => {
-          window.location.href = this.href;
-        }, 20);
-      }
+  
+      // Deixa o conteúdo atual escondido
+      document.body.classList.remove('show-main');
+      document.body.classList.add('no-transition');
+  
+      // Navega após um pequeno atraso
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 20);
     });
   });
 </script>
