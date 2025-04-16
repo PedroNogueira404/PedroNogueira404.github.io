@@ -483,3 +483,18 @@ body:not(.mobile-menu-active) .main-content {
     min-height: 100dvh;
   }
 }
+body.light-mode .sidebar {
+  background-color: #f4f4f4;
+  color: #111;
+}
+
+body.light-mode .sidebar .nav-link,
+body.light-mode .sidebar .social-link,
+body.light-mode .sidebar .lang-link {
+  color: #111;
+}
+
+body.light-mode .sidebar .social-link img,
+body.light-mode .sidebar .lang-flag {
+  filter: none;
+}
