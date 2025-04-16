@@ -188,7 +188,7 @@
 <!-- Menu Toggle Script -->
 <script>
   document.getElementById('menuToggle').addEventListener('click', function () {
-    document.body.classList.toggle('mobile-menu-active');
+    document.body.classList.toggle('sidebar-only');//troquei, antes era mobile-menu-active
   });
 
   document.querySelectorAll('.sidebar .nav-link').forEach(link => {
