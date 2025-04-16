@@ -203,7 +203,7 @@ body.light-mode .card a:hover {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   flex-wrap: wrap;
 }
 
@@ -245,9 +245,9 @@ body.light-mode .card a:hover {
 .menu-toggle {
   display: none;
   position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 2rem;
+  top: 10px;
+  left: 10px;
+  font-size: 1.5rem;
   background: none;
   color: white;
   border: none;
