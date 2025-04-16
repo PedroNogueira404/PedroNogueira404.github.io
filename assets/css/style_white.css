@@ -484,8 +484,9 @@ body:not(.mobile-menu-active) .main-content {
   }
 }
 body.light-mode .sidebar {
-  background-color: #f4f4f4;
-  color: #111;
+  background: #f4f4f4 url('/assets/black and white loop GIF by Doze Studio.gif') no-repeat center center;
+  background-size: cover;
+  color: #222;
 }
 
 body.light-mode .sidebar .nav-link,
