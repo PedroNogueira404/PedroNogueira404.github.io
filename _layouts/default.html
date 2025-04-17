@@ -12,35 +12,22 @@
     body {
       transition: background-color 0.3s ease;
     }
-    body.light-mode {
-      background-color: #ffffff;
-    }
-    body:not(.light-mode) {
-      background-color: #000000;
-    }
-    body.no-transition * {
-      transition: none !important;
-    }
-  html, body {
-    background-color: var(--main-bg, #fff);
-    transition: none !important;
-  }
   body.preload * {
     transition: none !important;
   }
   @media (max-width: 768px) and (orientation: portrait) {
     body.sidebar-only .sidebar {
-      display: block;
+      display: flex;
     }
     body.sidebar-only .main-content {
       display: none;
     }
   }
 
-  /* Garante que o sidebar não esteja escondido */
+  /* Garante que o sidebar não esteja escondido
   .sidebar {
-    display: block;
-  }
+     display: block;
+  }*/
   </style>
 
 </head>
@@ -155,7 +142,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     setTheme(prefersLight);
   }
+  let isLight;
 
+if (savedTheme) {
+  isLight = savedTheme === 'light';
+} else {
+  isLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+}
+
+setTheme(isLight); // aplica o tema
+toggleMain.checked = isLight;
+toggleSidebar.checked = isLight;
   
   toggleMain.checked = isLight;
   toggleSidebar.checked = isLight;
