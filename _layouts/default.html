@@ -149,13 +149,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Verifica o tema salvo (se houver) no localStorage e aplica
   const savedTheme = localStorage.getItem('theme');
-  const isLight = savedTheme === 'light';
-  
-  if (isLight) {
-    body.classList.add('light-mode');
+  if (savedTheme) {
+    setTheme(savedTheme === 'light');
   } else {
-    body.classList.remove('light-mode');
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    setTheme(prefersLight);
   }
+
   
   toggleMain.checked = isLight;
   toggleSidebar.checked = isLight;
@@ -190,14 +190,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const isSidebarOnly = body.classList.contains("sidebar-only");
   
     // Garante estado limpo antes de aplicar a nova classe
-    body.classList.remove("sidebar-only", "show-main");
+    //body.classList.remove("sidebar-only", "show-main");
   
-    if (isSidebarOnly) {
+    if (body.classList.contains("sidebar-only")) {
+      body.classList.remove("sidebar-only");
       body.classList.add("show-main");
     } else {
+      body.classList.remove("show-main");
       body.classList.add("sidebar-only");
     }
   });
+
 
 
   // Função para definir se está no formato portrait no mobile
