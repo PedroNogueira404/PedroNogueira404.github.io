@@ -359,6 +359,17 @@ body.mobile-menu-active .main-content {
     color: inherit;
     cursor: pointer;
   }
+  /* Garante que main-content pode aparecer quando show-main for ativado */
+body.content-ready.show-main .main-content {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body.sidebar-only .main-content {
+  display: none;
+  opacity: 0;
+}
   body.sidebar-only .sidebar {
     display: block;
   }
