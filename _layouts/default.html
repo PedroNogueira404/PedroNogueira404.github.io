@@ -210,43 +210,90 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelectorAll('.sidebar .nav-link');
-    const body = document.body;
+  // Alternando o sidebar com o hambúrguer
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    let sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open"); // Abre o sidebar
+    sidebar.classList.toggle("close"); // Fecha o sidebar  
+  });
 
-    const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+document.addEventListener("DOMContentLoaded", () => {
+  // Código para garantir que o tema só mude ao clicar no botão de alternância
+  const toggleMain = document.getElementById('theme-toggle');
+  const toggleSidebar = document.getElementById('theme-toggle-sidebar');
+  const body = document.body;
 
-    // Inicializa a visibilidade corretamente no portrait
-    if (isPortraitMobile()) {
-      body.classList.add("sidebar-only");
-      body.classList.remove("show-main");
+  // Verifica o tema salvo (se houver) no localStorage e aplica
+  const isLight = localStorage.getItem('theme') === 'light';
+  if (isLight) {
+    body.classList.add('light-mode');
+    toggleMain.checked = true;
+    toggleSidebar.checked = true;
+  }
+
+  // Função para alterar o tema
+  function setTheme(isLight) {
+    body.classList.toggle('light-mode', isLight);
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    toggleMain.checked = isLight;
+    toggleSidebar.checked = isLight;
+
+    const giscusFrame = document.querySelector('iframe.giscus-frame');
+    if (giscusFrame) {
+      giscusFrame.contentWindow.postMessage({
+        giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
+      }, 'https://giscus.app');
     }
+  }
 
-    menuToggle.addEventListener("click", () => {
-      body.classList.toggle("sidebar-only");
-      body.classList.toggle("show-main");
-    });
+  // Adiciona evento de clique para alternar o tema
+  toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
+  toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 
-    navLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
-        if (!isPortraitMobile()) return;
+  // Alterna o sidebar com o menu hambúrguer
+  document.getElementById("menu-toggle").addEventListener("click", function() {
+    let sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open");
+    sidebar.classList.toggle("close");
+  });
 
-        e.preventDefault();
-        const href = link.href;
+  // Tratamento para o clique no menu
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.querySelectorAll('.sidebar .nav-link');
+  
+  // Função para definir se está no formato portrait
+  const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches();
 
-        // Alterna visibilidade corretamente
-        body.classList.remove("sidebar-only");
-        body.classList.add("show-main");
+  if (isPortraitMobile()) {
+    body.classList.add("sidebar-only");
+    body.classList.remove("show-main");
+  }
 
-        // Redireciona para o link após a transição
-        setTimeout(() => {
-          window.location.href = href;
-        }, 100);
-      });
+  menuToggle.addEventListener("click", () => {
+    body.classList.toggle("sidebar-only");
+    body.classList.toggle("show-main");
+  });
+
+  // Para cada link do menu, vamos ocultar o sidebar e mostrar o conteúdo principal
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (!isPortraitMobile()) return;
+
+      e.preventDefault(); // Impede o comportamento padrão do link
+      const href = link.href;
+
+      body.classList.remove("sidebar-only");
+      body.classList.add("show-main");
+
+      // Lógica para transição suave sem flickering
+      setTimeout(() => {
+        window.location.href = href; // Navega para a página do link
+      }, 300); // Tempo para transição
     });
   });
+});
 </script>
+  
 
 </body>
 </html>
