@@ -293,6 +293,36 @@ document.addEventListener("DOMContentLoaded", () => {
   body.classList.remove('preload');
 });
 </script>
+<script>
+  const isMobilePortrait = window.matchMedia("(max-width: 768px)").matches;
+
+  if (isMobilePortrait) {
+    const body = document.body;
+    const hasEntered = sessionStorage.getItem("entered") === "true";
+
+    if (hasEntered) {
+      body.classList.add("entered");
+    }
+
+    // Quando clica em link dentro da sidebar
+    const sidebarLinks = document.querySelectorAll("#sidebar a");
+    sidebarLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        sessionStorage.setItem("entered", "true");
+      });
+    });
+
+    // Quando clica no menu hambúrguer
+    const toggle = document.getElementById("menu-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("entered");
+        const nowEntered = body.classList.contains("entered");
+        sessionStorage.setItem("entered", nowEntered ? "true" : "false");
+      });
+    }
+  }
+</script>
 
   
 
