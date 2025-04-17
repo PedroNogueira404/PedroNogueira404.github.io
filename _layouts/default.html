@@ -148,12 +148,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const giscusFrame = document.querySelector('iframe.giscus-frame');
 
   // Verifica o tema salvo (se houver) no localStorage e aplica
-  const isLight = localStorage.getItem('theme') === 'light';
+  const savedTheme = localStorage.getItem('theme');
+  const isLight = savedTheme === 'light';
+  
   if (isLight) {
     body.classList.add('light-mode');
-    toggleMain.checked = true;
-    toggleSidebar.checked = true;
+  } else {
+    body.classList.remove('light-mode');
   }
+  
+  toggleMain.checked = isLight;
+  toggleSidebar.checked = isLight;
+
 
   // Função para alterar o tema
   function setTheme(isLight) {
@@ -162,11 +168,17 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleMain.checked = isLight;
     toggleSidebar.checked = isLight;
 
-    if (giscusFrame) {
-      giscusFrame.contentWindow.postMessage({
-        giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
-      }, 'https://giscus.app');
+    try {
+      const giscusFrame = document.querySelector('iframe.giscus-frame');
+      if (giscusFrame && giscusFrame.contentWindow) {
+        giscusFrame.contentWindow.postMessage({
+          giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
+        }, 'https://giscus.app');
+      }
+    } catch (e) {
+      console.warn("Giscus theme update failed:", e);
     }
+
   }
 
   // Adiciona evento de clique para alternar o tema
@@ -207,25 +219,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adiciona evento para transição suave ao clicar nos links do sidebar
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
-      if (!isPortraitMobile()) return;
-
-      e.preventDefault();
-      const href = link.href;
-
-      // Inicia a transição do conteúdo principal
-      body.classList.remove("sidebar-only");
-      body.classList.add("show-main");
-
-      // Dá tempo para a transição acontecer
-      setTimeout(() => {
-        window.location.href = href;
-      }, 300); // 300ms é um bom tempo para uma transição suave
+      if (isPortraitMobile()) {
+        body.classList.remove("sidebar-only");
+        body.classList.add("show-main");
+      }
     });
-
-
+  }); // <- fecha o forEach
+});   // <- fecha o DOMContentLoaded
 
 </script>
-  
 
 </body>
 </html>
