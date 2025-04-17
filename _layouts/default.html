@@ -81,8 +81,8 @@
   </style>
 
 </head>
-<body class="no-transition">
 <body class="preload no-transition">
+
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
     Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
@@ -205,9 +205,7 @@
 
 <script>
 console.log("JS carregado"); 
-menuToggle.addEventListener("click", () => {
-  console.log("Clique no menu toggle");
-});
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Código para garantir que o tema só mude ao clicar no botão de alternância
@@ -215,6 +213,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleSidebar = document.getElementById('theme-toggle-sidebar');
   const body = document.body;
   const menuToggle = document.getElementById('menu-toggle');
+  menuToggle.addEventListener("click", () => {
+  console.log("Clique no menu toggle");
+});
   const navLinks = document.querySelectorAll('.sidebar .nav-link');
   // Verifica o tema salvo (se houver) no localStorage e aplica
   const isLight = localStorage.getItem('theme') === 'light';
