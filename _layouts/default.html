@@ -40,7 +40,16 @@
   </style>
 
 </head>
+<script>
+  (function() {
+    const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+    if (isPortraitMobile && !localStorage.getItem("entered")) {
+      document.documentElement.className += " sidebar-only";
+    }
+  })();
+</script>
 <body class="preload no-transition">
+
 
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
