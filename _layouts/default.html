@@ -72,21 +72,7 @@
       transition: none !important;
     }
   </style>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
-      if (isPortraitMobile) {
-        document.body.classList.add("sidebar-only");
-        document.body.classList.remove("show-main"); // Garante que começamos com sidebar
-      }
-    });
 
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.body.classList.remove("no-transition");
-      }, 100);
-    });
-  </script>
 </head>
 <body class="no-transition">
 <noscript>
@@ -252,7 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Alterna o sidebar com o menu hambúrguer
   document.getElementById("menu-toggle").addEventListener("click", function() {
-    let sidebar = document.getElementById("sidebar");
+    let sidebar = document.querySelector(".sidebar");
     sidebar.classList.toggle("open");
     sidebar.classList.toggle("close");
   });
