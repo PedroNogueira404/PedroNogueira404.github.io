@@ -9,59 +9,6 @@
   <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    @media (max-width: 768px) and (orientation: portrait) {
-      .main-content {
-        display: none;
-      }
-
-      body.show-main .main-content {
-        display: block;
-      }
-
-      body.sidebar-only .sidebar {
-        display: block;
-      }
-
-      .sidebar {
-        width: 100vw;
-        height: 100vh;
-        overflow-y: auto;
-        z-index: 1000;
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
-
-      .main-content {
-        width: 100vw;
-        height: 100vh;
-        overflow-y: auto;
-        position: fixed;
-        top: 0;
-        left: 0;
-      }
-
-      body.show-main .sidebar {
-        display: none;
-      }
-
-      .menu-toggle {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        z-index: 1100;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: inherit;
-        cursor: pointer;
-      }
-
-      body:not(.show-main):not(.sidebar-only) .sidebar {
-        display: block;
-      }
-    }
-
     body {
       transition: background-color 0.3s ease;
     }
