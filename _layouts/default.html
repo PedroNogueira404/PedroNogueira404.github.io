@@ -71,10 +71,18 @@
     body.no-transition * {
       transition: none !important;
     }
+  html, body {
+    background-color: var(--main-bg, #fff);
+    transition: none !important;
+  }
+  body.preload * {
+    transition: none !important;
+  }
   </style>
 
 </head>
 <body class="no-transition">
+<body class="preload no-transition">
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
     Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
@@ -206,7 +214,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleMain = document.getElementById('theme-toggle');
   const toggleSidebar = document.getElementById('theme-toggle-sidebar');
   const body = document.body;
-
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelectorAll('.sidebar .nav-link');
   // Verifica o tema salvo (se houver) no localStorage e aplica
   const isLight = localStorage.getItem('theme') === 'light';
   if (isLight) {
@@ -234,19 +243,8 @@ document.addEventListener("DOMContentLoaded", () => {
   toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 
-  // Alterna o sidebar com o menu hambúrguer
-  document.getElementById("menu-toggle").addEventListener("click", function() {
-    let sidebar = document.querySelector(".sidebar");
-    sidebar.classList.toggle("open");
-    sidebar.classList.toggle("close");
-  });
-
-  // Tratamento para o clique no menu
-  const menuToggle = document.getElementById('menu-toggle');
-  const navLinks = document.querySelectorAll('.sidebar .nav-link');
-  
-  // Função para definir se está no formato portrait
-  const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches();
+  const isPortraitMobile = () =>
+    window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
 
   if (isPortraitMobile()) {
     body.classList.add("sidebar-only");
@@ -258,24 +256,26 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.toggle("show-main");
   });
 
-  // Para cada link do menu, vamos ocultar o sidebar e mostrar o conteúdo principal
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       if (!isPortraitMobile()) return;
 
-      e.preventDefault(); // Impede o comportamento padrão do link
+      e.preventDefault();
       const href = link.href;
 
+      // Oculta sidebar e mostra conteúdo
       body.classList.remove("sidebar-only");
       body.classList.add("show-main");
 
-      // Lógica para transição suave sem flickering
+      // Aguarda transição e navega
       setTimeout(() => {
-        window.location.href = href; // Navega para a página do link
-      }, 300); // Tempo para transição
+        window.location.href = href;
+      }, 300); // pode ajustar o tempo se quiser
     });
   });
 });
+
+
 </script>
   
 
