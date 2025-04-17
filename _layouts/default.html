@@ -183,20 +183,28 @@ toggleSidebar.checked = isLight;
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 
   // Alterna a visibilidade do sidebar com o menu hambúrguer
+let manuallyForcedToMain = false;
+
 menuToggle.addEventListener("click", () => {
-  if (body.classList.contains("sidebar-only")) {
-    // Sai do modo só sidebar e mostra main
+  if (body.classList.contains("sidebar-only") || manuallyForcedToMain) {
     body.classList.remove("sidebar-only");
     body.classList.add("show-main");
-  } else if (body.classList.contains("show-main")) {
-    // Volta para só sidebar
-    body.classList.remove("show-main");
-    body.classList.add("sidebar-only");
+    manuallyForcedToMain = false; // reset após mostrar o main
   } else {
-    // Caso inicial ou nenhum dos dois, vai para só sidebar
+    body.classList.remove("show-main");
     body.classList.add("sidebar-only");
   }
 });
+
+// Força exibir main ao clicar em um link
+document.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    body.classList.remove("sidebar-only");
+    body.classList.add("show-main");
+    manuallyForcedToMain = true; // impede toggle reverso imediato
+  });
+});
+
 
 
 
