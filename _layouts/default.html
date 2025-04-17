@@ -135,47 +135,7 @@
     </footer>
   </div>
 </div>
-<!--
-<script>
-  const toggleMain = document.getElementById('theme-toggle');
-  const toggleSidebar = document.getElementById('theme-toggle-sidebar');
-  const body = document.body;
 
-  const isLight = localStorage.getItem('theme') === 'light';
-  if (isLight) {
-    body.classList.add('light-mode');
-    toggleMain.checked = true;
-    toggleSidebar.checked = true;
-  } else {
-    body.classList.remove('light-mode');
-  }
-
-  function setTheme(isLight) {
-    body.classList.toggle('light-mode', isLight);
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    toggleMain.checked = isLight;
-    toggleSidebar.checked = isLight;
-    toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
-    toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
-
-    const giscusFrame = document.querySelector('iframe.giscus-frame');
-    try {
-      if (giscusFrame) {
-        giscusFrame.contentWindow.postMessage({
-          giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
-        }, 'https://giscus.app');
-      }
-    } catch(e) {
-    console.warn('Giscus frame não disponível ainda.', e);
-  }
-
-
-  toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
-  toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
-</script>
-
-<script>
--->
 console.log("JS carregado"); 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -215,9 +175,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Alterna a visibilidade do sidebar com o menu hambúrguer
   menuToggle.addEventListener("click", () => {
-    body.classList.toggle("sidebar-only");
-    body.classList.toggle("show-main");
+    const isSidebarOnly = body.classList.contains("sidebar-only");
+    if (isSidebarOnly) {
+      body.classList.remove("sidebar-only");
+      body.classList.add("show-main");
+    } else {
+      body.classList.add("sidebar-only");
+      body.classList.remove("show-main");
+    }
   });
+
 
   // Função para definir se está no formato portrait no mobile
   const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches();
@@ -248,9 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.add("show-main");
 
       // Aguardar o tempo da transição antes de mudar a página
-      setTimeout(() => {
+
         window.location.href = href;
-      }, 300); // Tempo de transição (ajustável)
+
     });
   });
 });
