@@ -19,9 +19,16 @@
    .sidebar {
     display: none;
   }
-  .main-content {
-    display: none;
-  }
+   .main-content {
+     display: none;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: inherit;
+     z-index: 10;
+   }
     body.sidebar-only .sidebar {
       display: flex;
     }
@@ -30,6 +37,8 @@
     }
     body.show-main .main-content {
       display: block;
+      position: relative;
+      z-index: auto;
     }
   }
 
@@ -45,7 +54,7 @@
     const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
     if (isPortraitMobile && !localStorage.getItem("entered")) {
       document.body.classList.add("sidebar-only");
-      //document.documentElement.className += " sidebar-only";
+      //document.documentElement.className = " sidebar-only";
     }
   })();
 </script>
@@ -195,9 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   // MENU TOGGLE
   // ================================
-  let manuallyForcedToMain = false;
+  //let manuallyForcedToMain = false;
 
-  menuToggle.addEventListener("click", () => {
+  /*menuToggle.addEventListener("click", () => {
     if (body.classList.contains("sidebar-only") || manuallyForcedToMain) {
       body.classList.remove("sidebar-only");
       body.classList.add("show-main");
@@ -206,6 +215,12 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove("show-main");
       body.classList.add("sidebar-only");
     }
+  });*/
+  menuToggle.addEventListener("click", () => {
+    const showingMain = body.classList.contains("show-main");
+    body.classList.remove("sidebar-only", "show-main");
+    void body.offsetWidth; // força reflow para evitar flicker
+    body.classList.add(showingMain ? "sidebar-only" : "show-main");
   });
 
   // ================================
@@ -244,13 +259,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // TRANSITION ON NAV-LINK CLICK
   // ================================
   navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      body.classList.remove("sidebar-only", "show-main");
+      void body.offsetWidth; // força reflow
+      body.classList.add("show-main");
+    });
+  });
+  /*
+  navLinks.forEach(link => {
    link.addEventListener("click", () => {
     body.classList.remove("sidebar-only","show-main");
     body.classList.add("show-main");
     manuallyForcedToMain = false;
   });
   });
-
+  */
   /*
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
