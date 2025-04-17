@@ -340,12 +340,14 @@ body.mobile-menu-active .main-content {
   }
 
   body.show-main .main-content {
+    display: block;
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
   }
 
   body.show-main .sidebar {
+    display: none;
     opacity: 0;
     visibility: hidden;
     transform: translateX(-100%);
