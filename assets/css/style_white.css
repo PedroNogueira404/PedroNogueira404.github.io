@@ -373,6 +373,15 @@ body.sidebar-only .main-content {
   body.sidebar-only .sidebar {
     display: block;
   }
+  body.sidebar-only.show-main .main-content {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(0);
+}
+  body.sidebar-only.show-main .sidebar {
+  display: none !important;
+}
 
   body.sidebar-only .main-content {
     display: none;
