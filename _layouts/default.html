@@ -185,6 +185,8 @@
     body.classList.add('light-mode');
     toggleMain.checked = true;
     toggleSidebar.checked = true;
+  } else {
+    body.classList.remove('light-mode');
   }
 
   function setTheme(isLight) {
@@ -192,6 +194,8 @@
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     toggleMain.checked = isLight;
     toggleSidebar.checked = isLight;
+    toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
+    toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 
     const giscusFrame = document.querySelector('iframe.giscus-frame');
     if (giscusFrame) {
