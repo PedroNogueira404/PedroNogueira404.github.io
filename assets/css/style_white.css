@@ -367,8 +367,8 @@ body.mobile-menu-active .main-content {
     transform: translateX(100%);
     pointer-events: none; 
     transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
-  } */
-  
+  } 
+  DESCOMENTE AQUI SE OS NOVOS CSS NAO FUNCIONAREM DE >SIDEBAR >MAIN_CONTENT
   body.show-main .main-content {
     opacity: 1;
     visibility: visible;
@@ -386,6 +386,23 @@ body.mobile-menu-active .main-content {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+  }*/
+    .sidebar,
+  .main-content {
+    display: none;
+  }
+
+  body.sidebar-only .sidebar {
+    display: flex;
+  }
+
+  body.show-main .main-content {
+    display: block;
+  }
+
+  /* Corrige: esconde sidebar quando está no modo show-main */
+  body.show-main .sidebar {
+    display: none;
   }
 
   .menu-toggle {
