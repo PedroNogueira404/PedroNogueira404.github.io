@@ -154,8 +154,7 @@ setTheme(isLight); // aplica o tema
 toggleMain.checked = isLight;
 toggleSidebar.checked = isLight;
   
-  toggleMain.checked = isLight;
-  toggleSidebar.checked = isLight;
+
 
 
   // Função para alterar o tema
@@ -166,7 +165,6 @@ toggleSidebar.checked = isLight;
     toggleSidebar.checked = isLight;
 
     try {
-      const giscusFrame = document.querySelector('iframe.giscus-frame');
       if (giscusFrame && giscusFrame.contentWindow) {
         giscusFrame.contentWindow.postMessage({
           giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
@@ -198,12 +196,22 @@ menuToggle.addEventListener("click", () => {
 
 // Força exibir main ao clicar em um link
 document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    body.classList.remove("sidebar-only");
-    body.classList.add("show-main");
-    manuallyForcedToMain = true; // impede toggle reverso imediato
+  link.addEventListener("click", (e) => {
+    const isInSidebar = link.closest('.sidebar');
+    if (isPortraitMobile() && !body.classList.contains("show-main")) 
+      body.classList.remove("sidebar-only");
+      body.classList.add("show-main");
+
+      // Só bloqueia o toggle reverso se o clique foi num link fora do menu toggle
+      if (!isInSidebar) {
+        manuallyForcedToMain = true;
+      } else {
+        manuallyForcedToMain = false;
+      }
+    }
   });
 });
+
 
 
 
@@ -213,9 +221,8 @@ document.querySelectorAll("a").forEach(link => {
   const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches();
 
   // Se estiver em modo portrait no mobile, exibe apenas o sidebar
-  if (isPortraitMobile()) {
+  if (isPortraitMobile() && !body.classList.contains("show-main")) { { 
     body.classList.add("sidebar-only");
-    document.body.classList.add("sidebar-only");
     body.classList.remove("show-main");
 
     // Permitir transição automática ao clicar em nav-link
@@ -228,7 +235,7 @@ document.querySelectorAll("a").forEach(link => {
   // Adiciona evento para transição suave ao clicar nos links do sidebar
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
-      if (isPortraitMobile()) {
+      if (isPortraitMobile() && !body.classList.contains("show-main")) {
         body.classList.remove("sidebar-only", "show-main");
         void body.offsetWidth; // força reflow para aplicar a nova classe sem flicker
         body.classList.add("show-main");
