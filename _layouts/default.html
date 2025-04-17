@@ -254,7 +254,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (isPortraitMobile()) {
     body.classList.add("sidebar-only");
     body.classList.remove("show-main");
+
+    // Permitir transição automática ao clicar em nav-link
+    setTimeout(() => {
+      body.classList.add("content-ready");
+    }, 100); // Delay para evitar flickering
   }
+
 
   // Adiciona evento para transição suave ao clicar nos links do sidebar
   navLinks.forEach(link => {
