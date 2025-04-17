@@ -81,10 +81,10 @@
   </p>
 </noscript>
 
-<button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">&#9776;</button>
+<button id="menu-toggle" class="menu-toggle" aria-label="Open or close navigation menu">&#9776;</button>
 
 <div class="layout-container">
-  <div class="sidebar">
+  <div class="sidebar"> id="sidebar">
     <!-- perfil, nav, redes, idioma e tema -->
     <div class="sidebar-header">
       <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
@@ -196,12 +196,6 @@
 </script>
 
 <script>
-  // Alternando o sidebar com o hambúrguer
-  document.getElementById("menu-toggle").addEventListener("click", function() {
-    let sidebar = document.getElementById("sidebar");
-    sidebar.classList.toggle("open"); // Abre o sidebar
-    sidebar.classList.toggle("close"); // Fecha o sidebar  
-  });
 
 document.addEventListener("DOMContentLoaded", () => {
   // Código para garantir que o tema só mude ao clicar no botão de alternância
