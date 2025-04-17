@@ -210,17 +210,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   // LINK CLICK HANDLING
   // ================================
-  document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      if (!isPortraitMobile()) return;
+ // document.querySelectorAll("a").forEach(link => {
+   // link.addEventListener("click", () => {
+     // if (!isPortraitMobile()) return;
 
-      const isInSidebar = link.closest('.sidebar');
-      body.classList.remove("sidebar-only");
-      body.classList.add("show-main");
+     // const isInSidebar = link.closest('.sidebar');
+      //body.classList.remove("sidebar-only");
+     // body.classList.add("show-main");
 
-      manuallyForcedToMain = !isInSidebar;
-    });
-  });
+    //  manuallyForcedToMain = !isInSidebar;
+   // });
+  //});
 
   // ================================
   // SIDEBAR TRANSITION INIT
