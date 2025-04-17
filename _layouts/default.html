@@ -27,7 +27,6 @@
         height: 100vh;
         overflow-y: auto;
         z-index: 1000;
-        background-color: var(--sidebar-bg, #fff);
         position: fixed;
         top: 0;
         left: 0;
@@ -40,7 +39,6 @@
         position: fixed;
         top: 0;
         left: 0;
-        background-color: var(--main-bg, #fff);
       }
 
       body.show-main .sidebar {
@@ -79,9 +77,13 @@
     transition: none !important;
   }
   </style>
-
+<script>
+  if (window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches) {
+    document.documentElement.classList.add("sidebar-only");
+  }
+</script>
 </head>
-<body class="preload no-transition">
+<body class="preload no-transition sidebar-only">
 
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
