@@ -317,7 +317,48 @@ body.mobile-menu-active .main-content {
   body.show-main .sidebar {
     display: none;
   }
+  body:not(.show-main) .sidebar {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--sidebar-bg, #fff);
+    z-index: 1000;
+  }
 
+  body:not(.show-main) .main-content {
+    display: none !important;
+  }
+
+  body.show-main .sidebar {
+    display: none !important;
+  }
+
+  body.show-main .main-content {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--main-bg, #fff);
+  }
+
+  .menu-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1101;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: inherit;
+    cursor: pointer;
+  }
   body.sidebar-only .sidebar {
     display: block;
   }
