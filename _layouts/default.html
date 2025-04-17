@@ -58,18 +58,36 @@
         color: inherit;
         cursor: pointer;
       }
+
+      body:not(.show-main):not(.sidebar-only) .sidebar {
+        display: block;
+      }
+    }
+
+    body {
+      transition: background-color 0.3s ease;
+    }
+
+    body.no-transition * {
+      transition: none !important;
     }
   </style>
   <script>
-    document.body.classList.add('no-transition');
-    window.addEventListener('load', () => {
+    document.addEventListener("DOMContentLoaded", () => {
+      const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+      if (isPortraitMobile) {
+        document.body.classList.add("sidebar-only");
+      }
+    });
+
+    window.addEventListener("load", () => {
       setTimeout(() => {
-        document.body.classList.remove('no-transition');
+        document.body.classList.remove("no-transition");
       }, 100);
     });
   </script>
 </head>
-<body>
+<body class="no-transition">
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
     Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
@@ -80,6 +98,7 @@
 
 <div class="layout-container">
   <div class="sidebar">
+    <!-- perfil, nav, redes, idioma e tema -->
     <div class="sidebar-header">
       <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
       <h1 class="profile-name">Pedro H. Nogueira</h1>
@@ -196,20 +215,11 @@
 
     const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
 
-    if (isPortraitMobile()) {
-      document.body.classList.add("sidebar-only");
-    }
-
     menuToggle.addEventListener("click", () => {
       if (!isPortraitMobile()) return;
 
-      if (body.classList.contains("sidebar-only")) {
-        body.classList.remove("sidebar-only");
-        body.classList.add("show-main");
-      } else {
-        body.classList.remove("show-main");
-        body.classList.add("sidebar-only");
-      }
+      body.classList.toggle("sidebar-only");
+      body.classList.toggle("show-main");
     });
 
     navLinks.forEach(link => {
@@ -229,6 +239,5 @@
     });
   });
 </script>
-
 </body>
 </html>
