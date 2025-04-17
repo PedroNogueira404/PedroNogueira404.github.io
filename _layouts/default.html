@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang }}">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Cores do tema para mobile -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-
   <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
   <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-  @media (max-width: 768px) and (orientation: portrait) {
-    .main-content {
-      display: none;
+    @media (max-width: 768px) and (orientation: portrait) {
+      .main-content {
+        display: none;
+      }
+
+      body.show-main .main-content {
+        display: block;
+      }
+
+      body.sidebar-only .sidebar {
+        display: block;
+      }
+
+      .sidebar {
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 1000;
+        background-color: var(--sidebar-bg, #fff);
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .main-content {
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--main-bg, #fff);
+      }
+
+      body.show-main .sidebar {
+        display: none;
+      }
+
+      .menu-toggle {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1100;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: inherit;
+        cursor: pointer;
+      }
     }
-  
-    body.show-main .main-content {
-      display: block;
-    }
-  
-    body.sidebar-only .sidebar {
-      display: block;
-    }
-  
-    .sidebar {
-      width: 100vw;
-      height: 100vh;
-      overflow-y: auto;
-      z-index: 1000;
-      background-color: var(--sidebar-bg, #fff);
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
-  
-    .main-content {
-      width: 100vw;
-      height: 100vh;
-      overflow-y: auto;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: var(--main-bg, #fff);
-    }
-  
-    body.show-main .sidebar {
-      display: none;
-    }
-  
-    .menu-toggle {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      z-index: 1100;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      color: inherit;
-      cursor: pointer;
-    }
-  }
   </style>
   <script>
-    // Impede transições indesejadas na primeira renderização
     document.body.classList.add('no-transition');
     window.addEventListener('load', () => {
       setTimeout(() => {
@@ -73,152 +70,121 @@
   </script>
 </head>
 <body>
-    <noscript>
-      <p style="text-align: center; background: #ffdddd; padding: 1rem;">
-        Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
-      </p>
-  </noscript>
-  <button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">
-  &#9776;
-</button>
-  <div class="layout-container">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <div class="sidebar-header">
-        <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
-        <h1 class="profile-name">Pedro H. Nogueira</h1>
-        <p class="profile-title">Astrophysicist</p>
-      </div>
-      <!-- Navigation -->
-      <nav class="main-nav">
-        <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
-        <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
-        <a href="{{ '/outreach/' | relative_url }}" class="nav-link">Outreach</a>
-        <a href="{{ '/personal/' | relative_url }}" class="nav-link">Personal</a>
-        <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
-        <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
-      </nav>
+<noscript>
+  <p style="text-align: center; background: #ffdddd; padding: 1rem;">
+    Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
+  </p>
+</noscript>
 
-      <!-- Social Links with aria-labels -->
-      <div class="social-links">
-        <a href="mailto:nogueirapedro404@gmail.com" class="social-link" aria-label="Send email to Pedro Nogueira">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's GitHub profile">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's LinkedIn profile">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link" aria-label="Visit Pedro Nogueira's YouTube channel">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://bsky.app/profile/nogueira-astro.bsky.social" class="social-link" target="_blank" aria-label="Visit Pedro Nogueira's Bluesky profile">
-          <img src="/assets/bluesky-logo.svg" alt="Bluesky" class="social-icon bluesky-icon" />
-        </a>
-        <a href="https://twitter.com/nogueira_astro" class="social-link" target="_blank" aria-label="Visit Pedro Nogueira's X (Twitter) profile">
-          <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon" />
-        </a>
-      </div>
+<button id="menuToggle" class="menu-toggle" aria-label="Open or close navigation menu">&#9776;</button>
 
-      <!-- Language Switcher with aria-labels -->
-      <div class="language-switcher">
-        <a href="?lang=pt" class="lang-link" aria-label="Switch language to Portuguese">
-          <img src="/assets/br.svg" alt="Portuguese" class="lang-flag" /> Português
-        </a>
-        <a href="?lang=en" class="lang-link" aria-label="Switch language to English">
-          <img src="/assets/uk.svg" alt="English" class="lang-flag" /> English
-        </a>
-        <a href="?lang=es" class="lang-link" aria-label="Switch language to Spanish">
-          <img src="/assets/es.svg" alt="Spanish" class="lang-flag" /> Español
-        </a>
-      </div>
-
-      <!-- Theme Toggle Button (also in sidebar) -->
-      <div class="switch-container sidebar-switch">
-        <label class="switch-label" for="theme-toggle-sidebar" aria-label="Toggle between light and dark mode">🌗</label>
-        <label class="switch">
-          <input type="checkbox" id="theme-toggle-sidebar" aria-label="Theme toggle switch in sidebar">
-          <span class="slider"></span>
-        </label>
-      </div>
-    </div><!-- END OF SIDEBAR -->
-    
-    <!-- Main Content -->
-    <div class="main-content" style="overflow-y: auto;" tabindex="-1">
-      {{ content }}
-
-      <!-- Theme Toggle Button -->
-      <div class="switch-container">
-        <label class="switch-label" for="theme-toggle" aria-label="Toggle between light and dark mode">🌗</label>
-        <label class="switch">
-          <input type="checkbox" id="theme-toggle" aria-label="Theme toggle switch">
-          <span class="slider"></span>
-        </label>
-      </div>
-
-      <!-- Comments Section -->
-      {% if page.url contains '/blog/' and page.url != '/blog/' %}
-      <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
-        <div id="giscus_container"></div>
-        <script src="https://giscus.app/client.js"
-                data-repo="PedroNogueira404/PedroNogueira404.github.io"
-                data-repo-id="R_kgDOOW9BoA"
-                data-category="General"
-                data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="preferred_color_scheme"
-                data-lang="en"
-                data-loading="lazy"
-                data-comments-enabled="true"
-                crossorigin="anonymous"
-                async>
-        </script>
-      </div>
-      {% endif %}
-
-      <!-- Footer -->
-      <footer class="site-footer">
-        &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
-      </footer>
+<div class="layout-container">
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
+      <h1 class="profile-name">Pedro H. Nogueira</h1>
+      <p class="profile-title">Astrophysicist</p>
+    </div>
+    <nav class="main-nav">
+      <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
+      <a href="{{ '/outreach/' | relative_url }}" class="nav-link">Outreach</a>
+      <a href="{{ '/personal/' | relative_url }}" class="nav-link">Personal</a>
+      <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
+      <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
+    </nav>
+    <div class="social-links">
+      <a href="mailto:nogueirapedro404@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+      <a href="https://bsky.app/profile/nogueira-astro.bsky.social" target="_blank" class="social-link">
+        <img src="/assets/bluesky-logo.svg" alt="Bluesky" class="social-icon bluesky-icon">
+      </a>
+      <a href="https://twitter.com/nogueira_astro" target="_blank" class="social-link">
+        <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon">
+      </a>
+    </div>
+    <div class="language-switcher">
+      <a href="?lang=pt" class="lang-link"><img src="/assets/br.svg" alt="Portuguese" class="lang-flag"> Português</a>
+      <a href="?lang=en" class="lang-link"><img src="/assets/uk.svg" alt="English" class="lang-flag"> English</a>
+      <a href="?lang=es" class="lang-link"><img src="/assets/es.svg" alt="Spanish" class="lang-flag"> Español</a>
+    </div>
+    <div class="switch-container sidebar-switch">
+      <label class="switch-label" for="theme-toggle-sidebar">🌗</label>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-sidebar">
+        <span class="slider"></span>
+      </label>
     </div>
   </div>
 
-<!-- Theme Switching Script -->
+  <div class="main-content" tabindex="-1">
+    {{ content }}
+
+    <div class="switch-container">
+      <label class="switch-label" for="theme-toggle">🌗</label>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    {% if page.url contains '/blog/' and page.url != '/blog/' %}
+    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
+      <div id="giscus_container"></div>
+      <script src="https://giscus.app/client.js"
+              data-repo="PedroNogueira404/PedroNogueira404.github.io"
+              data-repo-id="R_kgDOOW9BoA"
+              data-category="General"
+              data-category-id="DIC_kwDOOW9BoM4Co8kQ"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="preferred_color_scheme"
+              data-lang="en"
+              data-loading="lazy"
+              data-comments-enabled="true"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+    {% endif %}
+
+    <footer class="site-footer">
+      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+    </footer>
+  </div>
+</div>
+
 <script>
   const toggleMain = document.getElementById('theme-toggle');
   const toggleSidebar = document.getElementById('theme-toggle-sidebar');
   const body = document.body;
-  
+
   const isLight = localStorage.getItem('theme') === 'light';
   if (isLight) {
     body.classList.add('light-mode');
     toggleMain.checked = true;
     toggleSidebar.checked = true;
   }
-  
+
   function setTheme(isLight) {
     body.classList.toggle('light-mode', isLight);
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     toggleMain.checked = isLight;
     toggleSidebar.checked = isLight;
-  
+
     const giscusFrame = document.querySelector('iframe.giscus-frame');
     if (giscusFrame) {
       giscusFrame.contentWindow.postMessage({
-        giscus: {
-          setConfig: {
-            theme: isLight ? 'light' : 'dark'
-          }
-        }
+        giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
       }, 'https://giscus.app');
     }
   }
-  
+
   toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 </script>
@@ -230,28 +196,22 @@
 
     const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
 
-    // Define estado inicial no mobile portrait
     if (isPortraitMobile()) {
       document.body.classList.add("sidebar-only");
     }
 
-    // Clique no botão hamburguer
     menuToggle.addEventListener("click", () => {
       if (!isPortraitMobile()) return;
 
-      const body = document.body;
       if (body.classList.contains("sidebar-only")) {
         body.classList.remove("sidebar-only");
         body.classList.add("show-main");
-      } else if (body.classList.contains("show-main")) {
+      } else {
         body.classList.remove("show-main");
         body.classList.add("sidebar-only");
-      } else {
-        body.classList.add("show-main");
       }
     });
 
-    // Clique nos links da sidebar
     navLinks.forEach(link => {
       link.addEventListener("click", (e) => {
         if (!isPortraitMobile()) return;
@@ -262,7 +222,6 @@
         document.body.classList.remove("sidebar-only");
         document.body.classList.add("show-main");
 
-        // Aguarda transição antes de navegar
         setTimeout(() => {
           window.location.href = href;
         }, 100);
