@@ -44,7 +44,8 @@
   (function() {
     const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
     if (isPortraitMobile && !localStorage.getItem("entered")) {
-      document.documentElement.className += " sidebar-only";
+      document.body.classList.add("sidebar-only");
+      //document.documentElement.className += " sidebar-only";
     }
   })();
 </script>
@@ -228,8 +229,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (isPortraitMobile() && !body.classList.contains("show-main")) {
     const alreadyEntered = localStorage.getItem("entered");
     if (!alreadyEntered) {
+      body.classList.remove("show-main", "sidebar-only");
       body.classList.add("sidebar-only");
-      body.classList.remove("show-main");
+      
       localStorage.setItem("entered", "true");
 
       setTimeout(() => {
@@ -243,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   navLinks.forEach(link => {
    link.addEventListener("click", () => {
-    body.classList.remove("sidebar-only");
+    body.classList.remove("sidebar-only","show-main");
     body.classList.add("show-main");
     manuallyForcedToMain = false;
   });
