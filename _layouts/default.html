@@ -53,12 +53,13 @@
   (function() {
     const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
     if (isPortraitMobile && !localStorage.getItem("entered")) {
-      document.body.classList.add("sidebar-only");
-      //document.documentElement.className = " sidebar-only";
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("sidebar-only");
+      });
     }
   })();
 </script>
-<body class="sidebar-only preload no-transition">
+<body class="preload no-transition">
 
 
 <noscript>
@@ -259,13 +260,25 @@ document.addEventListener("DOMContentLoaded", () => {
   // TRANSITION ON NAV-LINK CLICK
   // ================================
   navLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    if (!isPortraitMobile()) return;
+
+    // previne flicker antes da navegação
+    localStorage.setItem("entered", "true");
+    body.classList.remove("sidebar-only");
+    body.classList.add("show-main");
+  });
+});
+
+  /*
+  navLinks.forEach(link => {
     link.addEventListener("click", () => {
       body.classList.remove("sidebar-only", "show-main");
       void body.offsetWidth; // força reflow
       body.classList.add("show-main");
     });
   });
-  /*
+  
   navLinks.forEach(link => {
    link.addEventListener("click", () => {
     body.classList.remove("sidebar-only","show-main");
