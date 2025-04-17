@@ -176,12 +176,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Alterna a visibilidade do sidebar com o menu hambúrguer
   menuToggle.addEventListener("click", () => {
     const isSidebarOnly = body.classList.contains("sidebar-only");
+  
+    // Garante estado limpo antes de aplicar a nova classe
+    body.classList.remove("sidebar-only", "show-main");
+  
     if (isSidebarOnly) {
-      body.classList.remove("sidebar-only");
       body.classList.add("show-main");
     } else {
       body.classList.add("sidebar-only");
-      body.classList.remove("show-main");
     }
   });
 
@@ -214,13 +216,11 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove("sidebar-only");
       body.classList.add("show-main");
 
-      // Aguardar o tempo da transição antes de mudar a página
-
+      // Dá tempo para a transição acontecer
+      setTimeout(() => {
         window.location.href = href;
-
+      }, 300); // 300ms é um bom tempo para uma transição suave
     });
-  });
-});
 
 
 
