@@ -242,6 +242,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // TRANSITION ON NAV-LINK CLICK
   // ================================
   navLinks.forEach(link => {
+   link.addEventListener("click", () => {
+    body.classList.remove("sidebar-only");
+    body.classList.add("show-main");
+    manuallyForcedToMain = false;
+  });
+  });
+
+  /*
+  navLinks.forEach(link => {
     link.addEventListener("click", () => {
       if (isPortraitMobile() && !body.classList.contains("show-main")) {
         body.classList.remove("sidebar-only", "show-main");
@@ -251,6 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  */
 
   // ================================
   // REMOVE PRELOAD CLASS
