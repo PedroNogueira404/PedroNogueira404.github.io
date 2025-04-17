@@ -12,7 +12,12 @@
     body {
       transition: background-color 0.3s ease;
     }
-
+    body.light-mode {
+      background-color: #ffffff;
+    }
+    body:not(.light-mode) {
+      background-color: #000000;
+    }
     body.no-transition * {
       transition: none !important;
     }
@@ -23,14 +28,23 @@
   body.preload * {
     transition: none !important;
   }
-  </style>
-<script>
-  if (window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches) {
-    document.documentElement.classList.add("sidebar-only");
+  @media (max-width: 768px) and (orientation: portrait) {
+    body.sidebar-only .sidebar {
+      display: block;
+    }
+    body.sidebar-only .main-content {
+      display: none;
+    }
   }
-</script>
+
+  /* Garante que o sidebar não esteja escondido */
+  .sidebar {
+    display: block;
+  }
+  </style>
+
 </head>
-<body class="preload no-transition sidebar-only">
+<body class="preload no-transition">
 
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
@@ -121,7 +135,7 @@
     </footer>
   </div>
 </div>
-
+<!--
 <script>
   const toggleMain = document.getElementById('theme-toggle');
   const toggleSidebar = document.getElementById('theme-toggle-sidebar');
@@ -145,18 +159,23 @@
     toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 
     const giscusFrame = document.querySelector('iframe.giscus-frame');
-    if (giscusFrame) {
-      giscusFrame.contentWindow.postMessage({
-        giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
-      }, 'https://giscus.app');
-    }
+    try {
+      if (giscusFrame) {
+        giscusFrame.contentWindow.postMessage({
+          giscus: { setConfig: { theme: isLight ? 'light' : 'dark' } }
+        }, 'https://giscus.app');
+      }
+    } catch(e) {
+    console.warn('Giscus frame não disponível ainda.', e);
   }
+
 
   toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
   toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
 </script>
 
 <script>
+-->
 console.log("JS carregado"); 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -206,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Se estiver em modo portrait no mobile, exibe apenas o sidebar
   if (isPortraitMobile()) {
     body.classList.add("sidebar-only");
+    document.body.classList.add("sidebar-only");
     body.classList.remove("show-main");
 
     // Permitir transição automática ao clicar em nav-link
