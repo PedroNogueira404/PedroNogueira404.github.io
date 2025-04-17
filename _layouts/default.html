@@ -77,6 +77,7 @@
       const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
       if (isPortraitMobile) {
         document.body.classList.add("sidebar-only");
+        document.body.classList.remove("show-main"); // Garante que começamos com sidebar
       }
     });
 
@@ -209,15 +210,20 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.querySelectorAll('.sidebar .nav-link');
+    const body = document.body;
 
     const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
 
-    menuToggle.addEventListener("click", () => {
-      if (!isPortraitMobile()) return;
+    // Inicializa a visibilidade corretamente no portrait
+    if (isPortraitMobile()) {
+      body.classList.add("sidebar-only");
+      body.classList.remove("show-main");
+    }
 
+    menuToggle.addEventListener("click", () => {
       body.classList.toggle("sidebar-only");
       body.classList.toggle("show-main");
     });
@@ -229,9 +235,11 @@
         e.preventDefault();
         const href = link.href;
 
-        document.body.classList.remove("sidebar-only");
-        document.body.classList.add("show-main");
+        // Alterna visibilidade corretamente
+        body.classList.remove("sidebar-only");
+        body.classList.add("show-main");
 
+        // Redireciona para o link após a transição
         setTimeout(() => {
           window.location.href = href;
         }, 100);
@@ -239,5 +247,6 @@
     });
   });
 </script>
+
 </body>
 </html>
