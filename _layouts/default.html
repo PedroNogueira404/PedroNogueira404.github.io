@@ -229,11 +229,14 @@ document.querySelectorAll("a").forEach(link => {
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       if (isPortraitMobile()) {
-        body.classList.remove("sidebar-only");
+        body.classList.remove("sidebar-only", "show-main");
+        void body.offsetWidth; // força reflow para aplicar a nova classe sem flicker
         body.classList.add("show-main");
+        manuallyForcedToMain = false; // reseta o estado para que o botão funcione como toggle normal
       }
     });
-  }); // <- fecha o forEach
+  });
+
 });   // <- fecha o DOMContentLoaded
 
 </script>
