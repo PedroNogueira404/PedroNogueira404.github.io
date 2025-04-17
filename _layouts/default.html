@@ -195,22 +195,19 @@ menuToggle.addEventListener("click", () => {
 });
 
 // Força exibir main ao clicar em um link
-document.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", (e) => {
-    const isInSidebar = link.closest('.sidebar');
-    if (isPortraitMobile() && !body.classList.contains("show-main")) 
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      if (!isPortraitMobile()) return;
+  
+      const isInSidebar = link.closest('.sidebar');
       body.classList.remove("sidebar-only");
       body.classList.add("show-main");
-
-      // Só bloqueia o toggle reverso se o clique foi num link fora do menu toggle
-      if (!isInSidebar) {
-        manuallyForcedToMain = true;
-      } else {
-        manuallyForcedToMain = false;
-      }
-    }
+  
+      // Se o clique foi fora do sidebar (ex: Giscus, footer), trava o botão
+      manuallyForcedToMain = !isInSidebar;
+    });
   });
-});
+
 
 
 
@@ -221,7 +218,7 @@ document.querySelectorAll("a").forEach(link => {
   const isPortraitMobile = () => window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches();
 
   // Se estiver em modo portrait no mobile, exibe apenas o sidebar
-  if (isPortraitMobile() && !body.classList.contains("show-main")) { { 
+  if (isPortraitMobile() && !body.classList.contains("show-main")) { 
     body.classList.add("sidebar-only");
     body.classList.remove("show-main");
 
