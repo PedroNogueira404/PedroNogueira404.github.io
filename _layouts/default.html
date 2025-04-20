@@ -42,10 +42,6 @@
     }
   }
 
-  /* Garante que o sidebar não esteja escondido
-  .sidebar {
-     display: block;
-  }*/
   </style>
 
 </head>
@@ -59,11 +55,13 @@
   })();
 </script>
 <body class="sidebar-only preload no-transition">
-
+  // ================================
+  // TEST
+  // ================================
 
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
-    Este site requer JavaScript para funcionar corretamente. Por favor, habilite o JavaScript no seu navegador.
+    This site requires JavaScript to function properly. Please enable JavaScript in your browser.
   </p>
 </noscript>
 
@@ -71,7 +69,7 @@
 
 <div class="layout-container">
   <div class="sidebar" id="sidebar">
-    <!-- perfil, nav, redes, idioma e tema -->
+    <!-- profile, navigation, social links, language, and theme -->
     <div class="sidebar-header">
       <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
       <h1 class="profile-name">Pedro H. Nogueira</h1>
@@ -206,16 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   //let manuallyForcedToMain = false;
 
-  /*menuToggle.addEventListener("click", () => {
-    if (body.classList.contains("sidebar-only") || manuallyForcedToMain) {
-      body.classList.remove("sidebar-only");
-      body.classList.add("show-main");
-      manuallyForcedToMain = false;
-    } else {
-      body.classList.remove("show-main");
-      body.classList.add("sidebar-only");
-    }
-  });*/
+
   menuToggle.addEventListener("click", () => {
     const showingMain = body.classList.contains("show-main");
     body.classList.remove("sidebar-only", "show-main");
@@ -223,20 +212,11 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.add(showingMain ? "sidebar-only" : "show-main");
   });
 
+
+
   // ================================
   // LINK CLICK HANDLING
   // ================================
- // document.querySelectorAll("a").forEach(link => {
-   // link.addEventListener("click", () => {
-     // if (!isPortraitMobile()) return;
-
-     // const isInSidebar = link.closest('.sidebar');
-      //body.classList.remove("sidebar-only");
-     // body.classList.add("show-main");
-
-    //  manuallyForcedToMain = !isInSidebar;
-   // });
-  //});
 
   // ================================
   // SIDEBAR TRANSITION INIT
@@ -265,27 +245,6 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.add("show-main");
     });
   });
-  /*
-  navLinks.forEach(link => {
-   link.addEventListener("click", () => {
-    body.classList.remove("sidebar-only","show-main");
-    body.classList.add("show-main");
-    manuallyForcedToMain = false;
-  });
-  });
-  */
-  /*
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      if (isPortraitMobile() && !body.classList.contains("show-main")) {
-        body.classList.remove("sidebar-only", "show-main");
-        void body.offsetWidth; // força reflow
-        body.classList.add("show-main");
-        manuallyForcedToMain = false;
-      }
-    });
-  });
-  */
 
   // ================================
   // REMOVE PRELOAD CLASS
