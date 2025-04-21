@@ -1,3 +1,5 @@
-Sitemap: https://pedronogueira404.github.io/sitemap.xml
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://pedronogueira404.github.io/sitemap.xml
+
