@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang }}">
+<html lang="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | relative_url }}">
+  <title>Outreach</title>
+  <link rel="stylesheet" href="/assets/css/style_white.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -51,17 +51,17 @@
   <div class="sidebar" id="sidebar">
     <!-- profile, navigation, social links, language, and theme -->
     <div class="sidebar-header">
-      <img src="{{ '/assets/profile.jpg' | relative_url }}" alt="Pedro Nogueira" class="profile-img">
+      <img src="/assets/profile.jpg" alt="Pedro Nogueira" class="profile-img">
       <h1 class="profile-name">Pedro H. Nogueira</h1>
       <p class="profile-title">Astrophysicist</p>
     </div>
     <nav class="main-nav">
-      <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
-      <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
-      <a href="{{ '/outreach/' | relative_url }}" class="nav-link">Outreach</a>
-      <a href="{{ '/personal/' | relative_url }}" class="nav-link">Personal</a>
-      <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
-      <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
+      <a href="/" class="nav-link">Home</a>
+      <a href="/portfolio/" class="nav-link">Publications</a>
+      <a href="/outreach/" class="nav-link">Outreach</a>
+      <a href="/personal/" class="nav-link">Personal</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
     </nav>
     <div class="social-links">
       <a href="mailto:nogueirapedro404@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
@@ -90,7 +90,10 @@
   </div>
 
   <div class="main-content" tabindex="-1">
-    {{ content }}
+    <h1 id="astronomia-para-todos">Astronomia para todos</h1>
+
+<p>Aqui você encontra minhas iniciativas de divulgação científica, vídeos, palestras e muito mais!</p>
+
 
     <div class="switch-container">
       <label class="switch-label" for="theme-toggle">🌗</label>
@@ -100,31 +103,10 @@
       </label>
     </div>
 
-    {% if page.url contains '/blog/' and page.url != '/blog/' %}
-    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 2rem;">
-      <div id="giscus_container"></div>
-      <script src="https://giscus.app/client.js"
-              data-repo="PedroNogueira404/PedroNogueira404.github.io"
-              data-repo-id="R_kgDOOW9BoA"
-              data-category="General"
-              data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-              data-mapping="pathname"
-              data-strict="0"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="preferred_color_scheme"
-              data-lang="en"
-              data-loading="lazy"
-              data-comments-enabled="true"
-              crossorigin="anonymous"
-              async>
-      </script>
-    </div>
-    {% endif %}
+    
 
     <footer class="site-footer">
-      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+      &copy; 2025 Pedro Nogueira
     </footer>
   </div>
 </div>
