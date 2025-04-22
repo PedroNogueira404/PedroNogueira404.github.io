@@ -1,7 +1,8 @@
-menu:
-  home: Home
-  outreach: Outreach
-  personal: Personal
-  portfolio: Portfolio
-  blog: Blog
-  contact: Contact
+en:
+  menu:
+    home: "Home"
+    outreach: "Outreach"
+    personal: "Personal"
+    portfolio: "Portfolio"
+    blog: "Blog"
+    contact: "Contact"
