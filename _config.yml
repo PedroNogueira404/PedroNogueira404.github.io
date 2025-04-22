@@ -33,7 +33,7 @@ collections:
   publications:
     output: true
     permalink: /publications/:path/
-  blog:
+  posts:
     output: true
     permalink: /posts/:path/
 future: true
