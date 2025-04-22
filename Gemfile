@@ -1,5 +1,5 @@
 source "https://rubygems.org"
 gem "github-pages", "~> 232"
 gem "jekyll-sitemap"
-gem "jekyll-multilingual" 
+gem "jekyll-multiple-languages-plugin" 
 gem "minima", "~> 2.5"
