@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "My First Project"
+title: "locolocolocomelo"
 date: 2024-04-09
 image: "/assets/project1.jpg"
 excerpt: "A brief description of my first project."
