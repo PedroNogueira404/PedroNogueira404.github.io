@@ -25,5 +25,11 @@ exclude_from_localizations:
   - favicon.ico
 
 i18n_dir: "_i18n"  # Direciona o Jekyll para os arquivos de tradução
-
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+  publications:
+    output: true
+    permalink: /publications/:path/
 future: true
