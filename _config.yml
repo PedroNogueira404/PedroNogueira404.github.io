@@ -13,6 +13,9 @@ collections:
   publications:
     output: true
     permalink: /publications/:path/
+  blogposts:
+    output: true
+    permalink: /blogposts/:path/
 
 languages:
   - en
