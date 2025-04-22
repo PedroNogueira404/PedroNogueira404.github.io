@@ -9,4 +9,4 @@ languages:
   - en
   - pt
   - es
-default_lang: en
+lang: "en"
