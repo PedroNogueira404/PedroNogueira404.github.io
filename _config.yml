@@ -3,17 +3,11 @@ theme: minima
 
 plugins:
   - jekyll-sitemap
-  - jekyll-multiple-languages-plugin
-  - jekyll-i18n
+  - jekyll-multilingual
 
 languages:
-  - en
-  - pt
-  - es
-
-# Define as configurações do idioma padrão
-default_locale: en
-collections:
-  publications:
-    output: true
-    permalink: /portfolio/:title/
+  default: "en"
+  available:
+    - en
+    - pt
+    - es
