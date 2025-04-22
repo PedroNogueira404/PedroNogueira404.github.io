@@ -81,6 +81,25 @@
   </div>
 
   <div class="main-content" tabindex="-1">
+      <!-- Menu de navegação -->
+  <nav>
+      <ul>
+        <li><a href="/">{% t menu.home %}</a></li>
+        <li><a href="/about">{% t menu.about %}</a></li>
+        <li><a href="/outreach">{% t menu.outreach %}</a></li>
+        <li><a href="/personal">{% t menu.personal %}</a></li>
+        <li><a href="/portfolio">{% t menu.portfolio %}</a></li>
+        <li><a href="/blog">{% t menu.blog %}</a></li>
+        <li><a href="/contact">{% t menu.contact %}</a></li>
+      </ul>
+    </nav>
+  
+    <!-- Seção de boas-vindas -->
+    <section>
+      <h1>{% t welcome.title %}</h1>
+      <p>{% t welcome.subtitle %}</p>
+    </section>
+    
     {{ content }}
 
     <div class="switch-container">
