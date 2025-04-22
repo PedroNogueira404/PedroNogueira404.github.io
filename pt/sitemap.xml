@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>/portfolio/teste_git/</loc>
+<lastmod>2025-04-10T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>/publications/hbc_494/</loc>
+<lastmod>2025-04-10T00:00:00+00:00</lastmod>
+</url>
+<url>
+<loc>/publications/teste_portfoliogit/</loc>
+<lastmod>2025-04-10T00:00:00+00:00</lastmod>
+</url>
+<url>
 <loc>/about/</loc>
 </url>
 <url>
@@ -20,6 +32,6 @@
 </url>
 <url>
 <loc>/assets/CV.pdf</loc>
-<lastmod>2025-04-22T20:46:47+00:00</lastmod>
+<lastmod>2025-04-22T20:59:47+00:00</lastmod>
 </url>
 </urlset>
