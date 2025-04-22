@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Referências aos elementos principais
   const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
   const toggleMain = document.getElementById('theme-toggle');
+  const langSwitcherLinks = document.querySelectorAll('.language-switcher a');
   const toggleSidebar = document.getElementById('theme-toggle-sidebar');
   const body = document.body;
   const menuToggle = document.getElementById('menu-toggle');
@@ -154,7 +155,14 @@ document.addEventListener("DOMContentLoaded", () => {
   giscusConfigScript.setAttribute('data-repo-id', giscusConfig.repoId);
   giscusConfigScript.setAttribute('data-category', giscusConfig.category);
   giscusConfigScript.setAttribute('data-category-id', giscusConfig.categoryId);
-  
+
+  langSwitcherLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const lang = e.target.getAttribute('href').split('=')[1];
+      document.documentElement.lang = lang; // Altera a linguagem do HTML
+      window.location.search = `?lang=${lang}`; // Atualiza a URL com o novo idioma
+    });
+  });
 
   // ================================
   // THEME MANAGEMENT
