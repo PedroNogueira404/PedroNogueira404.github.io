@@ -6,8 +6,7 @@ plugins:
   - jekyll-multiple-languages-plugin
 
 languages:
-  default: "en"
-  available:
-    - en
-    - pt
-    - es
+  - en
+  - pt
+  - es
+default_lang: en
