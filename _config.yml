@@ -4,6 +4,7 @@ theme: minima
 plugins:
   - jekyll-sitemap
   - jekyll-multiple-languages-plugin
+  - jekyll-i18n
 
 languages:
   - en
