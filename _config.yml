@@ -11,8 +11,19 @@ languages:
   - en
   - pt
   - es
-lang: "en"
-exclude_from_localizations: ["assets", "js", "images", "favicon.ico"]
-i18n_dir: "_i18n"  # Garanta que essa linha esteja correta
-# Para evitar conflitos:
+
+defaults:
+  - scope:
+      path: ""  # Aplica o idioma padrão globalmente
+    values:
+      lang: "en"  # Define o idioma padrão como inglês
+
+exclude_from_localizations:
+  - assets
+  - js
+  - images
+  - favicon.ico
+
+i18n_dir: "_i18n"  # Direciona o Jekyll para os arquivos de tradução
+
 future: true
