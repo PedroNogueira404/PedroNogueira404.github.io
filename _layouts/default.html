@@ -46,6 +46,7 @@
       <h1 class="profile-name">Pedro H. Nogueira</h1>
       <p class="profile-title">Astrophysicist</p>
     </div>
+    <!--
     <nav class="main-nav">
       <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
       <a href="{{ '/portfolio/' | relative_url }}" class="nav-link">Publications</a>
@@ -53,6 +54,16 @@
       <a href="{{ '/personal/' | relative_url }}" class="nav-link">Personal</a>
       <a href="{{ '/blog/' | relative_url }}" class="nav-link">Blog</a>
       <a href="{{ '/assets/CV.pdf' | relative_url }}" class="nav-link" target="_blank">CV</a>
+    </nav>
+    -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}" class="nav-link">{{ 'menu.home' | t }}</a></li>
+        <li><a href="{{ '/portfolio/' | relative_url }}" class="nav-link">{{ 'menu.portfolio' | t }}</a></li>
+        <li><a href="{{ '/outreach/' | relative_url }}" class="nav-link">{{ 'menu.outreach' | t }}</a></li>
+        <li><a href="{{ '/personal/' | relative_url }}" class="nav-link">{{ 'menu.personal' | t }}</a></li>
+        <li><a href="{{ '/blog/' | relative_url }}" class="nav-link">{{ 'menu.blog' | t }}</a></li>
+      </ul>
     </nav>
     <div class="social-links">
       <a href="mailto:nogueirapedro404@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
@@ -81,7 +92,7 @@
   </div>
 
   <div class="main-content" tabindex="-1">
-      <!-- Menu de navegação -->
+      <!-- Menu de navegação 
   <nav>
     <ul>
       <li><a href="/">{{ 'menu.home' | t }}</a></li>
@@ -91,7 +102,7 @@
       <li><a href="/blog">{{ 'menu.blog' | t }}</a></li>
     </ul>
     </nav>
-    
+    -->
     <!-- Seção de boas-vindas -->
     <section>
       <h1>{{ 'welcome.title' | t }}</h1>
