@@ -151,7 +151,7 @@
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Referências aos elementos principais
+  // Referências aos elementos principais 
   const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
   const toggleMain = document.getElementById('theme-toggle');
   const langSwitcherLinks = document.querySelectorAll('.language-switcher a');
@@ -163,19 +163,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById('sidebar');
   const mainContent = document.querySelector('.main-content');
   const giscusContainer = document.getElementById('giscus_container');
-  const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
-  const giscusConfig = {
-    repo: "PedroNogueira404/PedroNogueira404.github.io",
-    repoId: "R_kgDOOW9BoA",
-    category: "General",
-    categoryId: "DIC_kwDOOW9BoM4Co8kQ",
-    mapping: "pathname",
-    reactionsEnabled: "1",
-    emitMetadata: "0",
-    inputPosition: "bottom",
-    theme: "preferred_color_scheme",
-    lang: "en"
-  };
+  //const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+  //const giscusConfig = {
+  //  repo: "PedroNogueira404/PedroNogueira404.github.io",
+  //  repoId: "R_kgDOOW9BoA",
+  //  category: "General",
+  //  categoryId: "DIC_kwDOOW9BoM4Co8kQ",
+  //  mapping: "pathname",
+  //  reactionsEnabled: "1",
+  //  emitMetadata: "0",
+  //  inputPosition: "bottom",
+  //  theme: "preferred_color_scheme",
+  //  lang: "en"
+  //};
   const giscusConfigString = JSON.stringify(giscusConfig);
   const giscusConfigScript = document.createElement('script');
   giscusConfigScript.src = "https://giscus.app/client.js";
@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
   giscusConfigScript.setAttribute('data-repo-id', giscusConfig.repoId);
   giscusConfigScript.setAttribute('data-category', giscusConfig.category);
   giscusConfigScript.setAttribute('data-category-id', giscusConfig.categoryId);
-
+-->
   langSwitcherLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const lang = e.target.getAttribute('href').split('=')[1];
