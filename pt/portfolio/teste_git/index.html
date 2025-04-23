@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   <title>kaudhfsdklhf</title>
   <link rel="stylesheet" href="/assets/css/style_white.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/latest/css/all.min.css">
   <style>
     body {
       transition: background-color 0.3s ease;
@@ -193,19 +193,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Update the main toggle switch to reflect the current theme
   toggleMain.checked = isLight;
+  
+    function updateGiscusTheme(theme) {
+      const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+      giscusScript.setAttribute('data-theme', theme);
+    }
+  // Set Theme giscus theme
+  function setGiscusTheme(theme) {
+   var iframe = document.querySelector('.giscus-frame');
 
+   if (iframe) {
+    var url = new URL(iframe.src);
+    url.searchParams.set('theme', theme);
+    iframe.src = url.toString();
+   }
+  }
+
+  // Set Theme iletter theme
+  function setIletterTheme(theme) {
+   var iframe = document.querySelector('.giscus');
+
+   if (iframe) {
+    var url = new URL(iframe.src);
+    url.searchParams.set('theme', theme);
+    iframe.src = url.toString();
+   }
+  }
   // Check if the sidebar toggle exists
   if (toggleSidebar) {
     // Update the sidebar toggle switch to reflect the current theme
     toggleSidebar.checked = isLight;
 
     // Add an event listener to the sidebar toggle to update the theme when changed
-    toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
+    toggleSidebar.addEventListener('change', () => window.setTheme(toggleSidebar.checked));
   }
-
-  toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
-  toggleMain.addEventListener('change', () => setTheme(toggleMain.checked));
-  toggleSidebar.addEventListener('change', () => setTheme(toggleSidebar.checked));
+  
+  toggleMain.addEventListener('change', () => {
+    setTheme(toggleMain.checked);
+    setGiscusTheme(toggleMain.checked);
+    setIletterTheme(toggleMain.checked);
+    updateGiscusTheme(toggleMain.checked);
+  });
 
   // ================================
   // MENU TOGGLE
@@ -267,6 +295,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
+<script>
+  document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
+</script>
 </body>
 </html>
