@@ -46,7 +46,7 @@
       <h1 class="profile-name">Pedro H. Nogueira</h1>
       <p class="profile-title">Astrophysicist</p>
     </div>
-    <!--
+    
     <nav class="main-nav">
       <a href="/" class="nav-link">Home</a>
       <a href="/portfolio/" class="nav-link">Publications</a>
@@ -55,7 +55,7 @@
       <a href="/blog/" class="nav-link">Blog</a>
       <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
     </nav>
-    -->
+    <!--
     <nav class="main-nav">
       <ul>
         <li><a href="/" class="nav-link">menu.home</a></li>
@@ -65,7 +65,7 @@
         <li><a href="/blog/" class="nav-link">menu.blog</a></li>
       </ul>
     </nav>
-    
+    -->
     <div class="social-links">
       <a href="mailto:nogueirapedro404@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
       <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
@@ -226,9 +226,21 @@ document.addEventListener("DOMContentLoaded", () => {
     giscusFrame.addEventListener('load', () => {
       const themeMessage = { type: 'set-theme', theme: isLight ? 'light' : 'dark' }; // Properly structured message
       const giscusOrigin = new URL(giscusFrame.src).origin;
-      giscusFrame.contentWindow.postMessage({ giscusConfig: giscusConfig }, giscusOrigin);
+      giscusFrame.contentWindow.postMessage( themeMessage , giscusOrigin);
     });
   }
+  /*
+  if (giscusFrame) {
+  giscusFrame.addEventListener('load', () => {
+    const themeMessage = {
+      type: 'set-theme',
+      theme: isLight ? 'light' : 'dark'
+    };
+    const giscusOrigin = new URL(giscusFrame.src).origin;
+    giscusFrame.contentWindow.postMessage(themeMessage, giscusOrigin);
+  });
+}
+*/
 
   // Set the initial theme based on the `isLight` variable
   setTheme(isLight);
