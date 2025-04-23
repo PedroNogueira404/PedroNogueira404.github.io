@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById('sidebar');
   const mainContent = document.querySelector('.main-content');
   const giscusContainer = document.getElementById('giscus_container');
-  //const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+  const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
   //const giscusConfig = {
   //  repo: "PedroNogueira404/PedroNogueira404.github.io",
   //  repoId: "R_kgDOOW9BoA",
@@ -177,11 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //};
   const giscusConfigString = JSON.stringify(giscusConfig);
   const giscusConfigScript = document.createElement('script');
-  giscusConfigScript.src = "https://giscus.app/client.js";
-  giscusConfigScript.setAttribute('data-repo', giscusConfig.repo);
-  giscusConfigScript.setAttribute('data-repo-id', giscusConfig.repoId);
-  giscusConfigScript.setAttribute('data-category', giscusConfig.category);
-  giscusConfigScript.setAttribute('data-category-id', giscusConfig.categoryId);
+  //giscusConfigScript.src = "https://giscus.app/client.js";
+  //giscusConfigScript.setAttribute('data-repo', giscusConfig.repo);
+  //giscusConfigScript.setAttribute('data-repo-id', giscusConfig.repoId);
+  //giscusConfigScript.setAttribute('data-category', giscusConfig.category);
+  //giscusConfigScript.setAttribute('data-category-id', giscusConfig.categoryId);
 -->
   langSwitcherLinks.forEach(link => {
     link.addEventListener('click', (e) => {
