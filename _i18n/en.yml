@@ -1,7 +1,15 @@
 menu:
-  home: "Home"
-  outreach: "Outreach"
-  personal: "Personal"
-  portfolio: "Portfolio"
-  blog: "Blog"
-  contact: "Contact"
+  home: Home
+  about: About
+  outreach: Outreach
+  personal: Personal
+  portfolio: Portfolio
+  blog: Blog
+  contact: Contact
+
+welcome:
+  title: Hi, I'm Pedro!
+  subtitle: Astronomer and science communicator.
+
+footer:
+  copyright: "© 2025 Pedro Nogueira. All rights reserved."
