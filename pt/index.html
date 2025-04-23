@@ -184,37 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set `isLight` based on the system preference
     isLight = prefersLightScheme.matches;
   }
-  function updateGiscusTheme() {
-    const giscusFrame = document.querySelector('iframe.giscus-frame');
-    if (!giscusFrame) return;
-  
-    const themeMessage = {
-      type: 'set-theme',
-      theme: document.documentElement.classList.contains('light') ? 'light' : 'dark'
-    };
-    const giscusOrigin = new URL(giscusFrame.src).origin;
-    giscusFrame.contentWindow.postMessage(themeMessage, giscusOrigin);
-  }
-  // Updates the theme for Giscus
-  if (giscusFrame) {
-    giscusFrame.addEventListener('load', () => {
-      const themeMessage = { type: 'set-theme', theme: isLight ? 'light' : 'dark' }; // Properly structured message
-      const giscusOrigin = new URL(giscusFrame.src).origin;
-      giscusFrame.contentWindow.postMessage( themeMessage , giscusOrigin);
-    });
-  }
-  /*
-  if (giscusFrame) {
-  giscusFrame.addEventListener('load', () => {
-    const themeMessage = {
-      type: 'set-theme',
-      theme: isLight ? 'light' : 'dark'
-    };
-    const giscusOrigin = new URL(giscusFrame.src).origin;
-    giscusFrame.contentWindow.postMessage(themeMessage, giscusOrigin);
-  });
-}
-*/
 
   // Set the initial theme based on the `isLight` variable
   setTheme(isLight);
@@ -242,9 +211,8 @@ document.addEventListener("DOMContentLoaded", () => {
   menuToggle.addEventListener("click", () => {
     const showingMain = body.classList.contains("show-main");
     body.classList.remove("sidebar-only", "show-main");
-    updateGiscusTheme();
     requestAnimationFrame(() => {
-      body.classList.add(showingMain ? "sidebar-only" : "show-main");
+    body.classList.add(showingMain ? "sidebar-only" : "show-main");
     });
   });
 
