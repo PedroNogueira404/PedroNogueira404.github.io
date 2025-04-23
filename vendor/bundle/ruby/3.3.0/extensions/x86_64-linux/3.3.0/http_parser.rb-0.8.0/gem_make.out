@@ -1,0 +1,19 @@
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250423-978-sof6ou sitelibdir\=./.gem.20250423-978-sof6ou clean
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250423-978-sof6ou sitelibdir\=./.gem.20250423-978-sof6ou
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250423-978-sof6ou sitelibdir\=./.gem.20250423-978-sof6ou install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20250423-978-sof6ou
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250423-978-sof6ou sitelibdir\=./.gem.20250423-978-sof6ou clean

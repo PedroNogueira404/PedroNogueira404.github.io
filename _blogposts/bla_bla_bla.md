@@ -10,6 +10,7 @@ tags: [exoplanets, spectroscopy]
 This project explores the detection of exoplanets using high-resolution spectroscopy.
 
 More details to come soon!
+<!--
 <div id="giscus_container"></div>
 <script src="https://giscus.app/client.js"
         data-repo="PedroNogueira404/PedroNogueira404.github.io"
@@ -21,3 +22,4 @@ More details to come soon!
         crossorigin="anonymous"
         async>
 </script>
+-->
