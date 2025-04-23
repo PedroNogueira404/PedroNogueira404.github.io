@@ -7,7 +7,8 @@ permalink: /blog/
 
 # Blog
 <div class="card-grid">
-  <p>Total posts found: {{ site.blogposts | size }}</p>
+  <p>Total posts found: {{ site.blogposts | size }}<br></p>
+  
   {% for post in site.blogposts %}
     <div class="card">
       <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
