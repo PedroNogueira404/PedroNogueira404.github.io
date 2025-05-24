@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "kaudhfsdklhf"
+title: "Arxiv-Summarizer"
 date: 2025-04-10
-excerpt: "test"
+excerpt: "Automate summarizing papers/abstracts on Arxiv"
 category: Git codes
 ---
 
