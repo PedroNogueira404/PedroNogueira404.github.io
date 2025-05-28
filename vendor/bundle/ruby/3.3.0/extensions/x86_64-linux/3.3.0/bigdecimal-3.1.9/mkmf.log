@@ -111,7 +111,7 @@ checked program was:
 have_func: checking for _lzcnt_u32() in x86intrin.h... -------------------- no
 
 LD_LIBRARY_PATH=.:/usr/lib/x86_64-linux-gnu:/app/lib "x86_64-unknown-linux-gnu-gcc -o conftest -I/usr/include/ruby-3.3.0/x86_64-linux -I/usr/include/ruby-3.3.0/ruby/backward -I/usr/include/ruby-3.3.0 -I.    -O2 -pipe -g -Wp,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-z,relro,-z,now -Wl,--as-needed  -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -lruby  -lm -lpthread  -lc"
-/usr/lib/gcc/x86_64-unknown-linux-gnu/14.2.0/../../../../x86_64-unknown-linux-gnu/bin/ld: /tmp/ccbZDOZp.o: in function `t':
+/usr/lib/gcc/x86_64-unknown-linux-gnu/14.2.0/../../../../x86_64-unknown-linux-gnu/bin/ld: /tmp/ccXlaQ79.o: in function `t':
 /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal/conftest.c:16:(.text+0xb): undefined reference to `_lzcnt_u32'
 collect2: error: ld returned 1 exit status
 checked program was:
@@ -170,7 +170,7 @@ checked program was:
 have_func: checking for _lzcnt_u64() in x86intrin.h... -------------------- no
 
 LD_LIBRARY_PATH=.:/usr/lib/x86_64-linux-gnu:/app/lib "x86_64-unknown-linux-gnu-gcc -o conftest -I/usr/include/ruby-3.3.0/x86_64-linux -I/usr/include/ruby-3.3.0/ruby/backward -I/usr/include/ruby-3.3.0 -I.    -O2 -pipe -g -Wp,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-z,relro,-z,now -Wl,--as-needed  -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -lruby  -lm -lpthread  -lc"
-/usr/lib/gcc/x86_64-unknown-linux-gnu/14.2.0/../../../../x86_64-unknown-linux-gnu/bin/ld: /tmp/ccTKeHvo.o: in function `t':
+/usr/lib/gcc/x86_64-unknown-linux-gnu/14.2.0/../../../../x86_64-unknown-linux-gnu/bin/ld: /tmp/ccrFQ2N9.o: in function `t':
 /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal/conftest.c:16:(.text+0xb): undefined reference to `_lzcnt_u64'
 collect2: error: ld returned 1 exit status
 checked program was:
@@ -347,7 +347,7 @@ checked program was:
 /* end */
 
 LD_LIBRARY_PATH=.:/usr/lib/x86_64-linux-gnu:/app/lib "x86_64-unknown-linux-gnu-gcc -o conftest -I/usr/include/ruby-3.3.0/x86_64-linux -I/usr/include/ruby-3.3.0/ruby/backward -I/usr/include/ruby-3.3.0 -I.    -O2 -pipe -g -Wp,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -fexceptions -fstack-protector-strong -grecord-gcc-switches -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-z,relro,-z,now -Wl,--as-needed  -fstack-protector-strong -rdynamic -Wl,-export-dynamic -Wl,--no-as-needed     -lruby  -lm -lpthread  -lc"
-/usr/lib/gcc/x86_64-unknown-linux-gnu/14.2.0/../../../../x86_64-unknown-linux-gnu/bin/ld: /tmp/ccar7hOc.o: in function `t':
+/usr/lib/gcc/x86_64-unknown-linux-gnu/14.2.0/../../../../x86_64-unknown-linux-gnu/bin/ld: /tmp/ccnmlYKu.o: in function `t':
 /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal/conftest.c:17:(.text+0xb): undefined reference to `__builtin_isfinite'
 collect2: error: ld returned 1 exit status
 checked program was:

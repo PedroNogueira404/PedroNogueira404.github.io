@@ -1,40 +1,82 @@
+default_lang: en
 title: Pedro Nogueira
-theme: minima
+languages: ["en", "pt", "es"]
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-multiple-languages-plugin
+  - jekyll-last-modified-at
+
 collections:
-  portfolio:
+  codes:
     output: true
-    permalink: /portfolio/:path/
+    # permalink: /:lang/codes/:slug/
   publications:
     output: true
-    permalink: /publications/:path/
+    permalink: /:lang/publications/:slug/
   blogposts:
     output: true
-    permalink: /blogposts/:path/
+    permalink: /:lang/blog/:slug/
 
-languages:
-  - en
-  - pt
-  - es
+# defaults:
+#   - scope:
+#       path: "_blogposts/en"
+#       type: blogposts
+#     values:
+#       lang: en
+#       permalink: /en/blog/:slug/
 
-defaults:
-  - scope:
-      path: ""  # Aplica o idioma padrão globalmente
-    values:
-      lang: "en"  # Define o idioma padrão como inglês
+
+  # - scope:
+  #     path: "_codes/en"
+  #     type: codes
+  #   values:
+  #     lang: en
+  #     permalink: /en/codes/:slug/
+
+  # - scope:
+  #     path: "_codes/es"
+  #     type: codes
+  #   values:
+  #     lang: es
+  #     permalink: /es/codes/:slug/
+  # - scope:
+  #     path: "_codes/pt"
+  #     type: codes
+  #   values:
+  #     lang: pt
+  #     permalink: /pt/codes/:slug/
+  
+  # - scope:
+  #     path: "_publications/en"
+  #     type: publications
+  #   values:
+  #     lang: en
+  #     permalink: /en/publications/:slug/
+
+  # - scope:
+  #     path: "_publications/es"
+  #     type: publications
+  #   values:
+  #     lang: es
+  #     permalink: /es/publications/:slug/
+
+  # - scope:
+  #     path: "_publications/pt"
+  #     type: publications
+  #   values:
+  #     lang: pt
+  #     permalink: /pt/publications/:slug/
 
 exclude_from_localizations:
   - assets
-  - js
-  - images
-  - favicon.ico
-
+  - css
+  - _blogposts
+  - _codes
+  - _publications
 i18n_dir: "_i18n"  # Direciona o Jekyll para os arquivos de tradução
-
+default_locale_in_subfolder: true
 
 future: true

@@ -1,19 +1,38 @@
 ---
 layout: default
-lang: en
 title: Blog
 permalink: /blog/
 ---
 
 # Blog
 <div class="card-grid">
-  <p>Total posts found: {{ site.blogposts | size }}<br></p>
+{% assign lang = site.lang | default: site.default_lang | downcase %}
+  <p>Total posts found in all languages: {{ site.blogposts | size }}<br></p>
+  <p>Total posts found in current language: {{ site.blogposts | where: "lang", lang | size }}<br></p>
   
+  <p><strong>Current lang: {{ lang }}</strong></p>
+
+
   {% for post in site.blogposts %}
-    <div class="card">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
-      <p>{{ post.excerpt }}</p>
-    </div>
+    {% if post.lang == lang %}
+      <div class="card">
+        <h3>
+          <!-- <a href="{{ post.url| remove: site.default_lang | prepend: site.baseurl }}">{{ post.title }}</a>         -->
+          <a href="{{ post.url | remove: "/en/" | prepend: site.baseurl }}">{{ post.title }}</a> 
+          <!-- <a href="{{ post.url | remove: site.default_lang | relative_url }}">{{ post.title }}</a> -->
+          <!-- <a href="{{ post.url }}">{{ post.title }}</a> -->
+        </h3>
+        <p>{{ post.url| remove: site.default_lang | prepend: site.baseurl }}</p>
+        <p><small>{{ post.date | date: "%B %d, %Y" }}</small></p>
+        <p>{{ post.excerpt }}</p>
+        <p><strong>site.baseurl:</strong> {{ site.baseurl }}</p>
+        <p><strong>post.url:</strong> {{ post.url }}</p>
+        <p><strong>post.lang:</strong> {{ post.lang }}</p>
+        <!-- <p><strong>page.lang:</strong> {{ page.lang }}</p> -->
+        <!-- <p><strong>site.default_lang:</strong> {{ site.default_lang }}</p> -->
+        <p>{{ post.url | remove: site.default_lang | relative_url }}">{{ post.title }}</p>
+      </div>
+    {% endif %}
   {% endfor %}
 </div>
+

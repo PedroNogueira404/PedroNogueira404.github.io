@@ -28,17 +28,17 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250523-26192-m7hhfv sitelibdir\=./.gem.20250523-26192-m7hhfv clean
+make DESTDIR\= sitearchdir\=./.gem.20250524-18880-jci90p sitelibdir\=./.gem.20250524-18880-jci90p clean
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250523-26192-m7hhfv sitelibdir\=./.gem.20250523-26192-m7hhfv
+make DESTDIR\= sitearchdir\=./.gem.20250524-18880-jci90p sitelibdir\=./.gem.20250524-18880-jci90p
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250523-26192-m7hhfv sitelibdir\=./.gem.20250523-26192-m7hhfv install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20250523-26192-m7hhfv
+make DESTDIR\= sitearchdir\=./.gem.20250524-18880-jci90p sitelibdir\=./.gem.20250524-18880-jci90p install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20250524-18880-jci90p
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20250523-26192-m7hhfv sitelibdir\=./.gem.20250523-26192-m7hhfv clean
+make DESTDIR\= sitearchdir\=./.gem.20250524-18880-jci90p sitelibdir\=./.gem.20250524-18880-jci90p clean
