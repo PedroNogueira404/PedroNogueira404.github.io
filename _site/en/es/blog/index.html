@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-{% assign lang = site.lang | default: site.default_lang | downcase %}
-<!-- {% assign lang = lang | replace: 'pt-br', 'pt' | replace: 'en-us', 'en' | replace: 'es-es', 'es' %} -->
 
-<!-- <html lang="{{ site.lang }}"> -->
+<!--  -->
+
+<!-- <html lang="es"> -->
 
 <head>
   <meta name="google-site-verification" content="GXvA2WRAF6o4rV4pni0NwB4Z8V33BYQIDyrvSICONP8" />
@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
-  <!-- <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | absolute_url }}"> -->
-  <link rel="stylesheet" href="{{ '/assets/css/style_white.css'}}">
+  <title>Blog</title>
+  <!-- <link rel="stylesheet" href="/en/assets/css/style_white.css"> -->
+  <link rel="stylesheet" href="/assets/css/style_white.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
@@ -31,16 +31,16 @@
   }
 
   </style>
-
+  <script>
+    // Redireciona da raiz para /en/ se estiver na raiz ("/" ou "/index.html")
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      window.location.replace("/en/");
+    }
+  </script>
 </head>
 
 <body class="preload">
-<!-- <script>
-  // Redireciona da raiz para /en/ se estiver na raiz ("/" ou "/index.html")
-  if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-    window.location.replace("/en/");
-  }
-</script> -->
+
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
     This site requires JavaScript to function properly. Please enable JavaScript in your browser.
@@ -53,17 +53,17 @@
   <div class="sidebar" id="sidebar">
     <!-- profile, navigation, social links, language, and theme -->
     <div class="sidebar-header">
-      <img src="{{ '/assets/profile.jpg'}}" alt="Pedro Nogueira" class="profile-img">
+      <img src="/assets/profile.jpg" alt="Pedro Nogueira" class="profile-img">
       <h1 class="profile-name">Pedro H. Nogueira</h1>
       <p class="profile-title">Astrophysicist</p>
     </div>
     
 <nav class="main-nav">
-  <a href="/{{ site.lang }}/" class="nav-link">{% t menu.home %}</a>
-  <a href="/{{ site.lang }}/about/" class="nav-link">{% t menu.about %}</a>
-  <a href="/{{ site.lang }}/portfolio/" class="nav-link">{% t menu.portfolio %}</a>
-  <a href="/{{ site.lang }}/outreach/" class="nav-link">{% t menu.outreach %}</a>
-  <a href="/{{ site.lang }}/blog/" class="nav-link">{% t menu.blog %}</a>
+  <a href="/es/" class="nav-link">Inicio</a>
+  <a href="/es/about/" class="nav-link">Sobre mí</a>
+  <a href="/es/portfolio/" class="nav-link">Portafolio</a>
+  <a href="/es/outreach/" class="nav-link">Divulgación</a>
+  <a href="/es/blog/" class="nav-link">Blog</a>
   <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
 </nav>
 
@@ -99,7 +99,43 @@
   <div class="main-content" tabindex="-1">
     <!-- Seção de boas-vindas -->
     
-    {{ content }}
+    <h1 id="blog">Blog</h1>
+<div class="card-grid">
+
+  <p>Total posts found in all languages: 3<br /></p>
+  <p>Total posts found in current language: 1<br /></p>
+  
+  <p><strong>Current lang: es</strong></p>
+
+
+  
+    
+  
+    
+      <div class="card">
+        <h3>
+          <!-- <a href="/es/blog/locoloco/">locolocolocomelo</a>         -->
+          <a href="/es/blog/locoloco/">locolocolocomelo</a> 
+          <!-- <a href="/en/blog/locoloco/">locolocolocomelo</a> -->
+          <!-- <a href="/blog/locoloco/">locolocolocomelo</a> -->
+        </h3>
+        <p>/es/blog/locoloco/</p>
+        <p><small>April 09, 2024</small></p>
+        <p>A brief description of my first project.</p>
+        <p><strong>site.baseurl:</strong> /es</p>
+        <p><strong>post.url:</strong> /blog/locoloco/</p>
+        <p><strong>post.lang:</strong> es</p>
+        <!-- <p><strong>page.lang:</strong> </p> -->
+        <!-- <p><strong>site.default_lang:</strong> en</p> -->
+        <p>/en/blog/locoloco/"&gt;locolocolocomelo</p>
+      </div>
+    
+  
+    
+  
+</div>
+
+
 
     <div class="switch-container">
       <label class="switch-label" for="theme-toggle">🌗</label>
@@ -109,63 +145,20 @@
       </label>
     </div>
 
-    {% if page.url contains '/blog/' and page.url != '/blog/' %}
-    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 1rem;">
-
-    <div class="post-meta">
-      <p>Last updated: {{ page.last_modified_at | default: page.date | date: "%B %d, %Y" }}</p>
-      <p>Published on: {{ page.date | date: "%B %d, %Y" }}</p>      
-      <div id="giscus_container"></div>
-        <script src="https://giscus.app/client.js"
-                data-repo="PedroNogueira404/PedroNogueira404.github.io"
-                data-repo-id="R_kgDOOW9BoA"
-                data-category="General"
-                data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                crossorigin="anonymous"
-                async>
-        </script>
-        <!-- <div id="giscus_container"></div>
-<script src="https://giscus.app/client.js"
-        data-repo="PedroNogueira404/PedroNogueira404.github.io"
-        data-repo-id="R_kgDOOW9BoA"
-        data-category="General"
-        data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-        data-mapping="pathname"
-        crossorigin="anonymous"
-        async>
-</script> -->
-
-
-    </div>
-    {% endif %}
+    
 
                 
     <footer class="site-footer">
-      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+      &copy; 2025 Pedro Nogueira
     </footer>
   </div>
 </div>
-<!-- <script>
-  // Detecta idioma do navegador
-  const lang = navigator.language || navigator.userLanguage;
 
-  // Extrai apenas o código principal: "en", "pt", "es"
-  const mainLang = lang.split('-')[0].toLowerCase();
 
-  // Lista de idiomas suportados
-  const supported = ['en', 'pt', 'es'];
 
-  // Se for suportado, redireciona; senão, padrão para inglês
-  const redirectLang = supported.includes(mainLang) ? mainLang : 'en';
 
-  // Redireciona
-  window.location.replace('/' + redirectLang + '/');
-</script> -->
+
+
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -180,14 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const giscusFrame = document.querySelector('iframe.giscus-frame');
   const sidebar = document.getElementById('sidebar');
   const mainContent = document.querySelector('.main-content');
-
-  // langSwitcherLinks.forEach(link => {
-  //   link.addEventListener('click', (e) => {
-  //     const lang = e.target.getAttribute('href').split('=')[1];
-  //     document.documentElement.lang = lang; // Altera a linguagem do HTML
-  //     window.location.search = `?lang=${lang}`; // Atualiza a URL com o novo idioma
-  //   });
-  // });
 
   // ================================
   // THEME MANAGEMENT
@@ -229,36 +214,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update the main toggle switch to reflect the current theme
   toggleMain.checked = isLight;
   
-    // function updateGiscusTheme(theme) {
-    //   const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
-    //   giscusScript.setAttribute('data-theme', theme);
-    // }
-  // Set Theme giscus theme
-  // function setGiscusTheme(theme) {
-  //  var iframe = document.querySelector('.giscus-frame');
-
-  //  if (iframe) {
-  //   var url = new URL(iframe.src);
-  //   url.searchParams.set('theme', theme);
-  //   iframe.src = url.toString();
-  //   // giscusScript.setAttribute('data-theme', theme)
-  //  }
-  // }
-
-    function changeGiscusTheme () {
-    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ?  'dark' : 'light'
-
-    function sendMessage(message) {
-      const iframe = document.querySelector('iframe.giscus-frame');
-      if (!iframe) return;
-      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    function updateGiscusTheme(theme) {
+      const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+      giscusScript.setAttribute('data-theme', theme);
     }
+  // Set Theme giscus theme
+  function setGiscusTheme(theme) {
+   var iframe = document.querySelector('.giscus-frame');
 
-    sendMessage({
-      setConfig: {
-        theme: theme
-      }
-    });
+   if (iframe) {
+    var url = new URL(iframe.src);
+    url.searchParams.set('theme', theme);
+    iframe.src = url.toString();
+   }
   }
 
 
@@ -273,10 +241,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
   toggleMain.addEventListener('change', () => {
     setTheme(toggleMain.checked);
-    changeGiscusTheme();
-
-    // setGiscusTheme(toggleMain.checked);
-    // updateGiscusTheme(toggleMain.checked);
+    setGiscusTheme(toggleMain.checked);
+    //setIletterTheme(toggleMain.checked);
+    //updateGiscusTheme(toggleMain.checked);
   });
 
   // ================================
@@ -335,9 +302,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   // REMOVE PRELOAD CLASS
   // ================================
-  body.classList.remove('preload');
-});
-</script>
-
+    body.classList.remove('preload');
+  });
+  </script>
+  <script>
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
+  </script>
+<!-- <script>
+  document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
+</script> -->
 </body>
 </html>

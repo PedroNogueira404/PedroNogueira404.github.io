@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-{% assign lang = site.lang | default: site.default_lang | downcase %}
-<!-- {% assign lang = lang | replace: 'pt-br', 'pt' | replace: 'en-us', 'en' | replace: 'es-es', 'es' %} -->
 
-<!-- <html lang="{{ site.lang }}"> -->
+<!--  -->
+
+<!-- <html lang="en"> -->
 
 <head>
   <meta name="google-site-verification" content="GXvA2WRAF6o4rV4pni0NwB4Z8V33BYQIDyrvSICONP8" />
@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
-  <!-- <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | absolute_url }}"> -->
-  <link rel="stylesheet" href="{{ '/assets/css/style_white.css'}}">
+  <title>Portfolio</title>
+  <!-- <link rel="stylesheet" href="http://localhost:4000/en/assets/css/style_white.css"> -->
+  <link rel="stylesheet" href="/assets/css/style_white.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
@@ -53,17 +53,17 @@
   <div class="sidebar" id="sidebar">
     <!-- profile, navigation, social links, language, and theme -->
     <div class="sidebar-header">
-      <img src="{{ '/assets/profile.jpg'}}" alt="Pedro Nogueira" class="profile-img">
+      <img src="/assets/profile.jpg" alt="Pedro Nogueira" class="profile-img">
       <h1 class="profile-name">Pedro H. Nogueira</h1>
       <p class="profile-title">Astrophysicist</p>
     </div>
     
 <nav class="main-nav">
-  <a href="/{{ site.lang }}/" class="nav-link">{% t menu.home %}</a>
-  <a href="/{{ site.lang }}/about/" class="nav-link">{% t menu.about %}</a>
-  <a href="/{{ site.lang }}/portfolio/" class="nav-link">{% t menu.portfolio %}</a>
-  <a href="/{{ site.lang }}/outreach/" class="nav-link">{% t menu.outreach %}</a>
-  <a href="/{{ site.lang }}/blog/" class="nav-link">{% t menu.blog %}</a>
+  <a href="/en/" class="nav-link">Home</a>
+  <a href="/en/about/" class="nav-link">About me</a>
+  <a href="/en/portfolio/" class="nav-link">Portfolio</a>
+  <a href="/en/outreach/" class="nav-link">Outreach</a>
+  <a href="/en/blog/" class="nav-link">Blog</a>
   <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
 </nav>
 
@@ -99,7 +99,59 @@
   <div class="main-content" tabindex="-1">
     <!-- Seção de boas-vindas -->
     
-    {{ content }}
+    <h1 id="publications">Publications</h1>
+<div class="card-grid">
+
+  <p>Total publications found in all languages: 3<br /></p>
+  <p>Total publications found in current language: 1<br /></p>
+  <p><strong>Current lang: en</strong></p>
+
+  
+    
+      <div class="card">
+        <h3>
+          <a href="/en/publications/hbc-494/">HBC 494 - Stellar System Research - test</a> 
+          <!-- <a href="/en//publications/hbc-494/">HBC 494 - Stellar System Research - test</a>         -->
+        </h3>
+        <p><strong>site.baseurl:</strong> /en</p>
+        <p><small>April 10, 2025</small></p>
+        <p>Research on the HBC 494 system, focusing on brown dwarf companions.</p>
+        <p><strong>post.url:</strong> /publications/hbc-494/</p>
+        <p><strong>post.lang:</strong> en</p>
+        <p><strong>page.lang:</strong> </p>
+        <p><strong>post.lang:</strong> en</p>
+      </div>
+    
+  
+    
+  
+    
+  
+</div>
+
+<h1 id="codes">Codes</h1>
+<div class="card-grid">
+  <p>Total codes found in all languages: 1<br /></p>
+  <p>Total codes found in current language: 1<br /></p>
+  <p><strong>Current lang: en</strong></p>
+
+  
+    
+      <div class="card">
+        <h3>
+          <a href="/en/codes/teste-git/">Arxiv-Summarizer</a> 
+        </h3>
+        <p><small>April 10, 2025</small></p>
+        <p>Automate summarizing papers/abstracts on  Arxivvvvvvvvvvv</p>
+        <p><strong>post.url:</strong> /codes/teste-git/</p>
+        <p><strong>post.lang:</strong> en</p>
+        <p><strong>page.lang:</strong> </p>
+        <p><strong>post.lang:</strong> en</p>
+      </div>
+    
+  
+</div>
+
 
     <div class="switch-container">
       <label class="switch-label" for="theme-toggle">🌗</label>
@@ -109,44 +161,11 @@
       </label>
     </div>
 
-    {% if page.url contains '/blog/' and page.url != '/blog/' %}
-    <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 1rem;">
-
-    <div class="post-meta">
-      <p>Last updated: {{ page.last_modified_at | default: page.date | date: "%B %d, %Y" }}</p>
-      <p>Published on: {{ page.date | date: "%B %d, %Y" }}</p>      
-      <div id="giscus_container"></div>
-        <script src="https://giscus.app/client.js"
-                data-repo="PedroNogueira404/PedroNogueira404.github.io"
-                data-repo-id="R_kgDOOW9BoA"
-                data-category="General"
-                data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                crossorigin="anonymous"
-                async>
-        </script>
-        <!-- <div id="giscus_container"></div>
-<script src="https://giscus.app/client.js"
-        data-repo="PedroNogueira404/PedroNogueira404.github.io"
-        data-repo-id="R_kgDOOW9BoA"
-        data-category="General"
-        data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-        data-mapping="pathname"
-        crossorigin="anonymous"
-        async>
-</script> -->
-
-
-    </div>
-    {% endif %}
+    
 
                 
     <footer class="site-footer">
-      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+      &copy; 2025 Pedro Nogueira
     </footer>
   </div>
 </div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-{% assign lang = site.lang | default: site.default_lang | downcase %}
-<!-- {% assign lang = lang | replace: 'pt-br', 'pt' | replace: 'en-us', 'en' | replace: 'es-es', 'es' %} -->
 
-<!-- <html lang="{{ site.lang }}"> -->
+<!--  -->
+
+<!-- <html lang="pt"> -->
 
 <head>
   <meta name="google-site-verification" content="GXvA2WRAF6o4rV4pni0NwB4Z8V33BYQIDyrvSICONP8" />
@@ -11,9 +11,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
-  <!-- <link rel="stylesheet" href="{{ '/assets/css/style_white.css' | absolute_url }}"> -->
-  <link rel="stylesheet" href="{{ '/assets/css/style_white.css'}}">
+  <title>My sec Project</title>
+  <!-- <link rel="stylesheet" href="http://localhost:4000/en/assets/css/style_white.css"> -->
+  <link rel="stylesheet" href="/assets/css/style_white.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
@@ -53,17 +53,17 @@
   <div class="sidebar" id="sidebar">
     <!-- profile, navigation, social links, language, and theme -->
     <div class="sidebar-header">
-      <img src="{{ '/assets/profile.jpg'}}" alt="Pedro Nogueira" class="profile-img">
+      <img src="/assets/profile.jpg" alt="Pedro Nogueira" class="profile-img">
       <h1 class="profile-name">Pedro H. Nogueira</h1>
       <p class="profile-title">Astrophysicist</p>
     </div>
     
 <nav class="main-nav">
-  <a href="/{{ site.lang }}/" class="nav-link">{% t menu.home %}</a>
-  <a href="/{{ site.lang }}/about/" class="nav-link">{% t menu.about %}</a>
-  <a href="/{{ site.lang }}/portfolio/" class="nav-link">{% t menu.portfolio %}</a>
-  <a href="/{{ site.lang }}/outreach/" class="nav-link">{% t menu.outreach %}</a>
-  <a href="/{{ site.lang }}/blog/" class="nav-link">{% t menu.blog %}</a>
+  <a href="/pt/" class="nav-link">Início</a>
+  <a href="/pt/about/" class="nav-link">Sobre</a>
+  <a href="/pt/portfolio/" class="nav-link">Portfólio</a>
+  <a href="/pt/outreach/" class="nav-link">Divulgação</a>
+  <a href="/pt/blog/" class="nav-link">Blog</a>
   <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
 </nav>
 
@@ -99,7 +99,16 @@
   <div class="main-content" tabindex="-1">
     <!-- Seção de boas-vindas -->
     
-    {{ content }}
+    <p>jkdbfkjzbdkvbzkljv
+kjHSVBckhvzdckvzkhvc</p>
+
+<p>INGLES</p>
+
+<p>lzbnxcvljbzklvjbzkljcbvkljzbcv
+This project explores the detection of exoplanets using high-resolution spectroscopy.</p>
+
+<p>More details to come soon!</p>
+
 
     <div class="switch-container">
       <label class="switch-label" for="theme-toggle">🌗</label>
@@ -109,12 +118,12 @@
       </label>
     </div>
 
-    {% if page.url contains '/blog/' and page.url != '/blog/' %}
+    
     <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 1rem;">
 
     <div class="post-meta">
-      <p>Last updated: {{ page.last_modified_at | default: page.date | date: "%B %d, %Y" }}</p>
-      <p>Published on: {{ page.date | date: "%B %d, %Y" }}</p>      
+      <p>Last updated: May 28, 2025</p>
+      <p>Published on: April 09, 2024</p>      
       <div id="giscus_container"></div>
         <script src="https://giscus.app/client.js"
                 data-repo="PedroNogueira404/PedroNogueira404.github.io"
@@ -142,11 +151,11 @@
 
 
     </div>
-    {% endif %}
+    
 
                 
     <footer class="site-footer">
-      &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+      &copy; 2025 Pedro Nogueira
     </footer>
   </div>
 </div>
