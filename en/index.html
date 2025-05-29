@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+
+<!--  -->
+
+<!-- <html lang="en"> -->
+
+<head>
+  <meta name="google-site-verification" content="GXvA2WRAF6o4rV4pni0NwB4Z8V33BYQIDyrvSICONP8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <title>Home</title>
+  <!-- <link rel="stylesheet" href="/en/assets/css/style_white.css"> -->
+  <link rel="stylesheet" href="/assets/css/style_white.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      transition: background-color 0.3s ease;
+    }
+
+  @media (max-width: 768px) and (orientation: portrait) {
+
+  body.show-main .main-content {
+    display: block;
+    position: relative;
+    height: auto;
+    z-index: auto;
+  } 
+  }
+
+  </style>
+  <script>
+    // Redireciona da raiz para /en/ se estiver na raiz ("/" ou "/index.html")
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      window.location.replace("/en/");
+    }
+  </script>
+</head>
+
+<body class="preload">
+
+<noscript>
+  <p style="text-align: center; background: #ffdddd; padding: 1rem;">
+    This site requires JavaScript to function properly. Please enable JavaScript in your browser.
+  </p>
+</noscript>
+
+<button id="menu-toggle" class="menu-toggle" aria-label="Open or close navigation menu">&#9776;</button>
+
+<div class="layout-container">
+  <div class="sidebar" id="sidebar">
+    <!-- profile, navigation, social links, language, and theme -->
+    <div class="sidebar-header">
+      <img src="/assets/profile.jpg" alt="Pedro Nogueira" class="profile-img">
+      <h1 class="profile-name">Pedro H. Nogueira</h1>
+      <p class="profile-title">Astrophysicist</p>
+    </div>
+    
+<nav class="main-nav">
+  <a href="/en/" class="nav-link">Home</a>
+  <a href="/en/about/" class="nav-link">About me</a>
+  <a href="/en/portfolio/" class="nav-link">Portfolio</a>
+  <a href="/en/outreach/" class="nav-link">Outreach</a>
+  <a href="/en/blog/" class="nav-link">Blog</a>
+  <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
+</nav>
+
+
+    <div class="social-links">
+      <a href="mailto:nogueirapedro404@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+      <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
+      <a href="https://bsky.app/profile/nogueira-astro.bsky.social" target="_blank" class="social-link">
+        <img src="/assets/bluesky-logo.svg" alt="Bluesky" class="social-icon bluesky-icon">
+      </a>
+      <a href="https://twitter.com/nogueira_astro" target="_blank" class="social-link">
+        <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon">
+      </a>
+    </div>
+
+    <div class="language-switcher">
+      <a href="/pt/" class="lang-link"><img src="/assets/br.svg" alt="Português" class="lang-flag"> Português</a>
+      <a href="/en/" class="lang-link"><img src="/assets/uk.svg" alt="English" class="lang-flag"> English</a>
+      <a href="/es/" class="lang-link"><img src="/assets/es.svg" alt="Español" class="lang-flag"> Español</a>
+    </div>
+
+    <div class="switch-container sidebar-switch">
+      <label class="switch-label" for="theme-toggle-sidebar">🌗</label>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-sidebar">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="main-content" tabindex="-1">
+    <!-- Seção de boas-vindas -->
+    
+    <h1 id="welcome-">Welcome 👋</h1>
+<p>I am Pedro Henrique Nogueira, an astrophysicist focused on exoplanets, brown dwarfs, exomoons and planetary formation.</p>
+
+<!-- Explore my [Portfolio](/en/portfolio/), read my [Blog](/en/blog/), or learn more [About me](/en/about/). -->
+
+
+    <div class="switch-container">
+      <label class="switch-label" for="theme-toggle">🌗</label>
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    
+
+                
+    <footer class="site-footer">
+      &copy; 2025 Pedro Nogueira
+    </footer>
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Referências aos elementos principais 
+  const isPortraitMobile = window.matchMedia("(max-width: 768px) and (orientation: portrait)").matches;
+  const toggleMain = document.getElementById('theme-toggle');
+  const langSwitcherLinks = document.querySelectorAll('.language-switcher a');
+  const toggleSidebar = document.getElementById('theme-toggle-sidebar');
+  const body = document.body;
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelectorAll('.sidebar .nav-link');
+  const giscusFrame = document.querySelector('iframe.giscus-frame');
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  // ================================
+  // THEME MANAGEMENT
+  // ================================
+  // Sets the theme to light or dark mode based on the provided boolean value
+  // Function to set the theme of the website to light or dark mode
+  // based on the boolean value passed as the parameter `isLight`.
+  function setTheme(isLight) {
+    if (isLight) {
+      // If `isLight` is true, add the 'light-mode' class to the body
+      // and store the theme preference as 'light' in localStorage.
+      body.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+      return;
+    }
+    // If `isLight` is false, remove the 'light-mode' class from the body
+    // and store the theme preference as 'dark' in localStorage.
+    body.classList.remove('light-mode');
+    localStorage.setItem('theme', 'dark');
+  }
+
+  // Retrieve the saved theme preference from localStorage
+  const savedTheme = localStorage.getItem('theme');
+  
+  // Check if a theme preference exists in localStorage
+  if (savedTheme) {
+    // Set `isLight` to true if the saved theme is 'light', otherwise false
+    isLight = savedTheme === 'light';
+  } else {
+    // If no saved theme, check the user's system preference for light mode
+    const prefersLightScheme = window.matchMedia('(prefers-color-scheme: light)');
+    // Set `isLight` based on the system preference
+    isLight = prefersLightScheme.matches;
+  }
+
+  // Set the initial theme based on the `isLight` variable
+  setTheme(isLight);
+
+  // Update the main toggle switch to reflect the current theme
+  toggleMain.checked = isLight;
+  
+    function updateGiscusTheme(theme) {
+      const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
+      giscusScript.setAttribute('data-theme', theme);
+    }
+  // Set Theme giscus theme
+  function setGiscusTheme(theme) {
+   var iframe = document.querySelector('.giscus-frame');
+
+   if (iframe) {
+    var url = new URL(iframe.src);
+    url.searchParams.set('theme', theme);
+    iframe.src = url.toString();
+   }
+  }
+
+
+  // Check if the sidebar toggle exists
+  if (toggleSidebar) {
+    // Update the sidebar toggle switch to reflect the current theme
+    toggleSidebar.checked = isLight;
+
+    // Add an event listener to the sidebar toggle to update the theme when changed
+    toggleSidebar.addEventListener('change', () => window.setTheme(toggleSidebar.checked));
+  }
+  
+  toggleMain.addEventListener('change', () => {
+    setTheme(toggleMain.checked);
+    setGiscusTheme(toggleMain.checked);
+    //setIletterTheme(toggleMain.checked);
+    //updateGiscusTheme(toggleMain.checked);
+  });
+
+  // ================================
+  // MENU TOGGLE
+  // ================================
+
+  menuToggle.addEventListener("click", () => {
+    const showingMain = body.classList.contains("show-main");
+    body.classList.remove("sidebar-only", "show-main");
+    requestAnimationFrame(() => {
+    body.classList.add(showingMain ? "sidebar-only" : "show-main");
+    });
+  });
+
+  // ================================
+  // SIDEBAR TRANSITION INIT
+  // ================================
+  const hasEntered = sessionStorage.getItem("entered");
+  if (isPortraitMobile) {
+    document.body.classList.remove('show-main');
+    document.body.classList.add('sidebar-only');
+    if (hasEntered === "true") {
+      body.classList.remove("show-main", "sidebar-only");
+      body.classList.add("show-main");
+    } else {
+      body.classList.remove("show-main", "sidebar-only");
+      body.classList.add("sidebar-only");
+      sessionStorage.setItem("entered", "false");
+    }
+  
+    // Update sessionStorage when a sidebar link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        sessionStorage.setItem("entered", "true");
+      });
+    });
+
+    const transitionDuration = parseFloat(getComputedStyle(body).getPropertyValue('transition-duration')) * 1000 || 100;
+    body.classList.add("content-ready");
+    setTimeout(() => {
+      body.classList.add("content-ready");
+    }, transitionDuration);
+
+
+    // Quando clica no menu hambúrguer
+    const toggle = document.getElementById("menu-toggle");
+    if (toggle) {
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("entered");
+        const nowEntered = body.classList.contains("entered");
+        sessionStorage.setItem("entered", nowEntered ? "true" : "false");
+      });
+    }
+  }
+
+  // ================================
+  // REMOVE PRELOAD CLASS
+  // ================================
+    body.classList.remove('preload');
+  });
+  </script>
+  <script>
+    const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
+  </script>
+<!-- <script>
+  document.querySelector('script[src="https://giscus.app/client.js"]').setAttribute('data-theme', theme);
+</script> -->
+</body>
+</html>
