@@ -14,7 +14,7 @@
   <title>primeiro projeto</title>
   <!-- <link rel="stylesheet" href="http://localhost:4000/en/assets/css/style_white.css"> -->
   <link rel="stylesheet" href="/assets/css/style_white.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     body {
       transition: background-color 0.3s ease;
@@ -69,16 +69,25 @@
 
 
     <div class="social-links">
+      
       <a href="mailto:nogueirapedro404@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+      
       <a href="https://github.com/PedroNogueira404" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+      
       <a href="https://www.linkedin.com/in/pedro-henrique-nogueira-8a30571aa" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+
       <a href="https://youtube.com/@exopedrito" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
-      <a href="https://bsky.app/profile/nogueira-astro.bsky.social" target="_blank" class="social-link">
+
+      <!-- <a href="https://bsky.app/profile/nogueira-astro.bsky.social" target="_blank" class="social-link">
         <img src="/assets/bluesky-logo.svg" alt="Bluesky" class="social-icon bluesky-icon">
-      </a>
+      </a> -->
+      <a href="https://bsky.app/profile/nogueira-astro.bsky.social" target="_blank" class="social-link"><i class="fab fa-bluesky"></i></a>
+      
+      
       <a href="https://twitter.com/nogueira_astro" target="_blank" class="social-link">
-        <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon">
-      </a>
+        <i class="fa-brands fa-x-twitter"></i></a>
+        <!-- <img src="/assets/x-logo2.svg" alt="X" class="social-icon x-icon">
+      </a> -->
     </div>
 
     <div class="language-switcher">
@@ -124,34 +133,24 @@ BBBBBBBBBBBBBBBB</p>
     <div class="post-meta">
       <p>Last updated: May 28, 2025</p>
       <p>Published on: April 22, 2024</p>      
-      <div id="giscus_container"></div>
-        <script src="https://giscus.app/client.js"
-                data-repo="PedroNogueira404/PedroNogueira404.github.io"
-                data-repo-id="R_kgDOOW9BoA"
-                data-category="General"
-                data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                crossorigin="anonymous"
-                async>
-        </script>
-        <!-- <div id="giscus_container"></div>
-<script src="https://giscus.app/client.js"
-        data-repo="PedroNogueira404/PedroNogueira404.github.io"
-        data-repo-id="R_kgDOOW9BoA"
-        data-category="General"
-        data-category-id="DIC_kwDOOW9BoM4Co8kQ"
-        data-mapping="pathname"
-        crossorigin="anonymous"
-        async>
-</script> -->
-
-
-    </div>
-    
+    <div id="giscus_container"></div>
+      <script src="https://giscus.app/client.js"
+              data-repo="PedroNogueira404/PedroNogueira404.github.io"
+              data-repo-id="R_kgDOOW9BoA"
+              data-category="General"
+              data-category-id="DIC_kwDOOW9BoM4Co8kQ"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-theme="theme-color"
+              data-lang="en"
+              data-input-position="bottom"
+              crossorigin="anonymous"
+              async>
+      </script>
+  </div>
+  
 
                 
     <footer class="site-footer">
@@ -159,22 +158,7 @@ BBBBBBBBBBBBBBBB</p>
     </footer>
   </div>
 </div>
-<!-- <script>
-  // Detecta idioma do navegador
-  const lang = navigator.language || navigator.userLanguage;
 
-  // Extrai apenas o código principal: "en", "pt", "es"
-  const mainLang = lang.split('-')[0].toLowerCase();
-
-  // Lista de idiomas suportados
-  const supported = ['en', 'pt', 'es'];
-
-  // Se for suportado, redireciona; senão, padrão para inglês
-  const redirectLang = supported.includes(mainLang) ? mainLang : 'en';
-
-  // Redireciona
-  window.location.replace('/' + redirectLang + '/');
-</script> -->
 <script>
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -190,13 +174,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById('sidebar');
   const mainContent = document.querySelector('.main-content');
 
-  // langSwitcherLinks.forEach(link => {
-  //   link.addEventListener('click', (e) => {
-  //     const lang = e.target.getAttribute('href').split('=')[1];
-  //     document.documentElement.lang = lang; // Altera a linguagem do HTML
-  //     window.location.search = `?lang=${lang}`; // Atualiza a URL com o novo idioma
-  //   });
-  // });
+  langSwitcherLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const lang = e.target.getAttribute('href').split('=')[1];
+      document.documentElement.lang = lang; 
+      window.location.search = `?lang=${lang}`; 
+    });
+  });
 
   // ================================
   // THEME MANAGEMENT
@@ -238,21 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update the main toggle switch to reflect the current theme
   toggleMain.checked = isLight;
   
-    // function updateGiscusTheme(theme) {
-    //   const giscusScript = document.querySelector('script[src="https://giscus.app/client.js"]');
-    //   giscusScript.setAttribute('data-theme', theme);
-    // }
-  // Set Theme giscus theme
-  // function setGiscusTheme(theme) {
-  //  var iframe = document.querySelector('.giscus-frame');
 
-  //  if (iframe) {
-  //   var url = new URL(iframe.src);
-  //   url.searchParams.set('theme', theme);
-  //   iframe.src = url.toString();
-  //   // giscusScript.setAttribute('data-theme', theme)
-  //  }
-  // }
 
     function changeGiscusTheme () {
     const theme = document.documentElement.getAttribute('data-theme') === 'dark' ?  'dark' : 'light'
@@ -276,16 +246,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Update the sidebar toggle switch to reflect the current theme
     toggleSidebar.checked = isLight;
 
-    // Add an event listener to the sidebar toggle to update the theme when changed
     toggleSidebar.addEventListener('change', () => window.setTheme(toggleSidebar.checked));
   }
   
   toggleMain.addEventListener('change', () => {
     setTheme(toggleMain.checked);
-    changeGiscusTheme();
+    // changeGiscusTheme();
 
-    // setGiscusTheme(toggleMain.checked);
-    // updateGiscusTheme(toggleMain.checked);
   });
 
   // ================================

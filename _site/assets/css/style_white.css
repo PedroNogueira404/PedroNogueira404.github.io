@@ -7,9 +7,9 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.4;
   display: block;
   min-height: 100vh;
   background-color: var(--main-bg, #fff);
@@ -18,13 +18,16 @@ body {
 }
 /* Tema Claro */
 body.light-mode {
+  font-family: 'Manrope', sans-serif;
   background-color: #f4f4f4;
   color: #222;
-  --hover-color: #7a2bd4; /* escuro, bom para fundo claro */
+  --hover-color: #7a2bd4;
 }
+
 
 /* Tema Escuro */
 body:not(.light-mode) {
+  font-family: 'Manrope', sans-serif;
   --main-bg: #0f0e0e;
   color: #ffffff;
   --hover-color: #FFDD57; /* amarelo, bom para fundo escuro */
@@ -40,6 +43,8 @@ body:not(.light-mode) {
   background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
   background-size: cover;
   color: white;
+  border: 1px solid #1f2020;
+  border color: #1f2020;
   height: 100vh; /* força ocupar a altura toda */
   overflow: hidden; /* importante */
 }
@@ -60,6 +65,10 @@ body:not(.light-mode) {
   border-radius: 50%;
 }
 
+body:not(.light-mode) .profile-img {
+  border: 2px solid #dee6e6;
+}
+
 .profile-name {
   font-size: 1.4rem;
   font-weight: 800;
@@ -72,8 +81,9 @@ body:not(.light-mode) {
      1px  1px 0 #000;
 }
 
+
 .profile-title {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #beaafa;
   margin-bottom: 0.8rem;
 }
@@ -87,11 +97,24 @@ body:not(.light-mode) {
     z-index: 1102;
   }
 
-
+/* The sidebar links formatting */
 .main-nav a {
-  font-weight: 700;
+  font-family: 'typewriter', sans-serif;
+  font-weight: 600;
+  border: 2px solid #f00707;
+  background-color: #1a1a1a ;
+  border-color: #ffffff;
+  border-radius: 70%;
 }
 
+body.light-mode .main-nav a {
+  font-weight: 600;
+  border: 2px solid #000;
+  background-color: #f8dcdc;
+  border-color: #f10202;
+  border-radius: 70%;
+}
+/* ------------------------------------- */
 .nav-link, .social-link {
   display: block;
   margin: 0.7rem 0;
@@ -100,11 +123,12 @@ body:not(.light-mode) {
   color: #f0f1fa;
   text-align: center;
   width: 100%;
+  transform: scale(1);
 }
 
 .nav-link:hover, .social-link:hover {
   color: var(--hover-color);
-  transform: translateX(5px);
+  transform: translateX(-5%);
 }
 body.light-mode .nav-link:hover,
 body.light-mode .social-link:hover {
@@ -122,29 +146,32 @@ body.light-mode .social-link:hover {
 
 .social-link {
   font-size: 24px;
-  color: #B69CFF;
+  color: #937bd3;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 }
 
 .social-icon {
   width: 24px;
   height: 24px;
-  transition: filter 0.3s ease;
+  transition: filter 3s ease;
   vertical-align: middle;
   filter: brightness(1) invert(0);
 }
 
 body.dark-mode .social-icon {
-  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
+  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(225deg) brightness(120%) contrast(92%);
 }
 
 .social-link .x-icon,
 .social-link .bluesky-icon {
-  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
+  filter: invert(72%) sepia(85%) saturate(654%) hue-rotate(200deg) brightness(100%) contrast(72%);
   width: 24px;
   height: 24px;
   vertical-align: middle;
+  color: #937bd3;
+  text-decoration: none;
+  transition: color 0.5s ease;
 }
 
 /* Cards do Portfólio */
@@ -158,15 +185,18 @@ body.dark-mode .social-icon {
 .card {
   background-color: #1e1e1e;
   color: #e0e0e0;
-  border-radius: 10px;
+  /* border-radius: 2px; */
+  /* border: 2px solid #1f2020; */
   padding: 1.5rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0a88c7;
 }
 
 .card h3 {
@@ -183,7 +213,8 @@ body.dark-mode .social-icon {
 
 .card a {
   text-decoration: none;
-  color: inherit;
+  color: rgb(202, 21, 21);
+  border-radius: 2px;
   transition: color 0.3s ease;
 }
 
@@ -193,23 +224,25 @@ body.dark-mode .social-icon {
 
 .card small {
   font-size: 0.9rem;
-  color: #b0b0b0;
+  color: #3f9c09;
 }
 
 body.light-mode .card {
-  background-color: #f9f9f9;
+  background-color: #fcfbfb;
   color: #222;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #1f2020;
 }
 
 body.light-mode .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2px solid #0a88c7; /* Adiciona borda azul clara no hover */
 }
 
-body.light-mode .card a:hover {
+/* body.light-mode .card a:hover {
   color: #66ccff;
-}
+} */
 
 /* Switch de idioma */
 .language-switcher {
@@ -231,19 +264,21 @@ body.light-mode .card a:hover {
 }
 
 .lang-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.7);
 }
 
 .lang-flag {
-  width: 24px;
+  width: 28px;
   height: auto;
   object-fit: cover;
-  border: 1px solid #000000;
+  border: 2px solid #000000;
   border-radius: 2px;
 }
 
 /* Conteúdo principal */
 .main-content {
+  font-family: proxima nova, sans-serif;
+  font-size: 20px;
   flex: 1;
   padding: 2rem 3rem;
   min-height: 100vh;
@@ -474,8 +509,12 @@ body.light-mode .sidebar {
 }
 
 body.light-mode .profile-name {
-  color: #1a1a1a; /* cor do título no modo claro */
-  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+  border-color: 2px solid #1f2020;
+  text-shadow: none; /* Remove shadow no modo claro */
+   /* cor do título no modo claro */
+  /* font-weight: 600; */
 }
 
 body.light-mode .profile-title {
