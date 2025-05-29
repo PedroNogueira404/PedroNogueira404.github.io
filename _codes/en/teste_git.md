@@ -4,7 +4,7 @@ title: "Arxiv-Summarizer"
 date: 2025-04-10
 lang: en
 locale: en
-excerpt: "Automate summarizing papers/abstracts on Arxivvvvvvvvvvv"
+excerpt: "Automate summarizing papers/abstracts on  Arxivvvvvvvvvvv"
 category: codes
 permalink: /codes/:slug/
 ---
