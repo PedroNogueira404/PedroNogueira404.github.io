@@ -7,18 +7,21 @@
   box-sizing: border-box;
 }
 body {
-  /* font-family: 'Orbitron', sans-serif; */
+  /* font-family: 'nunito', sans-serif; */
   font-size: 18px;
   line-height: 1.4;
   display: block;
-  min-height: 100vh;
-  background-color: var(--main-bg, #fff);
+  max-height: 100vh;
+  /* height: 100vh; */
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: var(--main-bg, #aa9494);
   justify-content: center; 
   text-align: center;
 }
 /* Tema Claro */
 body.light-mode {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'nunito', sans-serif;
   background-color: #f4f4f4;
   color: #222;
   --hover-color: #7a2bd4;
@@ -27,11 +30,16 @@ body.light-mode {
 
 /* Tema Escuro */
 body:not(.light-mode) {
-  font-family: 'Manrope', sans-serif;
-  --main-bg: #0f0e0e;
-  color: #ffffff;
+  font-family: 'proxima nova', sans-serif;
+  font-size: 20px;
+  --main-bg: #1E1E3F;
+  color: #eee6e6;
   --hover-color: #FFDD57; /* amarelo, bom para fundo escuro */
 }
+/* body:not(.light-mode) .menu-toggle:focus {
+  font-size: 1000px;
+  outline: none;
+} */
 /* Sidebar */
 .sidebar {
   flex-shrink: 0;
@@ -39,12 +47,12 @@ body:not(.light-mode) {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Para empurrar os ícones sociais pra base */
-  padding: 1.5rem;
-  background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
+  padding: 1rem;
+  background: #1e1e1e url('/assets/Infinite_Loop.gif') 
+  no-repeat center center;
   background-size: cover;
-  color: white;
+  /* color: white; */
   border: 1px solid #1f2020;
-  border color: #1f2020;
   height: 100vh; /* força ocupar a altura toda */
   overflow: hidden; /* importante */
 }
@@ -70,15 +78,15 @@ body:not(.light-mode) .profile-img {
 }
 
 .profile-name {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
-  color: #F1C40F;
-  text-shadow:
+  color: #FAD000;
+  /* text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
+     1px  1px 0 #000; */
 }
 
 
@@ -87,8 +95,6 @@ body:not(.light-mode) .profile-img {
   color: #beaafa;
   margin-bottom: 0.8rem;
 }
-
-
 
 .switch-container {
     position: fixed;
@@ -99,28 +105,31 @@ body:not(.light-mode) .profile-img {
 
 /* The sidebar links formatting */
 .main-nav a {
-  font-family: 'typewriter', sans-serif;
-  font-weight: 600;
+  font-family: 'proxima nova';
+  color: #beb8e0;
+  font-weight: 530;
+  font-size: 20px; ;
   border: 2px solid #f00707;
-  background-color: #1a1a1a ;
-  border-color: #ffffff;
+  background-color: #1a1a1a93;
+  border-color: #289b1e81;
   border-radius: 70%;
 }
 
 body.light-mode .main-nav a {
-  font-weight: 600;
+  font-weight: 530;
   border: 2px solid #000;
-  background-color: #f8dcdc;
+  background-color: #e2b4b4;
   border-color: #f10202;
   border-radius: 70%;
 }
 /* ------------------------------------- */
 .nav-link, .social-link {
+  font-weight: 530;
   display: block;
   margin: 0.7rem 0;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #f0f1fa;
+  color: #7c85df;
   text-align: center;
   width: 100%;
   transform: scale(1);
@@ -130,6 +139,10 @@ body.light-mode .main-nav a {
   color: var(--hover-color);
   transform: translateX(-5%);
 }
+.social-link:hover {
+  transform: scale(1.2);
+}
+
 body.light-mode .nav-link:hover,
 body.light-mode .social-link:hover {
   color: var(--hover-color) !important;
@@ -213,18 +226,26 @@ body.dark-mode .social-icon {
 
 .card a {
   text-decoration: none;
-  color: rgb(202, 21, 21);
-  border-radius: 2px;
+  color: rgb(60, 148, 1);
+  font-weight: 600;
+  -webkit-text-stroke: 1px #000000;
+  /* text-stroke: 1px #000000; */
+  border-radius: 2px solid #000000;
   transition: color 0.3s ease;
 }
 
+body.light-mode .card a {
+  color: #0e005f; /* Azul claro no modo claro */
+  -webkit-text-stroke: 0.2px #8d8686; 
+  
+}
 .card a:hover {
   color: #66ccff;
 }
 
 .card small {
-  font-size: 0.9rem;
-  color: #3f9c09;
+  font-size: 1.2rem;
+  color: #215a00;
 }
 
 body.light-mode .card {
@@ -240,9 +261,9 @@ body.light-mode .card:hover {
   border: 2px solid #0a88c7; /* Adiciona borda azul clara no hover */
 }
 
-/* body.light-mode .card a:hover {
+body.light-mode .card a:hover {
   color: #66ccff;
-} */
+}
 
 /* Switch de idioma */
 .language-switcher {
@@ -264,7 +285,7 @@ body.light-mode .card:hover {
 }
 
 .lang-link:hover {
-  transform: scale(1.7);
+  transform: scale(1.4);
 }
 
 .lang-flag {
@@ -503,9 +524,9 @@ body.light-mode .menu-toggle {
   }
 }
 body.light-mode .sidebar {
-  background: #f4f4f4 url('/assets/black and white loop GIF by Doze Studio.gif') no-repeat center center;
+  background-image: linear-gradient(rgba(250, 1, 1, 0.1), rgba(51, 161, 7, 0.253)), url('/assets/black and white loop GIF by Doze Studio.gif');
+  /* background:  #1e1e1e url('/assets/black and white loop GIF by Doze Studio.gif') no-repeat center center; */
   background-size: cover;
-  color: #222;
 }
 
 body.light-mode .profile-name {
