@@ -30,10 +30,11 @@ body.light-mode {
 
 /* Tema Escuro */
 body:not(.light-mode) {
-  font-family: 'proxima nova', sans-serif;
+  font-family: proxima nova,sans-serif;
   font-size: 20px;
-  --main-bg: #1E1E3F;
-  color: #eee6e6;
+  --main-bg: #1E1E3F; /* cor de fundo escuro */
+  /* #2D2B55; */
+  color: #9EFFFF;
   --hover-color: #FFDD57; /* amarelo, bom para fundo escuro */
 }
 /* body:not(.light-mode) .menu-toggle:focus {
@@ -47,7 +48,7 @@ body:not(.light-mode) {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Para empurrar os ícones sociais pra base */
-  padding: 1rem;
+  padding: 2rem;
   background: #1e1e1e url('/assets/Infinite_Loop.gif') 
   no-repeat center center;
   background-size: cover;
@@ -62,8 +63,30 @@ body:not(.light-mode) {
   align-items: center; /* centraliza tudo horizontalmente */
   justify-content: center; /* ADICIONE ISSO para centralizar verticalmente */
   text-align: center;
-  height: 100%; /* ADICIONE para preencher o espaço da sidebar */
+  height: 100vh; /* ADICIONE para preencher o espaço da sidebar */
 }
+.position-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.post-meta {
+  display: flex;
+  /* background-color: #2D2B55 ; */
+  color: #FAEFA5;
+   /* #9EFFFF; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
 
 .profile-img {
   width: 110px;
@@ -91,27 +114,31 @@ body:not(.light-mode) .profile-img {
 
 
 .profile-title {
+  font-family: droid sans mono, sans-serif;
   font-size: 1rem;
-  color: #beaafa;
+  color: #FFEE80;
+  /* #beaafa; */
   margin-bottom: 0.8rem;
 }
 
 .switch-container {
     position: fixed;
     top: 10px;
-    right: 10px;
+    left: 10px;
     z-index: 1102;
   }
 
 /* The sidebar links formatting */
 .main-nav a {
-  font-family: 'proxima nova';
-  color: #beb8e0;
+  font-family: proxima nova, sans-serif;
+  color: #9EFFFF;
+  /* #FF9D00; */
+  /* beb8e0; */
   font-weight: 530;
-  font-size: 20px; ;
-  border: 2px solid #f00707;
+  font-size: 17px; ;
+  /* border: 0.1px solid #f00707; */
   background-color: #1a1a1a93;
-  border-color: #289b1e81;
+  border-color: #A599E9;
   border-radius: 70%;
 }
 
@@ -129,7 +156,8 @@ body.light-mode .main-nav a {
   margin: 0.7rem 0;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #7c85df;
+  color: #FF9D00
+  /* #7c85df; */
   text-align: center;
   width: 100%;
   transform: scale(1);
@@ -143,10 +171,10 @@ body.light-mode .main-nav a {
   transform: scale(1.2);
 }
 
-body.light-mode .nav-link:hover,
+/* body.light-mode .nav-link:hover,
 body.light-mode .social-link:hover {
   color: var(--hover-color) !important;
-}
+} */
 
 .social-links {
   display: flex;
@@ -196,12 +224,14 @@ body.dark-mode .social-icon {
 }
 
 .card {
-  background-color: #1e1e1e;
+  background-color: #2D2B55;
+  /* #A599E9 */
+  /* #1e1e1e; */
   color: #e0e0e0;
   /* border-radius: 2px; */
   /* border: 2px solid #1f2020; */
   padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   
 }
@@ -226,7 +256,7 @@ body.dark-mode .social-icon {
 
 .card a {
   text-decoration: none;
-  color: rgb(60, 148, 1);
+  color: #FAD000;
   font-weight: 600;
   -webkit-text-stroke: 1px #000000;
   /* text-stroke: 1px #000000; */
@@ -240,7 +270,8 @@ body.light-mode .card a {
   
 }
 .card a:hover {
-  color: #66ccff;
+  color: #4D21FC;
+   /* #66ccff; */
 }
 
 .card small {
@@ -316,13 +347,13 @@ body.light-mode .card a:hover {
   display: none;
   position: fixed;
   top: 10px;
-  left: 10px;
+  right: 10px;
   font-size: 1.5rem;
-  background: none;
+  /* background: none; */
   color: white;
   border: none;
   z-index: 1001;
-  cursor: pointer;
+  cursor: 
 }
 body.light-mode .menu-toggle {
   color: #222; /* Ou qualquer cor escura que contraste com o fundo claro */
@@ -356,6 +387,7 @@ body.light-mode .menu-toggle {
     justify-content: center;
     text-align: center;
     height: auto;
+    padding: 1px;
   }
 /* Sidebar */
    

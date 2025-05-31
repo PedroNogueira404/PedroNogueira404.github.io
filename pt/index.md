@@ -2,7 +2,7 @@
 layout: default
 title: Home
 lang: pt
-permalink: /
+permalink: /pt/
 ---
 
 # Welcome 👋
