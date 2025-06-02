@@ -1,11 +1,17 @@
 menu:
   home: HOME
-  about: ABOUT ME
-  outreach: SCIENCE COMMUNICATION
+  about: About me
+  outreach: SCI COMM.
   personal: PERSONAL INTERESTS
   portfolio: PORTFOLIO
   blog: BLOG
-# home:
+langs:
+  en: English
+  es: Español
+  pt: Português
+
+total:
+  posts: Total posts found in all languages
 #   welcome: "Welcome 👋!"
 #   intro: "I'm Pedro Henrique Nogueira, an astrophysicist specialized in exoplanets, brown dwarfs, exomoons, and planet formation."
 #   explore: "Check out my [Portfolio](/en/portfolio/), read my [Blog](/en/blog/), or learn more [About me](/en/about/)."

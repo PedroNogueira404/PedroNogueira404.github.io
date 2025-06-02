@@ -1,7 +1,10 @@
 ---
 layout: default
-title: Portfolio
+title: menu.portfolio
+namespace: portfolio
 permalink: /portfolio/
+permalink_es: /portfolio/
+permalink_pt: /portfólio/
 ---
 # Publications
 <div class="card-grid">

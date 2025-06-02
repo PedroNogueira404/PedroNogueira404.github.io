@@ -1,4 +1,5 @@
-default_lang: en
+# default_lang: en
+baseurl: ""
 title: Pedro Nogueira
 languages: ["en", "pt", "es"]
 
@@ -28,55 +29,14 @@ collections:
 #       lang: en
 #       permalink: /en/blog/:slug/
 
-
-  # - scope:
-  #     path: "_codes/en"
-  #     type: codes
-  #   values:
-  #     lang: en
-  #     permalink: /en/codes/:slug/
-
-  # - scope:
-  #     path: "_codes/es"
-  #     type: codes
-  #   values:
-  #     lang: es
-  #     permalink: /es/codes/:slug/
-  # - scope:
-  #     path: "_codes/pt"
-  #     type: codes
-  #   values:
-  #     lang: pt
-  #     permalink: /pt/codes/:slug/
-  
-  # - scope:
-  #     path: "_publications/en"
-  #     type: publications
-  #   values:
-  #     lang: en
-  #     permalink: /en/publications/:slug/
-
-  # - scope:
-  #     path: "_publications/es"
-  #     type: publications
-  #   values:
-  #     lang: es
-  #     permalink: /es/publications/:slug/
-
-  # - scope:
-  #     path: "_publications/pt"
-  #     type: publications
-  #   values:
-  #     lang: pt
-  #     permalink: /pt/publications/:slug/
-
 exclude_from_localizations:
   - assets
   - css
   - _blogposts
   - _codes
   - _publications
-i18n_dir: "_i18n"  # Direciona o Jekyll para os arquivos de tradução
+i18n_dir: "_i18n" # Direciona o Jekyll para os arquivos de tradução
 default_locale_in_subfolder: true
 
 future: true
+# Permalink settings

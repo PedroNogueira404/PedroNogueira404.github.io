@@ -35,12 +35,7 @@
 </head>
 
 <body class="preload">
-<!-- <script>
-  // Redireciona da raiz para /en/ se estiver na raiz ("/" ou "/index.html")
-  if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-    window.location.replace("/en/");
-  }
-</script> -->
+
 <noscript>
   <p style="text-align: center; background: #ffdddd; padding: 1rem;">
     This site requires JavaScript to function properly. Please enable JavaScript in your browser.
@@ -58,14 +53,15 @@
       <p class="profile-title">Astrophysicist</p>
     </div>
     
-<nav class="main-nav">
-  <a href="/{{ site.lang }}/" class="nav-link">{% t menu.home %}</a>
-  <a href="/{{ site.lang }}/about/" class="nav-link">{% t menu.about %}</a>
-  <a href="/{{ site.lang }}/portfolio/" class="nav-link">{% t menu.portfolio %}</a>
-  <a href="/{{ site.lang }}/outreach/" class="nav-link">{% t menu.outreach %}</a>
-  <a href="/{{ site.lang }}/blog/" class="nav-link">{% t menu.blog %}</a>
-  <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
-</nav>
+    <nav class="main-nav">
+      <a href="{% tl home %}" class="nav-link">{% t menu.home %}</a> 
+      <a href="{% tl about %}" class="nav-link">{% t menu.about %}</a>
+      <a href="{% tl portfolio %}" class="nav-link">{% t menu.portfolio %}</a>
+      <a href="{% tl outreach %}" class="nav-link">{% t menu.outreach %}</a>
+      <a href="{% tl blog %}" class="nav-link">{% t menu.blog %}</a>
+      <!-- <a href="/{{ site.lang }}/blog/" class="nav-link">{% t menu.blog %}</a> -->
+      <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
+    </nav>
 
 
     <div class="social-links">

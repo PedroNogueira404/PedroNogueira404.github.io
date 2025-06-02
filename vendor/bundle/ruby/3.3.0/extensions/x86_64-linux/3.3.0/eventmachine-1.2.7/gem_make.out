@@ -3,17 +3,17 @@ current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/event
 creating Makefile
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-g81ma sitelibdir\=./.gem.20250524-18880-g81ma clean
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-skblfa sitelibdir\=./.gem.20250601-34676-skblfa clean
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-g81ma sitelibdir\=./.gem.20250524-18880-g81ma
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-skblfa sitelibdir\=./.gem.20250601-34676-skblfa
 compiling mapper.cpp
 compiling rubymain.cpp
 linking shared-object fastfilereaderext.so
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-g81ma sitelibdir\=./.gem.20250524-18880-g81ma install
-/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20250524-18880-g81ma
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-skblfa sitelibdir\=./.gem.20250601-34676-skblfa install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20250601-34676-skblfa
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/eventmachine-1.2.7/ext/fastfilereader
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-g81ma sitelibdir\=./.gem.20250524-18880-g81ma clean
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-skblfa sitelibdir\=./.gem.20250601-34676-skblfa clean

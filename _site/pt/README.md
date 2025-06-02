@@ -16,3 +16,5 @@ Falta eu consertar o last_modified_at plugin, nao esta funcionando em blogposts/
 Separar publications e codes secao?
 
 Problema pior de site raiz nao ter formatacao css
+
+NAO CONSIGO FAZER BUILD NO GITHUB

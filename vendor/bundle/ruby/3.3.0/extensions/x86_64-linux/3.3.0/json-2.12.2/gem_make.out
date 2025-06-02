@@ -8,16 +8,16 @@ checking for whether -std=c99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-lj5vgm sitelibdir\=./.gem.20250524-18880-lj5vgm clean
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-2xsgyd sitelibdir\=./.gem.20250601-34676-2xsgyd clean
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-lj5vgm sitelibdir\=./.gem.20250524-18880-lj5vgm
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-2xsgyd sitelibdir\=./.gem.20250601-34676-2xsgyd
 compiling parser.c
 linking shared-object json/ext/parser.so
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-lj5vgm sitelibdir\=./.gem.20250524-18880-lj5vgm install
-/usr/bin/install -c -m 0755 parser.so ./.gem.20250524-18880-lj5vgm/json/ext
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-2xsgyd sitelibdir\=./.gem.20250601-34676-2xsgyd install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20250601-34676-2xsgyd/json/ext
 
 current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.3.0/gems/json-2.12.2/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20250524-18880-lj5vgm sitelibdir\=./.gem.20250524-18880-lj5vgm clean
+make DESTDIR\= sitearchdir\=./.gem.20250601-34676-2xsgyd sitelibdir\=./.gem.20250601-34676-2xsgyd clean
