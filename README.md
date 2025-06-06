@@ -1,6 +1,6 @@
 # PedroNogueira404.github.io
 
-My personal website. Written w/ GithubPages, using HTML, JavaScript, and CSS.
+My personal website. Written w/ Jekyll, using HTML, JavaScript, and CSS.
 
 What to fix:
 * hamburguer menu
