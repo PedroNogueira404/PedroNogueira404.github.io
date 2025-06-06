@@ -4,4 +4,4 @@ module Dir
     alias_method :exists?, :exist? unless respond_to?(:exists?)
   end
 end
-puts "[✓] Patch Dir.exists? carregado com sucesso!"
+puts "[✓] Patch Dir.exists? carregado com sucesso! "
