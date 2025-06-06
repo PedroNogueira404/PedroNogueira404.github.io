@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https:fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 /* Reset básico */
 * {
@@ -7,142 +7,214 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Inter', sans-serif;
+  /* font-family: 'nunito', sans-serif; */
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.4;
   display: block;
-  /* overflow: hidden; <- Remova essa linha */
-  min-height: 100vh;
-  background-color: var(--main-bg, #fff);
-  color: #e0e0e0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  justify-content: center; /* ADICIONE ISSO para centralizar verticalmente */
+  max-height: 100vh;
+  /* height: 100vh; */
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: var(--main-bg, #aa9494);
+  justify-content: center; 
   text-align: center;
 }
 /* Tema Claro */
 body.light-mode {
-  --main-bg: #fff;
+  font-family: 'nunito', sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  --hover-color: #7a2bd4;
 }
+
 
 /* Tema Escuro */
 body:not(.light-mode) {
-  --main-bg: #000;
-  color: #fff;
+  font-family: proxima nova,sans-serif;
+  font-size: 20px;
+  --main-bg: #1E1E3F; /* cor de fundo escuro */
+  /* #2D2B55; */
+  color: #9EFFFF;
+  --hover-color: #FFDD57; /* amarelo, bom para fundo escuro */
 }
-/* Sidebar */
-.sidebar {
-  flex-shrink: 0;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Para empurrar os ícones sociais pra base */
-  padding: 1.5rem;
-  background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
-  background-size: cover;
-  color: white;
-  height: 100vh; /* força ocupar a altura toda */
-  overflow: hidden; /* importante */
+body:not(.light-mode) .menu-toggle:focus {
+  font-size: 1000px;
+  outline: none;
 }
+/* DARK Sidebar */
 .sidebar-header {
   display: flex;
   flex-direction: column;
   align-items: center; /* centraliza tudo horizontalmente */
   justify-content: center; /* ADICIONE ISSO para centralizar verticalmente */
   text-align: center;
-  height: 100%; /* ADICIONE para preencher o espaço da sidebar */
 }
+
+.sidebar {
+  flex-shrink: 0;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Para empurrar os ícones sociais pra base */
+  padding: 1.0rem;
+  background: #1e1e1e url('/assets/Infinite_Loop.gif')
+  no-repeat center center;
+  background-size: cover;
+  border: 1px solid #1f2020;
+  height: 100vh; /* força ocupar a altura toda */
+  min-height: 100vh;
+  overflow: visible; /* importante */
+}
+
+.language-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0rem;
+  flex-wrap: wrap;
+} 
+
+.post-meta {
+  display: flex;
+  /* background-color: #2D2B55 ; */
+  color: #FAEFA5;
+   /* #9EFFFF; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+
 
 .profile-img {
   width: 110px;
   height: 110px;
   margin-bottom: 1rem;
   border: 2px solid black;
+  border-radius: 50%;
+}
+
+body:not(.light-mode) .profile-img {
+  border: 2px solid #dee6e6;
 }
 
 .profile-name {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   margin-bottom: 0.4rem;
-  color: #F1C40F;
-  text-shadow:
+  color: #FAD000;
+  /* text-shadow:
     -1px -1px 0 #000,
      1px -1px 0 #000,
     -1px  1px 0 #000,
-     1px  1px 0 #000;
+     1px  1px 0 #000; */
 }
 
+
 .profile-title {
-  font-size: 0.8rem;
-  color: #beaafa;
+  font-family: droid sans mono, sans-serif;
+  font-size: 1rem;
+  color: #FFEE80;
+  /* #beaafa; */
   margin-bottom: 0.8rem;
 }
 
-
-body.light-mode {
-  background-color: #f4f4f4;
-  color: #222;
-}
 .switch-container {
     position: fixed;
     top: 10px;
-    right: 10px;
+    left: 10px;
     z-index: 1102;
   }
 
-
-.main-nav a {
-  font-weight: 700;
+/* The sidebar links formatting */
+body:not(.light-mode) .main-nav a {
+  font-family: proxima nova, sans-serif;
+  color: #9EFFFF;
+  /* #FF9D00; */
+  /* beb8e0; */
+  font-weight: 530;
+  font-size: 1rem;
+  background-color: #1a1a1a93;
+  border-color: #A599E9;
+  border-radius: 70%;
 }
 
+
+body.light-mode .main-nav a {
+  font-weight: 530;
+  border: 2px solid #000;
+  background-color: #e2b4b4;
+  border-color: #f10202;
+  border-radius: 70%;
+}
+/* ------------------------------------- */
 .nav-link, .social-link {
+  font-weight: 530;
   display: block;
   margin: 0.7rem 0;
   text-decoration: none;
   transition: all 0.3s ease;
-  color: #f0f1fa;
+  color: #FF9D00
+  /* #7c85df; */
   text-align: center;
   width: 100%;
+  transform: scale(1);
 }
 
 .nav-link:hover, .social-link:hover {
-  color: #FFDD57;
-  transform: translateX(5px);
+  color: var(--hover-color);
+  transform: translateX(-5%);
+}
+.social-link:hover {
+  transform: scale(1.2);
 }
 
+/* body.light-mode .nav-link:hover,
+body.light-mode .social-link:hover {
+  color: var(--hover-color) !important;
+} */
+
 .social-links {
-  display: flex;
+  display: flex !important;
   justify-content: center;
+  overflow: visible !important;
   gap: 12px;
   margin-top: auto;
   width: 100%;
   margin-bottom: 0.5rem;
+  overflow: visible !important;
 }
 
 .social-link {
   font-size: 24px;
-  color: #B69CFF;
+  color: #937bd3;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 }
 
 .social-icon {
   width: 24px;
   height: 24px;
-  transition: filter 0.3s ease;
+  transition: filter 3s ease;
   vertical-align: middle;
   filter: brightness(1) invert(0);
 }
 
 body.dark-mode .social-icon {
-  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
+  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(225deg) brightness(120%) contrast(92%);
 }
 
 .social-link .x-icon,
 .social-link .bluesky-icon {
-  filter: invert(72%) sepia(15%) saturate(554%) hue-rotate(215deg) brightness(120%) contrast(92%);
+  filter: invert(72%) sepia(85%) saturate(654%) hue-rotate(200deg) brightness(100%) contrast(72%);
   width: 24px;
   height: 24px;
   vertical-align: middle;
+  color: #937bd3;
+  text-decoration: none;
+  transition: color 0.5s ease;
 }
 
 /* Cards do Portfólio */
@@ -154,17 +226,22 @@ body.dark-mode .social-icon {
 }
 
 .card {
-  background-color: #1e1e1e;
+  background-color: #2D2B55;
+  /* #A599E9 */
+  /* #1e1e1e; */
   color: #e0e0e0;
-  border-radius: 10px;
+  /* border-radius: 2px; */
+  /* border: 2px solid #1f2020; */
   padding: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0a88c7;
 }
 
 .card h3 {
@@ -181,28 +258,46 @@ body.dark-mode .social-icon {
 
 .card a {
   text-decoration: none;
-  color: inherit;
+  color: #FAD000;
+  font-weight: 600;
+  -webkit-text-stroke: 1px #000000;
+  /* text-stroke: 1px #000000; */
+  border-radius: 2px solid #000000;
   transition: color 0.3s ease;
 }
 
+body.light-mode .card a {
+  color: #0e005f; /* Azul claro no modo claro */
+  -webkit-text-stroke: 0.2px #8d8686; 
+  
+}
 .card a:hover {
-  color: #66ccff;
+  color: #4D21FC;
+   /* #66ccff; */
 }
 
 .card small {
-  font-size: 0.9rem;
-  color: #b0b0b0;
+  font-size: 1.2rem;
+  color: #215a00;
 }
+/* body.light-mode .comments-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  color: black;
+  border-radius: 8px;
+} */
 
 body.light-mode .card {
-  background-color: #f9f9f9;
+  background-color: #fcfbfb;
   color: #222;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #1f2020;
 }
 
 body.light-mode .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2px solid #0a88c7; /* Adiciona borda azul clara no hover */
 }
 
 body.light-mode .card a:hover {
@@ -214,34 +309,35 @@ body.light-mode .card a:hover {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.6rem;
+  margin-top: 0rem;
   flex-wrap: wrap;
 }
 
 .lang-link {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
   text-decoration: none;
   color: inherit;
-  font-size: 0;
+  font-size: 0rem;
   transition: transform 0.2s ease;
 }
 
 .lang-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.4);
 }
 
 .lang-flag {
-  width: 24px;
+  width: 28px;
   height: auto;
   object-fit: cover;
-  border: 1px solid #ccc;
+  border: 2px solid #000000;
   border-radius: 2px;
 }
 
 /* Conteúdo principal */
 .main-content {
+  font-family: proxima nova, sans-serif;
+  font-size: 20px;
   flex: 1;
   padding: 2rem 3rem;
   min-height: 100vh;
@@ -258,13 +354,13 @@ body.light-mode .card a:hover {
   display: none;
   position: fixed;
   top: 10px;
-  left: 10px;
+  right: 10px;
   font-size: 1.5rem;
-  background: none;
+  /* background: none; */
   color: white;
   border: none;
   z-index: 1001;
-  cursor: pointer;
+  cursor: 
 }
 body.light-mode .menu-toggle {
   color: #222; /* Ou qualquer cor escura que contraste com o fundo claro */
@@ -279,10 +375,6 @@ body.light-mode .menu-toggle {
   overflow: hidden;
 }
 
-/* Quando menu mobile está ativo, oculta o conteúdo principal 
-body.mobile-menu-active .main-content { 
-  display: none;
-}*/
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) and (orientation: portrait) {
@@ -290,114 +382,65 @@ body.mobile-menu-active .main-content {
     flex-direction: column;
     overflow: hidden;
   }
-
   .layout-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
   }
-
-
-
   .sidebar-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
+    height: auto;
+    padding: 1px;
   }
-  /*
-
-    .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #1e1e1e url('/assets/Infinite_Loop.gif') no-repeat center center;
-    background-size: cover;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow-y: auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  .main-content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: auto;
-    background-color: var(--main-bg, #fff);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100%);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  body.show-main .main-content {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-  }
-
-  body.show-main .sidebar {
+/* Sidebar */
+   
+  .main-content  {
     display: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(-100%);
   } 
-    .main-content {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: auto;
-    background-color: var(--main-bg, #fff);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(100%);
-    pointer-events: none; 
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
-  } 
-  DESCOMENTE AQUI SE OS NOVOS CSS NAO FUNCIONAREM DE >SIDEBAR >MAIN_CONTENT
-  body.show-main .main-content {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(0);
-    pointer-events: auto;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-  }
-  
   .sidebar {
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
-  }
-  
-  body.show-main .sidebar {
-    transform: translateX(-100%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }*/
-    .sidebar,
-  .main-content {
     display: none;
   }
 
   body.sidebar-only .sidebar {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 100vw;
+    height: 100%;
+  }
+  body.sidebar-only .sidebar-header {
+    height: 100%;
+    justify-content: center;
+  }
+  body.sidebar-only .language-switcher {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 20%;
+    left: 95%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    gap: 0.5rem;
   }
 
+  
+  body.sidebar-only .main-content {
+    display: none;
+  }
   body.show-main .main-content {
-    display: block;
+    display: flex;
   }
 
   /* Corrige: esconde sidebar quando está no modo show-main */
@@ -411,7 +454,7 @@ body.mobile-menu-active .main-content {
     top: 10px;
     left: 10px;
     z-index: 1100;
-    font-size: 24px;
+    font-size: 29px;
     background: none;
     border: none;
     cursor: pointer;
@@ -427,6 +470,9 @@ body.mobile-menu-active .main-content {
   .profile-img {
     width: 140px;
     height: 140px;
+    margin-top: 1rem;
+    border-radius: 50%;
+    
   }
 
   .profile-name {
@@ -434,8 +480,8 @@ body.mobile-menu-active .main-content {
   }
 
   .profile-title {
-    font-size: 1.6rem;
-    margin-bottom: 0.1rem;
+    font-size: 1.5rem;
+    margin-bottom: 0.01rem;
   }
 
   .main-nav {
@@ -447,10 +493,13 @@ body.mobile-menu-active .main-content {
   }
 
   .nav-link {
+    display: flex;
     font-size: 1.3rem;
-    margin: 0.4rem 0;
-    padding: 0.3rem 0.6rem;
+    margin: 0.1rem 0;
+    padding: 0rem 0.3rem;
     width: auto;
+    text-align: center;
+    height: auto;
   }
 
   .social-links {
@@ -459,8 +508,7 @@ body.mobile-menu-active .main-content {
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 12px;
-    margin-top: auto;
+    gap: 1px;
   }
 
   .social-link {
@@ -469,14 +517,7 @@ body.mobile-menu-active .main-content {
     justify-content: center;
   }
 
-  .language-switcher {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.2rem;
-    pointer-events: auto;
-    z-index: 1001;
-  }
+
 }
 
 
@@ -493,7 +534,6 @@ body.mobile-menu-active .main-content {
     justify-content: space-between;
     width: 250px;
     min-height: 100vh;
-    overflow-y: auto;
     padding: 1rem;
   }
 
@@ -523,38 +563,24 @@ body.mobile-menu-active .main-content {
   }
 }
 body.light-mode .sidebar {
-  background: #f4f4f4 url('/assets/black and white loop GIF by Doze Studio.gif') no-repeat center center;
+  background-image: linear-gradient(rgba(250, 1, 1, 0.1), rgba(51, 161, 7, 0.253)), url('/assets/black and white loop GIF by Doze Studio.gif');
+  /* background:  #1e1e1e url('/assets/black and white loop GIF by Doze Studio.gif') no-repeat center center; */
   background-size: cover;
-  color: #222;
 }
 
 body.light-mode .profile-name {
-  color: #1a1a1a; /* cor do título no modo claro */
-  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+  border-color: 2px solid #1f2020;
+  text-shadow: none; /* Remove shadow no modo claro */
+   /* cor do título no modo claro */
+  /* font-weight: 600; */
 }
 
 body.light-mode .profile-title {
   color: #444444; /* cor do subtítulo no modo claro */
 }
 
-/* .profile-name {
-  font-size: 1.4rem;
-  font-weight: 800;
-  margin-bottom: 0.4rem;
-  color: #F1C40F;
-  text-shadow:
-    -1px -1px 0 #000,
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-}
-
-.profile-title {
-  font-size: 0.8rem;
-  color: #beaafa;
-  margin-bottom: 0.8rem;
-}
-*/
 body.light-mode .sidebar .nav-link,
 body.light-mode .sidebar .social-link,
 body.light-mode .sidebar .lang-link {
@@ -576,16 +602,6 @@ body.sidebar-only .main-content {
 @media only screen and (max-width: 767px) and (orientation: portrait) {
   .container {
     flex-direction: row;
-  }
-
-  #sidebar {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    transform: translateX(0);
   }
 
   #main-content {

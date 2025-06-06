@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-{% assign lang = site.lang | default: site.default_lang | downcase %}
-<!-- {% assign lang = lang | replace: 'pt-br', 'pt' | replace: 'en-us', 'en' | replace: 'es-es', 'es' %} -->
 
-<!-- <html lang="{{ site.lang }}"> -->
+<!--  -->
+
+<!-- <html lang="pt"> -->
 
 <head>
   <meta name="google-site-verification" content="GXvA2WRAF6o4rV4pni0NwB4Z8V33BYQIDyrvSICONP8" />
@@ -11,8 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-  <title>{{ page.title | default: "Pedro Henrique Nogueira" }}</title>
-  <link rel="stylesheet" href="{{ '/css/style_white.css'}}">
+  <title>primeiro projeto</title>
+  <link rel="stylesheet" href="/css/style_white.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     body {
@@ -46,18 +46,18 @@
     <div class="sidebar" id="sidebar">
       <!-- profile, navigation, social links, language, and theme -->
       <div class="sidebar-header">
-        <img src="{{ '/assets/profile.jpg'}}" alt="Pedro Nogueira" class="profile-img">
+        <img src="/assets/profile.jpg" alt="Pedro Nogueira" class="profile-img">
         <h1 class="profile-name">Pedro H. Nogueira</h1>
         <h2 class="profile-title">Astrophysicist</h2>
       </div>
 
       <nav class="main-nav">
-        <a href="{% tl home %}" class="nav-link">{% t menu.home %}</a>
-        <a href="{% tl about %}" class="nav-link">{% t menu.about %}</a>
-        <a href="{% tl portfolio %}" class="nav-link">{% t menu.portfolio %}</a>
-        <a href="{% tl outreach %}" class="nav-link">{% t menu.outreach %}</a>
-        <a href="{% tl blog %}" class="nav-link">{% t menu.blog %}</a>
-        <!-- <a href="/{{ site.lang }}/blog/" class="nav-link">{% t menu.blog %}</a> -->
+        <a href="/pt/" class="nav-link">Início</a>
+        <a href="/pt/sobre-pt/" class="nav-link">Sobre</a>
+        <a href="/pt/portfólio/" class="nav-link">Portfólio</a>
+        <a href="/pt/divulgação/" class="nav-link">Divulgação</a>
+        <a href="/pt/blog/" class="nav-link">Blog</a>
+        <!-- <a href="/pt/blog/" class="nav-link">Blog</a> -->
         <a href="/assets/CV.pdf" class="nav-link" target="_blank">CV</a>
       </nav>
 
@@ -94,7 +94,16 @@
     <div class="main-content" tabindex="-1">
       <!-- Seção de boas-vindas -->
 
-      {{ content }}
+      <p>This project explores the detection of exoplanets using high-resolution spectroscopy.</p>
+
+<p>Meu primeiro post 🚀</p>
+
+<p>BBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBBBBBBB
+BBBBBBBBBBBBBBBB</p>
+
+<p>PORTUGUES</p>
+
 
       <div class="switch-container">
         <label class="switch-label" for="theme-toggle">🌗</label>
@@ -104,12 +113,12 @@
         </label>
       </div>
 
-      {% if page.url contains '/blog/' and page.url != '/blog/' %}
+      
       <div class="comments-section" style="max-height: 400px; overflow-y: auto; margin-top: 1rem;">
 
         <div class="post-meta">
-          <p>Last updated: {{ page.last_modified_at | default: page.date | date: "%B %d, %Y" }}</p>
-          <p>Published on: {{ page.date | date: "%B %d, %Y" }}</p>
+          <p>Last updated: May 28, 2025</p>
+          <p>Published on: April 22, 2024</p>
         </div>
 
 
@@ -124,7 +133,7 @@
           data-strict="0"
           data-reactions-enabled="1"
           data-emit-metadata="0"
-          data-lang="{{ lang }}"
+          data-lang="pt"
           data-input-position="bottom"
           crossorigin="anonymous"
           async
@@ -176,11 +185,11 @@
         });
         giscusObserver.observe(document.body, { childList: true, subtree: true });
       </script>
-      {% endif %}
+      
  
 
       <footer class="site-footer">
-        &copy; {{ 'now' | date: "%Y" }} Pedro Nogueira
+        &copy; 2025 Pedro Nogueira
       </footer>
     </div>
   </div>

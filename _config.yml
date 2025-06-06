@@ -3,8 +3,6 @@ baseurl: ""
 title: Pedro Nogueira
 languages: ["en", "pt", "es"]
 
-require:
-  - _overrides/fix-dir-exists.rb
 
 plugins:
   - jekyll-feed
