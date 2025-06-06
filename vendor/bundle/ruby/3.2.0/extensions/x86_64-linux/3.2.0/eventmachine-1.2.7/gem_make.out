@@ -1,0 +1,19 @@
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/home/sonic/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250605-125783-j6z40v sitelibdir\=./.gem.20250605-125783-j6z40v clean
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250605-125783-j6z40v sitelibdir\=./.gem.20250605-125783-j6z40v
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250605-125783-j6z40v sitelibdir\=./.gem.20250605-125783-j6z40v install
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20250605-125783-j6z40v
+
+current directory: /home/sonic/personal_site/vendor/bundle/ruby/3.2.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20250605-125783-j6z40v sitelibdir\=./.gem.20250605-125783-j6z40v clean

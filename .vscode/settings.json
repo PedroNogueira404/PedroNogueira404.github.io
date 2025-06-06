@@ -1,19 +1,2 @@
 {
-    "editor.fontSize": 18,
-    "editor.lineHeight": 24,
-    "editor.tabSize": 4,
-    "editor.wordWrap": "on",
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "boundary",
-    "editor.renderControlCharacters": false,
-    "editor.cursorBlinking": "smooth",
-    "editor.cursorStyle": "line",
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.suggestSelection": "first",
-    "editor.snippetSuggestions": "top",
-    "editor.parameterHints.enabled": true,
-    "editor.codeLens": true,
-    "editor.folding": true,
-    "editor.foldingStrategy": "auto"
 }

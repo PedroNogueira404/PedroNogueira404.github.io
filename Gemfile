@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+ruby "3.2.2"
 gem "jekyll-last-modified-at"
 gem "jekyll", "~> 4.4"
 gem "jekyll-feed", "~> 0.17"
