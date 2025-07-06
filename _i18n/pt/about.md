@@ -3,7 +3,6 @@
 ---
 
 ---
-AAAAAAAAAAAAAAAA
 # Um pouco mais sobre mim 
 
 Fora da pesquisa científica e da astronomia, tenho muitos interesses e hobbies que me acompanham no dia a dia.
@@ -25,5 +24,3 @@ Já fui parte do projeto **Astrotubers** e continuo produzindo conteúdo de divu
 ---
 
 Sinta-se à vontade para explorar mais sobre quem sou além dos papers e códigos!
-
-

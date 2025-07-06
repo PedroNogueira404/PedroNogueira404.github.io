@@ -3,4 +3,4 @@
 
 # Astronomia para todos INGLES
 
-Aqui você encontra minhas iniciativas de divulgação científica, vídeos, palestras e muito mais!
+Here you can find what past and ongoing sci-comm I have participated on

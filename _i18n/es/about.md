@@ -1,8 +1,6 @@
 ---
-
 ---
 
 ## About
 
-Hola, soy pesquisador blablaaa 🏓
-
+Hola, soy investigador y ..... 🏓
