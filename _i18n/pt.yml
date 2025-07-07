@@ -1,0 +1,14 @@
+menu:
+  home: Início
+  about: Sobre
+  outreach: Divulgação
+  portfolio: Portfólio
+  blog: Blog
+langs:
+  en: English
+  es: Español
+  pt: Português
+total:
+  posts: Total de posts encontrados em todos os idiomas
+footer:
+  copyright: "© 2025 Pedro Nogueira. Todos os direitos reservados."

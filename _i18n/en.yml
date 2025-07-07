@@ -1,0 +1,59 @@
+menu:
+  home: HOME
+  about: About me
+  outreach: SCI COMM.
+  personal: PERSONAL INTERESTS
+  portfolio: PORTFOLIO
+  blog: BLOG
+langs:
+  en: English
+  es: Español
+  pt: Português
+
+total:
+  posts: Total posts found in all languages
+#   welcome: "Welcome 👋!"
+#   intro: "I'm Pedro Henrique Nogueira, an astrophysicist specialized in exoplanets, brown dwarfs, exomoons, and planet formation."
+#   explore: "Check out my [Portfolio](/en/portfolio/), read my [Blog](/en/blog/), or learn more [About me](/en/about/)."
+
+# about:
+#   title: About me
+#   intro: >
+#     Outside of scientific research and astronomy, I have many interests and hobbies that are part of my daily life.
+#   hobbies: >
+#     ## 🎮 Hobbies
+
+#     - Table tennis (yes, I’m serious!)
+#     - Games and geek culture
+#     - Science and humor — yes, they mix!
+#   travel: >
+#     ## ✈️ Travel and experiences
+
+#     I love traveling, discovering different cultures, and capturing those moments...
+#   outreach: >
+#     ## 🎥 Outreach and content
+
+#     I was part of the **Astrotubers** project...
+#   outro: >
+#     ---
+
+#     Feel free to explore more about who I am beyond papers and code!
+
+# portfolio:
+#   title: Portfolio
+#   description: A selection of my projects in astronomy and science communication.
+
+# outreach:
+#   title: Science outreach
+#   description: Activities to share science with the public.
+
+# # personal:
+# #   title: Personal interests
+# #   description: My hobbies and interests beyond science.
+
+# blog:
+#   title: Blog
+#   description: Thoughts, articles, and reflections on astronomy and science.
+
+# footer:
+#   copyright: "© 2025 Pedro Nogueira. All rights reserved."

@@ -1,0 +1,59 @@
+menu:
+  home: Inicio
+  about: Sobre mí
+  outreach: Divulgación
+  portfolio: Portafolio
+  blog: Blog
+langs:
+  en: English
+  es: Español
+  pt: Português
+
+total:
+  posts: Todos los posts en todas las lenguas
+# home:
+#   welcome: "¡Bienvenido 👋!"
+#   intro: "Soy Pedro Henrique Nogueira, astrofísico especializado en exoplanetas, enanas marrones, exolunas y formación planetaria."
+#   explore: "Explora mi [Portafolio](/es/portfolio/), lee mi [Blog](/es/blog/) o aprende más [Sobre mí](/es/about/)."
+
+# about:
+#   title: Sobre mí
+#   intro: >
+#     Fuera de la investigación científica y la astronomía, tengo muchos intereses y pasatiempos que me acompañan en el día a día.
+#   hobbies: >
+#     ## 🎮 Hobbies
+
+#     - Tenis de mesa (¡sí, en serio!)
+#     - Videojuegos y cultura geek
+#     - Ciencia y humor — ¡sí, se pueden mezclar!
+#   travel: >
+#     ## ✈️ Viajes y experiencias
+
+#     Me encanta viajar, conocer diferentes culturas y registrar esos momentos...
+#   outreach: >
+#     ## 🎥 Contenido y divulgación
+
+#     Formé parte del proyecto **Astrotubers**...
+#   outro: >
+#     ---
+
+#     ¡Siéntete libre de explorar más sobre quién soy, más allá de los papers y el código!
+
+# portfolio:
+#   title: Portafolio
+#   description: Una selección de mis proyectos en astronomía y divulgación científica.
+
+# outreach:
+#   title: Divulgación científica
+#   description: Actividades para compartir ciencia con el público.
+
+# personal:
+#   title: Intereses personales
+#   description: Mis pasatiempos e intereses más allá de la ciencia.
+
+# blog:
+#   title: Blog
+#   description: Pensamientos, artículos y reflexiones sobre astronomía y ciencia.
+
+footer:
+  copyright: "© 2025 Pedro Nogueira. Todos los derechos reservados."
