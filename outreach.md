@@ -6,5 +6,5 @@ permalink: /outreach/
 permalink_es: /divulgación/
 permalink_pt: /divulgação/
 ---
-{% tf outreach.md %}
 
+{% tf outreach.md %}
