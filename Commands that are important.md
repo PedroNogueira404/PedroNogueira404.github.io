@@ -1,5 +1,5 @@
 Commands that are important:
-
+#
 - bundle install
 - bundle exec jekyll clean
             Cleaner: Removing /home/sonic/personal_site/_site...
